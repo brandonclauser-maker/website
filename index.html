@@ -50,6 +50,7 @@
       position: relative;
       padding: clamp(10px, 2.2vw, 24px) 0 64px;
       isolation: isolate;
+      overflow: hidden;
       --hero-accent: #c51722;
       --hero-accent-soft: #9f121b;
       --hero-accent-glow: rgba(197,23,34,.38);
@@ -58,18 +59,14 @@
     .hero::before {
       content: "";
       position: absolute;
-      left: -34%;
-      bottom: -32%;
-      width: min(88vw, 980px);
-      aspect-ratio: 1 / 1;
-      background:
-        radial-gradient(circle at 56% 48%, rgba(182,22,34,.2) 0%, rgba(182,22,34,0) 58%),
-        url("assets/alpha-selling-logo.png");
-      background-size: 130% 130%, 248% auto;
-      background-position: 56% 48%, 48% 42%;
-      background-repeat: no-repeat;
-      opacity: .072;
-      filter: grayscale(1) contrast(1.2) brightness(.88) drop-shadow(0 0 28px rgba(182,22,34,.16));
+      left: 50%;
+      top: -4%;
+      transform: translateX(-50%);
+      width: min(74vw, 900px);
+      aspect-ratio: 2.2 / 1;
+      background: url("assets/alpha-selling-logo.png") center / contain no-repeat;
+      opacity: .062;
+      filter: grayscale(1) contrast(1.12) brightness(.86) blur(.8px);
       mix-blend-mode: screen;
       pointer-events: none;
       z-index: 0;
@@ -87,6 +84,22 @@
         radial-gradient(circle at 23% 74%, rgba(197,23,34,.136) 0%, rgba(197,23,34,0) 46%);
       pointer-events: none;
       z-index: 0;
+    }
+
+    .hero-cursor-glow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 540px;
+      height: 540px;
+      border-radius: 50%;
+      transform: translate3d(calc(var(--gx, 50%) - 50%), calc(var(--gy, 45%) - 50%), 0);
+      background: radial-gradient(circle, rgba(182,22,34,.22) 0%, rgba(182,22,34,.12) 28%, rgba(182,22,34,0) 72%);
+      filter: blur(38px);
+      opacity: 0;
+      transition: opacity .45s ease;
+      pointer-events: none;
+      z-index: 1;
     }
 
     .hero-inner {
@@ -946,7 +959,8 @@
       .headline .line.brand { font-size: clamp(2.45rem, 12vw, 3.8rem); }
       .video-wrap { margin-top: 14px; border-radius: 16px; }
       .video-label { font-size: .77rem; }
-      .hero::before { left: -44%; bottom: -27%; width: min(114vw, 760px); opacity: .064; }
+      .hero::before { top: 2%; width: min(92vw, 760px); opacity: .05; }
+      .hero-cursor-glow { width: 420px; height: 420px; filter: blur(34px); }
       .mini-faq { margin-top: 14px; }
       .stack-divider { margin-top: 14px; }
       .proof-section { padding: 12px; border-radius: 16px; }
@@ -963,6 +977,7 @@
   <div class="site">
     <main id="top">
       <section class="hero">
+        <div class="hero-cursor-glow" id="heroCursorGlow" aria-hidden="true"></div>
         <div class="container hero-inner">
           <h1 class="headline">
             <span class="line rotating" aria-live="polite">
@@ -1137,6 +1152,47 @@
           rotatingPhrase.classList.remove('is-changing');
         }, 130);
       }, 500);
+    }
+
+    const hero = document.querySelector('.hero');
+    const heroCursorGlow = document.getElementById('heroCursorGlow');
+
+    if (hero && heroCursorGlow) {
+      let tx = 50;
+      let ty = 45;
+      let x = tx;
+      let y = ty;
+      let rafId = null;
+
+      const animateGlow = () => {
+        x += (tx - x) * 0.12;
+        y += (ty - y) * 0.12;
+        heroCursorGlow.style.setProperty('--gx', `${x}%`);
+        heroCursorGlow.style.setProperty('--gy', `${y}%`);
+        rafId = requestAnimationFrame(animateGlow);
+      };
+
+      const startGlow = () => {
+        if (rafId) return;
+        heroCursorGlow.style.opacity = '0.75';
+        rafId = requestAnimationFrame(animateGlow);
+      };
+
+      const stopGlow = () => {
+        heroCursorGlow.style.opacity = '0';
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      };
+
+      hero.addEventListener('pointerenter', startGlow);
+      hero.addEventListener('pointerleave', stopGlow);
+      hero.addEventListener('pointermove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        tx = ((e.clientX - rect.left) / rect.width) * 100;
+        ty = ((e.clientY - rect.top) / rect.height) * 100;
+      });
     }
 
     const leadModal = document.getElementById('leadModal');
