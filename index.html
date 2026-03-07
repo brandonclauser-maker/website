@@ -227,8 +227,8 @@
       border: 1px solid rgba(255,255,255,.14);
       background: linear-gradient(180deg, rgba(14,14,20,.88), rgba(10,10,14,.86));
       color: #f0f1f7;
-      font-size: 1.13rem;
-      line-height: 1.48;
+      font-size: 1.17rem;
+      line-height: 1.5;
       box-shadow: 0 14px 34px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.04);
       text-align: center;
       position: relative;
@@ -482,37 +482,38 @@
       margin-top: 6px;
       display: flex;
       justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
+      gap: 14px;
+      flex-wrap: nowrap;
       align-items: center;
     }
 
     .trust-logo-item {
-      width: clamp(120px, 13vw, 154px);
-      height: 38px;
+      width: clamp(136px, 14vw, 170px);
+      height: 56px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.02);
-      padding: 6px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.018);
+      padding: 9px 14px;
     }
 
     .trust-logo-item img {
       max-width: 100%;
-      max-height: 24px;
+      max-height: 34px;
       width: auto;
       height: auto;
-      opacity: .9;
-      filter: saturate(.86) brightness(1.04) contrast(1.03);
+      object-fit: contain;
+      opacity: .98;
+      filter: saturate(1) brightness(1.02) contrast(1.02);
     }
 
     .powered-by {
-      margin-top: 10px;
+      margin-top: 14px;
       display: grid;
       justify-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
     .powered-by-label {
@@ -525,10 +526,10 @@
     }
 
     .powered-by-logo {
-      width: clamp(120px, 14vw, 178px);
+      width: clamp(230px, 26vw, 320px);
       height: auto;
-      opacity: .84;
-      filter: grayscale(.06) saturate(.92) brightness(.98);
+      opacity: .94;
+      filter: grayscale(0) saturate(1) brightness(1);
     }
 
     .proof-section {
@@ -1042,14 +1043,14 @@
       .video-label { font-size: .77rem; }
       .hero::before { top: 2%; width: min(96vw, 820px); opacity: .10; }
       .hero-cursor-glow { width: 420px; height: 420px; filter: blur(34px); }
-      .proof-strip { font-size: 1rem; padding: 14px 14px; line-height: 1.46; }
+      .proof-strip { font-size: 1.03rem; padding: 16px 15px; line-height: 1.5; }
       .mini-faq { margin-top: 14px; }
       .stack-divider { margin-top: 14px; }
       .trust-title { font-size: .69rem; letter-spacing: .06em; }
-      .trust-logos { gap: 6px; }
-      .trust-logo-item { width: 112px; height: 34px; padding: 4px 8px; }
-      .trust-logo-item img { max-height: 20px; }
-      .powered-by-logo { width: 130px; }
+      .trust-logos { gap: 10px; flex-wrap: wrap; }
+      .trust-logo-item { width: 146px; height: 46px; padding: 7px 10px; }
+      .trust-logo-item img { max-height: 28px; }
+      .powered-by-logo { width: 210px; }
       .proof-section { padding: 12px; border-radius: 16px; }
       .proof-head { flex-direction: column; align-items: flex-start; gap: 6px; }
       .proof-lockup img { width: 32px; }
@@ -1073,7 +1074,7 @@
             <span class="line brand">ALPHA SELLING</span>
           </h1>
           <div class="proof-strip">
-            Built from the <strong>exact method</strong> Brandon Clauser used to become the <strong class="proof-anchor">#1 AE</strong> in his division at <strong class="proof-anchor">Salesforce</strong> and <strong class="proof-anchor">Workday</strong>, win at multiple startups, and help drive a <strong class="proof-anchor">$13.75M</strong> net new deal in today’s <strong>AI-driven enterprise selling environment</strong>.
+            <strong>Brandon Clauser</strong> crafted and used the <strong>Alpha Selling method</strong> to become the <strong class="proof-anchor">#1 AE</strong> in his division at <strong class="proof-anchor">Salesforce</strong> and <strong class="proof-anchor">Workday</strong>, win in multiple startup environments, and help drive a <strong class="proof-anchor">$13.75M</strong> net new deal in today’s <strong>AI-driven enterprise market</strong>. Clients have used the same method to help close <strong class="proof-anchor">$5.5M</strong>, <strong class="proof-anchor">$2.6M</strong>, and <strong class="proof-anchor">$1.7M</strong> deals.
           </div>
 
           <div class="video-wrap" id="vsl">
@@ -1097,9 +1098,11 @@
             <p class="trust-title">Trusted by enterprise sellers from teams like:</p>
             <div class="trust-logos">
               <!-- Replace these placeholder files with official brand logos when available -->
-              <span class="trust-logo-item"><img src="assets/salesforce-logo.png" alt="Salesforce logo"></span>
-              <span class="trust-logo-item"><img src="assets/workday-logo.png" alt="Workday logo"></span>
-              <span class="trust-logo-item"><img src="assets/hubpsot-logo.jpg" alt="HubSpot logo"></span>
+              <span class="trust-logo-item"><img src="assets/Salesforce-logo.png" alt="Salesforce logo"></span>
+              <span class="trust-logo-item"><img src="assets/Oracle-Logo.png" alt="Oracle logo"></span>
+              <span class="trust-logo-item"><img src="assets/Microsoft-Logo.png" alt="Microsoft logo"></span>
+              <span class="trust-logo-item"><img src="assets/HubSpot_Logo.png" alt="HubSpot logo"></span>
+              <span class="trust-logo-item"><img src="assets/Workday_Logo.png" alt="Workday logo"></span>
             </div>
             <div class="powered-by">
               <p class="powered-by-label">Powered by:</p>
