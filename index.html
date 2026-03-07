@@ -317,7 +317,7 @@
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 14px;
       align-items: center;
       justify-items: center;
     }
@@ -433,7 +433,7 @@
     .hero-visual {
       position: relative;
       min-height: auto;
-      width: min(100%, 980px);
+      width: min(100%, 1140px);
     }
 
     .wolf-orbit {
@@ -492,6 +492,17 @@
         #101015;
       border: 1px solid rgba(255,255,255,.08);
       box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .hero .vsl-card {
+      width: min(100%, 1040px);
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero .video-shell {
+      aspect-ratio: 16 / 9;
+      border-radius: 26px;
     }
 
     .hero .theater::before {
@@ -1665,6 +1676,7 @@
       .mini-cards,
       .customer-grid { grid-template-columns: 1fr; }
       .hero-visual { min-height: auto; }
+      .hero .vsl-card { width: 100%; padding: 14px; }
       .hero-actions, .form-actions, .footer-news { flex-direction: column; }
       .btn, .footer-news button { width: 100%; }
       .footer-links { justify-content: flex-start; }
@@ -1686,6 +1698,7 @@
       .hero-title { font-size: clamp(3rem, 19vw, 4.8rem); }
       .section-title, .conversion-grid h2 { max-width: none; }
       .hero-visual { min-height: auto; }
+      .hero .video-shell { border-radius: 18px; }
       .trust-row { gap: 10px; }
       .trust-card { min-height: 84px; }
     }
@@ -1744,7 +1757,7 @@
             </h1>
             <div class="hero-vsl-priority load-in" style="animation-delay:280ms;">Start here: watch the VSL before applying</div>
             <p class="hero-note load-in" style="animation-delay:520ms;">
-              Build more pipeline, get to power faster, and run cleaner multi-threaded deals with the Alpha Selling framework.
+              Custom and tailored 1 on 1 coaching, no courses, no group training.
             </p>
 
             <div class="hero-actions load-in" style="animation-delay:640ms;">
