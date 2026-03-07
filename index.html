@@ -482,41 +482,30 @@
       margin-top: 6px;
       display: flex;
       justify-content: center;
-      gap: 7px;
+      gap: 8px;
       flex-wrap: wrap;
+      align-items: center;
     }
 
-    .trust-logo {
-      padding: 5px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.11);
-      background: rgba(255,255,255,.02);
-      color: #d7d9e4;
-      font-size: .72rem;
-      letter-spacing: .04em;
-      font-weight: 700;
-      line-height: 1;
+    .trust-logo-item {
+      width: clamp(100px, 11vw, 128px);
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.015);
+      padding: 4px 8px;
     }
 
-    .learning-strip {
-      margin: 7px auto 0;
-      width: min(100%, 900px);
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 6px;
-    }
-
-    .learning-chip {
-      padding: 5px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.1);
-      background: rgba(12,12,17,.4);
-      color: #cfd2de;
-      font-size: .7rem;
-      font-weight: 600;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      text-align: center;
+    .trust-logo-item img {
+      max-width: 100%;
+      max-height: 18px;
+      width: auto;
+      height: auto;
+      opacity: .72;
+      filter: grayscale(1) saturate(0) brightness(1.1) contrast(1.06);
     }
 
     .proof-section {
@@ -1021,8 +1010,9 @@
       .mini-faq { margin-top: 14px; }
       .stack-divider { margin-top: 14px; }
       .trust-title { font-size: .69rem; letter-spacing: .06em; }
-      .learning-strip { grid-template-columns: 1fr; gap: 5px; margin-top: 6px; }
-      .learning-chip { font-size: .68rem; }
+      .trust-logos { gap: 6px; }
+      .trust-logo-item { width: 94px; height: 28px; padding: 3px 6px; }
+      .trust-logo-item img { max-height: 15px; }
       .proof-section { padding: 12px; border-radius: 16px; }
       .proof-head { flex-direction: column; align-items: flex-start; gap: 6px; }
       .proof-lockup img { width: 32px; }
@@ -1069,17 +1059,12 @@
           <div class="trust-compact" aria-label="Trust row">
             <p class="trust-title">Trusted by enterprise sellers from teams like:</p>
             <div class="trust-logos">
-              <span class="trust-logo">Salesforce</span>
-              <span class="trust-logo">Workday</span>
-              <span class="trust-logo">HubSpot</span>
-              <span class="trust-logo">Microsoft</span>
+              <!-- Replace these placeholder files with official brand logos when available -->
+              <span class="trust-logo-item"><img src="assets/salesforce-logo.png" alt="Salesforce logo"></span>
+              <span class="trust-logo-item"><img src="assets/workday-logo.png" alt="Workday logo"></span>
+              <span class="trust-logo-item"><img src="assets/hubpsot-logo.jpg" alt="HubSpot logo"></span>
+              <span class="trust-logo-item"><img src="assets/logo-salesdraft-placeholder.svg" alt="SalesDraft logo"></span>
             </div>
-          </div>
-
-          <div class="learning-strip" aria-label="What you will learn">
-            <div class="learning-chip">Deal Control</div>
-            <div class="learning-chip">Multi-Threading</div>
-            <div class="learning-chip">Executive Selling</div>
           </div>
 
           <div class="stack-divider" aria-hidden="true"></div>
