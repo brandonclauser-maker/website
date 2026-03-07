@@ -1,34 +1,25 @@
-<!-- test -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brandon Clauser Sales Coaching — Alpha Selling</title>
-  <meta name="description" content="Enterprise AEs: close bigger deals, build more pipeline, and increase income with the Alpha Selling framework. Watch free training and apply for a strategy call." />
+  <title>ALPHA SELLING — Free Training</title>
+  <meta name="description" content="Learn the Alpha Selling method for enterprise AEs to close bigger deals, gain more control, and crush quota." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #09090b;
-      --bg-soft: #111116;
-      --panel: rgba(17, 17, 22, 0.82);
-      --panel-strong: rgba(20, 20, 27, 0.96);
-      --text: #ffffff;
-      --muted: #a2a2ad;
-      --line: rgba(255,255,255,0.08);
-      --accent: #ff4d2d;
-      --accent-2: #d92323;
-      --accent-soft: rgba(255, 77, 45, 0.14);
-      --accent-glow: rgba(255, 77, 45, 0.28);
-      --success: #d8ffd1;
-      --max: 1280px;
-      --radius: 28px;
-      --radius-sm: 18px;
-      --shadow-lg: 0 30px 80px rgba(0,0,0,0.45);
-      --shadow-md: 0 18px 50px rgba(0,0,0,0.28);
-      --nav-h: 82px;
+      --bg: #060608;
+      --bg-soft: #0b0b10;
+      --panel: rgba(14, 14, 20, 0.92);
+      --text: #f5f5f8;
+      --muted: #a7a9b5;
+      --line: rgba(255,255,255,.12);
+      --accent: #ff4a1f;
+      --accent-2: #ff6b46;
+      --radius: 20px;
+      --max: 1120px;
       --ease: cubic-bezier(.22,.61,.36,1);
     }
 
@@ -37,715 +28,168 @@
     body {
       margin: 0;
       font-family: 'Manrope', sans-serif;
-      background:
-        linear-gradient(162deg, rgba(255,77,45,.07) 0 12%, transparent 12% 100%),
-        linear-gradient(132deg, transparent 0 58%, rgba(217,35,35,.09) 58% 61%, transparent 61% 100%),
-        linear-gradient(118deg, transparent 0 72%, rgba(255,255,255,.02) 72% 73%, transparent 73% 100%),
-        radial-gradient(circle at 62% 22%, rgba(155,18,18,.16), transparent 30%),
-        linear-gradient(180deg, #060608 0%, #0c0c11 56%, #07070a 100%);
       color: var(--text);
+      background:
+        linear-gradient(137deg, transparent 0 56%, rgba(255,74,31,.08) 56% 57.2%, transparent 57.2% 100%),
+        linear-gradient(126deg, transparent 0 64%, rgba(255,74,31,.07) 64% 65.1%, transparent 65.1% 100%),
+        radial-gradient(circle at 58% 43%, rgba(255,74,31,.14), transparent 42%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 55%, var(--bg) 100%);
       min-height: 100vh;
       overflow-x: hidden;
-      padding-bottom: 84px;
     }
 
     body.modal-open { overflow: hidden; }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: radial-gradient(circle at center, black 25%, transparent 82%);
-      opacity: 0.22;
-      z-index: 0;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button, input, iframe { font: inherit; }
-
-    .ambient { display: none; }
-
-    .particle {
-      position: absolute;
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(255,77,45,0.72) 0%, rgba(255,77,45,0.12) 45%, transparent 72%);
-      animation: floatParticle linear infinite;
-      opacity: .55;
-      filter: blur(.2px);
-    }
-
-    @keyframes floatParticle {
-      from { transform: translate3d(0, 12vh, 0) scale(.7); opacity: 0; }
-      10% { opacity: .5; }
-      80% { opacity: .3; }
-      to { transform: translate3d(0, -110vh, 0) scale(1.5); opacity: 0; }
-    }
-
-    .cursor-glow {
-      position: fixed;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(255,77,45,0.14) 0%, rgba(255,77,45,0.06) 26%, transparent 68%);
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      mix-blend-mode: screen;
-      transition: opacity .3s ease;
-    }
-
     .site { position: relative; z-index: 2; }
     .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, iframe { font: inherit; }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 26px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent));
-    }
-
-    .headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      letter-spacing: -.04em;
-      line-height: .92;
-      margin: 0;
-    }
-
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.3rem, 5vw, 4.8rem);
-      line-height: .95;
-      margin: 18px 0 16px;
-      max-width: 10ch;
-    }
-
-    .lede {
-      color: var(--muted);
-      font-size: clamp(1rem, 1.5vw, 1.16rem);
-      line-height: 1.78;
-      max-width: 62ch;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: transform .9s var(--ease), opacity .9s var(--ease);
-    }
-
-    .reveal.in-view {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .load-in {
-      opacity: 0;
-      transform: translateY(18px);
-      animation: pageReveal .9s var(--ease) forwards;
-    }
-
-    @keyframes pageReveal {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    header.nav {
+    .nav {
       position: sticky;
       top: 0;
       z-index: 30;
-      backdrop-filter: blur(16px);
-      background: rgba(8,8,10,.56);
-      border-bottom: 1px solid rgba(255,255,255,.04);
+      background: rgba(6,6,9,.74);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
 
     .nav-inner {
-      min-height: var(--nav-h);
+      min-height: 76px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
     }
 
-    .brand-lockup {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .brand-mark {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.015)),
-        radial-gradient(circle at 30% 30%, rgba(255,77,45,.24), transparent 52%),
-        #101015;
-      display: grid;
-      place-items: center;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 12px 34px rgba(0,0,0,.34);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .brand-mark img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .brand-copy strong {
-      display: block;
-      font-size: .98rem;
-      font-weight: 700;
-      letter-spacing: .01em;
-    }
-
-    .brand-copy span {
-      display: block;
-      color: var(--muted);
-      font-size: .76rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      margin-top: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .nav-links a {
-      position: relative;
-      transition: color .25s ease;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 100%;
-      height: 1px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform .35s var(--ease);
-    }
-
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
-
-    .btn {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      border: 0;
-      cursor: pointer;
-      border-radius: 999px;
-      padding: 14px 22px;
-      font-weight: 800;
-      letter-spacing: -.01em;
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s ease, color .3s ease;
-      overflow: hidden;
-      isolation: isolate;
-      will-change: transform;
-    }
-
-    .btn::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.12) 30%, transparent 62%);
-      transform: translateX(-120%);
-      transition: transform .7s var(--ease);
-      z-index: -1;
-    }
-
-    .btn:hover::before { transform: translateX(130%); }
-    .btn:hover { transform: translateY(-2px) scale(1.02); }
-
-    .btn-primary {
-      color: #fff;
-      background: linear-gradient(135deg, #ff7357 0%, #ff4d2d 45%, #c81818 100%);
-      border: 1px solid rgba(255, 124, 101, 0.45);
-      box-shadow: 0 20px 46px rgba(255, 77, 45, 0.34), inset 0 1px 0 rgba(255,255,255,.2);
-    }
-
-    .btn-secondary {
-      color: var(--text);
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.16);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    .brand img {
+      width: clamp(180px, 25vw, 300px);
+      height: auto;
+      object-fit: contain;
     }
 
     .hero {
       position: relative;
-      padding: clamp(20px, 3.2vw, 36px) 0 56px;
-      min-height: calc(100vh - var(--nav-h));
-      display: flex;
-      align-items: center;
+      padding: clamp(28px, 4.2vw, 52px) 0 64px;
+      isolation: isolate;
     }
 
     .hero::before {
       content: "";
       position: absolute;
-      inset: 0;
+      left: -18%;
+      top: 6%;
+      width: 60%;
+      height: 82%;
+      background: url("assets/alpha-selling-logo.png") left center / contain no-repeat;
+      opacity: .03;
+      filter: grayscale(1) contrast(1.35) brightness(.82);
+      mix-blend-mode: screen;
       pointer-events: none;
-      background:
-        linear-gradient(138deg, transparent 0 52%, rgba(255,77,45,.08) 52% 54%, transparent 54% 100%),
-        linear-gradient(132deg, transparent 0 62%, rgba(255,77,45,.11) 62% 64%, transparent 64% 100%),
-        linear-gradient(126deg, transparent 0 72%, rgba(255,77,45,.07) 72% 73.5%, transparent 73.5% 100%),
-        radial-gradient(circle at 60% 46%, rgba(255,77,45,.2), transparent 40%);
       z-index: 0;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      left: -18%;
-      top: 4%;
-      width: 62%;
-      height: 88%;
-      background: url("assets/alpha-selling-logo.png") left center / contain no-repeat;
-      opacity: .03;
-      filter: grayscale(1) contrast(1.35) brightness(.82);
+      inset: 0;
+      background:
+        linear-gradient(139deg, transparent 0 54%, rgba(255,74,31,.08) 54% 55.2%, transparent 55.2% 100%),
+        linear-gradient(129deg, transparent 0 63%, rgba(255,74,31,.07) 63% 64%, transparent 64% 100%);
       pointer-events: none;
       z-index: 0;
-      mix-blend-mode: screen;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      align-items: center;
-      justify-items: center;
-    }
-
-    .hero-copy {
+    .hero-inner {
       position: relative;
       z-index: 2;
+      max-width: 960px;
+      margin: 0 auto;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 760px;
     }
 
-    .hero-title {
-      font-size: clamp(2.25rem, 4.8vw, 4rem);
-      max-width: 14ch;
-      text-align: center;
-      line-height: 1.02;
-      margin-bottom: 4px;
-    }
-
-    .hero-title .accent-word {
-      color: #ff3c1f;
-      font-style: normal;
-      text-shadow: 0 0 24px rgba(255,77,45,.42), 0 0 60px rgba(217,35,35,.18);
-      display: inline-block;
-    }
-
-    .hero-note {
-      margin: 8px 0 0;
-      color: var(--muted);
-      max-width: 62ch;
-      line-height: 1.65;
-      font-size: 1rem;
-    }
-
-    .hero-meta-rail {
-      margin-top: 12px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .hero-meta-rail span {
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.1);
-      background: rgba(255,255,255,.03);
-      color: #d8d8df;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .68rem;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .hero-watch-label {
-      margin: 8px 0 10px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,77,45,.3);
-      background: rgba(255,77,45,.1);
-      color: #ffd7cf;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .76rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .hero-kicker { display: none; }
-
-    .hero-chip {
+    .pill {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
       padding: 10px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
-      color: #f2f2f4;
-      font-weight: 600;
-      font-size: .92rem;
-    }
-
-    .hero-chip .mono {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .76rem;
-      letter-spacing: .08em;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: #d3d5de;
+      font-size: .75rem;
+      letter-spacing: .11em;
       text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin: 14px 0 0;
-      justify-content: center;
-    }
-
-    .hero-promise-list,
-    .trust-row { display: none; }
-
-    .trust-card {
-      padding: 14px 14px 12px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.07);
-      background: rgba(255,255,255,.025);
-      min-height: 96px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform .3s var(--ease), border-color .3s ease, background .3s ease;
-    }
-
-    .trust-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,77,45,.28);
-      background: rgba(255,255,255,.035);
-    }
-
-    .trust-card strong { font-size: 1rem; line-height: 1.1; }
-    .trust-card span { color: var(--muted); font-size: .8rem; }
-
-    .hero-visual {
-      position: relative;
-      min-height: auto;
-      width: min(100%, 1220px);
-      margin-top: 0;
-    }
-
-    .hero-visual::before {
-      content: "BC  BC  BC  BC  BC";
-      position: absolute;
-      inset: 16% -12% auto -8%;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 8vw, 6rem);
       font-weight: 700;
-      letter-spacing: .22em;
-      color: rgba(255,255,255,.035);
-      transform: rotate(-12deg);
-      z-index: 1;
-      pointer-events: none;
-      white-space: nowrap;
     }
 
-    .hero-visual::after {
-      content: "";
-      position: absolute;
-      left: 2%;
-      top: 8%;
-      width: 70%;
-      height: 78%;
-      background: url("assets/alpha-selling-logo.png") center/contain no-repeat;
-      opacity: .022;
-      filter: grayscale(1) contrast(1.2);
-      pointer-events: none;
-      z-index: 1;
-      mix-blend-mode: screen;
+    .headline {
+      margin: 18px 0 10px;
+      font-family: 'Cormorant Garamond', serif;
+      line-height: .94;
+      letter-spacing: -.03em;
+      font-weight: 700;
     }
 
-    .hero .theater {
-      position: relative;
-      inset: auto;
-      border-radius: 34px;
-      overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.02), transparent),
-        linear-gradient(145deg, rgba(255, 77, 45, 0.08), rgba(255,255,255,.02) 35%, rgba(217, 35, 35, 0.05) 100%),
-        #101015;
-      border: 1px solid rgba(255,255,255,.11);
-      box-shadow: 0 40px 120px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.08);
-    }
-
-    .hero .theater::after {
-      content: "";
-      position: absolute;
-      inset: 1px;
-      border-radius: 33px;
-      border: 1px solid rgba(255,77,45,.16);
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    .hero .vsl-card {
-      width: min(100%, 1140px);
-      margin: 0 auto;
-      padding: 22px;
-    }
-
-    .hero .video-shell {
-      aspect-ratio: 16 / 9;
-      border-radius: 28px;
-      border-color: rgba(255,255,255,.12);
-      box-shadow: 0 18px 60px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.08);
-    }
-
-    .hero .theater::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.24) 100%);
-      pointer-events: none;
-    }
-
-    .scan-lines {
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        180deg,
-        rgba(255,255,255,.03) 0,
-        rgba(255,255,255,.03) 1px,
-        transparent 1px,
-        transparent 18px
-      );
-      opacity: .1;
-      pointer-events: none;
-      mix-blend-mode: screen;
-    }
-
-    .theater-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 22px 24px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      position: relative;
-      z-index: 2;
-    }
-
-    .console-meta {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .console-left strong {
-      display: block;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .72rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: #f2f2f5;
-    }
-
-    .console-left span {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: .72rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      font-family: 'IBM Plex Mono', monospace;
-    }
-
-    .console-right {
-      text-align: right;
-      color: #d0d0d9;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .7rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      line-height: 1.45;
-    }
-
-    .console-right span { color: #ffb2a1; }
-
-    .window-dots { display: flex; gap: 8px; }
-    .window-dots span {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.14);
-    }
-    .window-dots span:nth-child(1) { background: rgba(255,77,45,.84); }
-
-    .theater-label {
-      font-family: 'IBM Plex Mono', monospace;
-      color: var(--muted);
-      font-size: .78rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .hero .demo-stage {
-      position: relative;
-      padding: 26px;
-      height: auto;
-    }
-
-    .vsl-edge {
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(255,255,255,.05);
-      border-radius: 24px;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .vsl-edge::before,
-    .vsl-edge::after {
-      content: "";
-      position: absolute;
-      width: 42px;
-      height: 42px;
-      border: 1px solid rgba(255,77,45,.22);
-      transform: rotate(45deg);
-    }
-
-    .vsl-edge::before { top: -22px; left: -22px; }
-    .vsl-edge::after { bottom: -22px; right: -22px; }
-
-    .vsl-card {
-      position: relative;
-      padding: 18px;
-      border-radius: 28px;
-      background: rgba(7,7,10,.62);
-      border: 1px solid rgba(255,255,255,.08);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 24px 60px rgba(0,0,0,.35);
-      z-index: 4;
-    }
-
-    .hero .theater-grid,
-    .hero .metric-ribbon,
-    .hero .vsl-learn,
-    .hero .vsl-cta-row {
-      display: none;
-    }
-
-    .vsl-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 14px;
-    }
-
-    .vsl-top strong {
-      display: block;
-      font-size: 1rem;
-    }
-
-    .vsl-top span {
-      display: block;
-      color: var(--muted);
-      font-size: .84rem;
-      margin-top: 3px;
-    }
-
-    .vsl-badge {
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .72rem;
-      letter-spacing: .08em;
-      color: var(--muted);
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .vsl-learn {
-      margin: 16px 0 0;
-      display: grid;
-      gap: 8px;
-      color: #e8e8ee;
-      font-size: .92rem;
-      line-height: 1.55;
-    }
-
-    .vsl-learn div::before {
-      content: "•";
+    .headline .line { display: block; }
+    .headline .line.main { font-size: clamp(2.7rem, 8vw, 6.2rem); }
+    .headline .line.mid { font-size: clamp(1.9rem, 4.8vw, 3.2rem); }
+    .headline .line.brand {
+      font-size: clamp(3.1rem, 10vw, 7.6rem);
       color: var(--accent);
-      margin-right: 8px;
-      font-weight: 800;
+      text-shadow: 0 0 26px rgba(255,74,31,.34);
+      font-style: italic;
     }
 
-    .vsl-cta-row {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .subheadline {
+      margin: 0 auto;
+      max-width: 66ch;
+      color: #d4d6df;
+      line-height: 1.7;
+      font-size: clamp(1rem, 1.8vw, 1.12rem);
     }
 
-    .vsl-cta-row .btn { min-width: 220px; }
+    .video-wrap {
+      margin: 24px auto 0;
+      width: min(100%, 980px);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(16,16,22,.96), rgba(10,10,14,.96));
+      border: 1px solid var(--line);
+      box-shadow: 0 34px 95px rgba(0,0,0,.56), 0 0 0 1px rgba(255,74,31,.14);
+      position: relative;
+    }
+
+    .video-wrap::before {
+      content: "BC";
+      position: absolute;
+      right: 12px;
+      top: 4px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 7vw, 4.6rem);
+      color: rgba(255,255,255,.035);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .video-label {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      background: linear-gradient(90deg, var(--accent) 0%, #ff3f11 100%);
+      color: #170b09;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: .86rem;
+      padding: 10px 12px;
+    }
 
     .video-shell {
       position: relative;
+      z-index: 2;
       aspect-ratio: 16 / 9;
       width: 100%;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.08);
-      background:
-        radial-gradient(circle at center, rgba(255,77,45,.12), rgba(0,0,0,.36)),
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+      background: #09090d;
+      border-top: 1px solid rgba(255,255,255,.08);
     }
 
     .video-shell iframe {
@@ -756,1962 +200,305 @@
       border: 0;
     }
 
-    .video-overlay {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      background: linear-gradient(180deg, rgba(8,8,10,.14), rgba(8,8,10,.52));
-      transition: opacity .35s ease, visibility .35s ease;
-      cursor: pointer;
-    }
-
-    .video-overlay.hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .play-core {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, #ff6649 0%, #ff4d2d 45%, #d92323 100%);
-      box-shadow: 0 20px 46px rgba(255,77,45,.28), inset 0 1px 0 rgba(255,255,255,.18);
-      margin-bottom: 18px;
-      animation: pulsePlay 2.4s ease-in-out infinite;
-    }
-
-    .play-core::before {
-      content: "";
-      border-style: solid;
-      border-width: 11px 0 11px 18px;
-      border-color: transparent transparent transparent #fff;
-      margin-left: 4px;
-    }
-
-    @keyframes pulsePlay {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
-    .overlay-copy {
-      text-align: center;
-      max-width: 38ch;
-    }
-
-    .overlay-copy strong {
-      display: block;
-      font-size: 1.18rem;
-      margin-bottom: 8px;
-    }
-
-    .overlay-copy span {
-      display: block;
-      color: #dddde4;
-      line-height: 1.65;
-      font-size: .94rem;
-    }
-
-    .theater-grid {
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .command-panel,
-    .story-panel {
-      padding: 18px;
-      border-radius: 24px;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.07);
-    }
-
-    .command-panel .small,
-    .story-panel .small,
-    .dropdown-header .small {
-      font-family: 'IBM Plex Mono', monospace;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .11em;
-      font-size: .72rem;
-      margin-bottom: 10px;
-    }
-
-    .scenario-list { display: grid; gap: 10px; }
-
-    .scenario {
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.06);
-      cursor: pointer;
-      transition: transform .3s var(--ease), border-color .3s ease, background .3s ease;
-      text-align: left;
-      color: inherit;
-    }
-
-    .scenario:hover,
-    .scenario.active {
-      transform: translateX(-3px);
-      border-color: rgba(255,77,45,.34);
-      background: rgba(255,77,45,.08);
-    }
-
-    .scenario strong { display: block; font-size: .96rem; }
-    .scenario span { color: var(--muted); font-size: .84rem; }
-
-    .tag-chip {
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .72rem;
-      letter-spacing: .08em;
-      color: var(--muted);
-      text-transform: uppercase;
-      display: inline-flex;
-      width: fit-content;
-    }
-
-    .story-panel h3 {
-      margin: 12px 0 10px;
-      font-size: clamp(1.55rem, 2.3vw, 2.2rem);
-      line-height: 1.04;
-      max-width: 13ch;
-    }
-
-    .story-panel p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: .95rem;
-    }
-
-    .quote-box {
-      display: grid;
-      gap: 14px;
-      margin-top: 16px;
-    }
-
-    .quote-line {
-      position: relative;
-      padding-left: 18px;
-      color: #f1f1f4;
-      line-height: 1.65;
-      font-size: .95rem;
-    }
-
-    .quote-line::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: .6em;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(255,77,45,.12);
-    }
-
-    .metric-ribbon {
-      display: flex;
-      gap: 12px;
-      z-index: 5;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .metric-card {
-      min-width: 140px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(6,6,9,.62);
-      border: 1px solid rgba(255,255,255,.08);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 18px 48px rgba(0,0,0,.3);
-      flex: 1;
-    }
-
-    .metric-card strong {
-      display: block;
-      font-size: 1.02rem;
-      margin-bottom: 4px;
-    }
-
-    .metric-card span {
-      color: var(--muted);
-      font-size: .8rem;
-    }
-
-    main section { padding: 110px 0; position: relative; }
-
-    .narrative-grid {
-      display: grid;
-      grid-template-columns: .84fr 1.16fr;
-      gap: clamp(26px, 4vw, 60px);
-      align-items: start;
-    }
-
-    .sticky-copy {
-      position: sticky;
-      top: calc(var(--nav-h) + 28px);
-    }
-
-    .story-stack { display: grid; gap: 18px; }
-
-    .story-card {
-      padding: 22px;
-      border-radius: 24px;
-      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.025));
-      border: 1px solid rgba(255,255,255,.07);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
-      transition: transform .3s var(--ease), border-color .3s ease, background .3s ease;
-    }
-
-    .story-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,77,45,.24);
-      background: linear-gradient(180deg, rgba(255,77,45,.06), rgba(255,255,255,.03));
-    }
-
-    .story-step {
-      font-family: 'IBM Plex Mono', monospace;
-      color: var(--accent);
-      font-size: .78rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .story-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.85rem, 2.4vw, 2.65rem);
-      margin: 0 0 10px;
-      line-height: 1;
-    }
-
-    .story-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 1rem;
-    }
-
-    .scenario-visual {
-      margin-top: 20px;
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.06);
-      overflow: hidden;
-    }
-
-    .scenario-flow {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 12px;
-    }
-
-    .flow-node {
-      padding: 16px;
-      border-radius: 18px;
-      min-height: 140px;
-      background: rgba(255,255,255,.026);
-      border: 1px solid rgba(255,255,255,.06);
-      position: relative;
-    }
-
-    .flow-node::after {
-      content: "→";
-      position: absolute;
-      top: 18px;
-      right: -12px;
-      color: rgba(255,255,255,.18);
-      font-size: 1.2rem;
-    }
-
-    .flow-node:last-child::after { display: none; }
-    .flow-node strong { display: block; margin-bottom: 10px; }
-    .flow-node span { color: var(--muted); line-height: 1.65; font-size: .92rem; }
-
-    .showcase-shell {
-      padding: 28px;
-      border-radius: 34px;
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: 1.12fr .88fr;
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .mockup {
-      min-height: 540px;
-      border-radius: 28px;
-      background: linear-gradient(180deg, rgba(9,9,12,.78), rgba(18,18,24,.96));
-      border: 1px solid rgba(255,255,255,.08);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .mockup-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 22px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-
-    .mockup-body {
-      padding: 22px;
-      display: grid;
-      gap: 18px;
-    }
-
-    .mini-chart {
-      height: 180px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,255,255,.07);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .mini-chart svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .mini-cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 12px;
-    }
-
-    .mini-card {
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.07);
-    }
-
-    .mini-card strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 6px;
-    }
-
-    .mini-card span {
-      color: var(--muted);
-      font-size: .82rem;
-      line-height: 1.5;
-    }
-
-    .showcase-side { display: grid; gap: 16px; }
-
-    .cred-block {
-      padding: 22px;
-      border-radius: 24px;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.07);
-    }
-
-    .cred-block h3 { margin: 0 0 10px; font-size: 1.35rem; }
-    .cred-block p { margin: 0; color: var(--muted); line-height: 1.8; }
-
-    .cred-list {
-      margin-top: 14px;
+    .cta {
+      margin-top: 24px;
       display: grid;
       gap: 10px;
+      place-items: center;
     }
 
-    .cred-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: #ececf0;
-      line-height: 1.6;
-    }
-
-    .cred-item i {
-      font-style: normal;
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    .proof-panel {
-      display: grid;
-      grid-template-columns: .88fr 1.12fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .proof-metrics { display: grid; gap: 14px; }
-
-    .proof-metric {
-      padding: 22px;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.07);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-    }
-
-    .proof-metric strong {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4vw, 3.3rem);
-      line-height: .95;
-      margin-bottom: 8px;
-    }
-
-    .proof-metric span {
-      color: var(--muted);
-      line-height: 1.7;
-      display: block;
-    }
-
-    .customer-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 14px;
-    }
-
-    .quote-card {
-      position: relative;
-      padding: 22px;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.07);
-      background: rgba(255,255,255,.028);
-      transition: transform .35s var(--ease), border-color .3s ease, background .3s ease;
-      min-height: 260px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .quote-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255,77,45,.28);
-      background: rgba(255,77,45,.06);
-    }
-
-    .quote-card::before {
-      content: "“";
-      position: absolute;
-      top: 12px;
-      right: 18px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 4rem;
-      color: rgba(255,255,255,.09);
-      line-height: 1;
-    }
-
-    .quote-card p {
-      margin: 0 0 16px;
-      color: #f1f1f4;
-      line-height: 1.8;
-      padding-right: 26px;
-    }
-
-    .quote-meta strong { display: block; font-size: 1rem; margin-bottom: 4px; }
-    .quote-meta span { color: var(--muted); font-size: .84rem; }
-
-    .conversion { padding-bottom: 130px; }
-
-    .conversion-wrap {
-      position: relative;
-      overflow: hidden;
-      border-radius: 34px;
-      padding: clamp(24px, 4vw, 42px);
-      background:
-        radial-gradient(circle at 85% 18%, rgba(255,77,45,.18), transparent 22%),
-        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
-        #101015;
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .conversion-grid {
-      display: grid;
-      grid-template-columns: 1fr .98fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .conversion-grid h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 5vw, 5.6rem);
-      line-height: .95;
-      margin: 16px 0;
-      max-width: 9ch;
-    }
-
-    .urgency-bar {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,77,45,.1);
-      border: 1px solid rgba(255,77,45,.2);
-      color: #ffd2c9;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .76rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .stack-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 22px;
-      max-width: 46ch;
-    }
-
-    .stack-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: #ececf0;
-      line-height: 1.6;
-    }
-
-    .stack-item i {
-      font-style: normal;
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    .lead-shell {
-      padding: 22px;
-      border-radius: 28px;
-      background: rgba(7,7,10,.66);
-      border: 1px solid rgba(255,255,255,.08);
-      backdrop-filter: blur(14px);
-    }
-
-    .lead-shell h3 {
-      margin: 0 0 10px;
-      font-size: 1.45rem;
-    }
-
-    .lead-shell p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .dropdown-lead {
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      overflow: hidden;
-    }
-
-    .dropdown-header {
-      width: 100%;
-      text-align: left;
-      background: transparent;
-      color: var(--text);
+    .btn {
       border: 0;
-      padding: 18px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-    }
-
-    .dropdown-header strong {
-      display: block;
-      font-size: 1rem;
-      margin-top: 3px;
-    }
-
-    .dropdown-toggle {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.08);
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,.04);
-      flex-shrink: 0;
-      transition: transform .3s var(--ease), background .3s ease;
-    }
-
-    .dropdown-lead.open .dropdown-toggle {
-      transform: rotate(180deg);
-      background: rgba(255,77,45,.1);
-    }
-
-    .dropdown-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .45s var(--ease), opacity .35s ease, padding .35s ease;
-      opacity: 0;
-      padding: 0 18px;
-    }
-
-    .dropdown-lead.open .dropdown-content {
-      max-height: 520px;
-      opacity: 1;
-      padding: 0 18px 18px;
-    }
-
-    .mini-trust {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .mini-pill {
-      padding: 8px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
+      font-weight: 800;
+      letter-spacing: -.01em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .26s var(--ease), box-shadow .26s var(--ease);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 45%, #d92222 100%);
+      border: 1px solid rgba(255,132,103,.5);
+      box-shadow: 0 20px 50px rgba(255,74,31,.34), inset 0 1px 0 rgba(255,255,255,.22);
+      width: min(100%, 420px);
+      padding: 16px 24px;
+      font-size: 1.02rem;
+    }
+
+    .scarcity {
       color: var(--muted);
-      font-size: .8rem;
+      font-size: .88rem;
     }
 
-    .form-grid {
-      display: grid;
-      gap: 12px;
-    }
-
-    .form-grid .btn-primary { min-width: 260px; }
-
-    .field {
-      display: grid;
-      gap: 8px;
-    }
-
-    .field label {
-      color: #e5e5ea;
-      font-size: .92rem;
-      font-weight: 600;
-    }
-
-    .field input {
-      width: 100%;
-      padding: 16px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      color: var(--text);
-      outline: none;
-      transition: border-color .25s ease, background .25s ease, transform .25s ease;
-    }
-
-    .field input:focus {
-      border-color: rgba(255,77,45,.45);
-      background: rgba(255,255,255,.04);
-      transform: translateY(-1px);
-    }
-
-    .form-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    .form-note {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: .82rem;
-      line-height: 1.6;
-    }
-
-    .lead-modal {
+    .modal {
       position: fixed;
       inset: 0;
       z-index: 120;
       display: grid;
       place-items: center;
       padding: 20px;
-      background: rgba(6, 6, 10, 0.72);
-      backdrop-filter: blur(8px);
+      background: rgba(6,6,10,.74);
+      backdrop-filter: blur(10px);
       opacity: 0;
       pointer-events: none;
-      transition: opacity .3s ease;
+      transition: opacity .28s ease;
     }
 
-    .lead-modal.open {
+    .modal.open {
       opacity: 1;
       pointer-events: auto;
     }
 
-    .lead-modal-card {
+    .modal-card {
       width: min(100%, 520px);
-      border-radius: 24px;
+      border-radius: 20px;
       border: 1px solid rgba(255,255,255,.14);
-      background: linear-gradient(180deg, rgba(20,20,27,.97), rgba(12,12,17,.97));
-      box-shadow: 0 30px 90px rgba(0,0,0,.6), 0 0 0 1px rgba(255,77,45,.12);
+      background: linear-gradient(180deg, rgba(18,18,24,.97), rgba(10,10,14,.97));
+      box-shadow: 0 34px 90px rgba(0,0,0,.62), 0 0 0 1px rgba(255,74,31,.14);
       padding: 22px;
-      transform: translateY(-24px) scale(.98);
+      transform: translateY(10px) scale(.98);
       opacity: 0;
-      transition: transform .35s var(--ease), opacity .35s ease;
+      transition: transform .3s var(--ease), opacity .3s ease;
       position: relative;
       overflow: hidden;
     }
 
-    .lead-modal-card::before {
-      content: "";
-      position: absolute;
-      inset: -30% -10% auto -10%;
-      height: 55%;
-      background: radial-gradient(circle at center, rgba(255,77,45,.18), transparent 70%);
-      pointer-events: none;
-    }
-
-    .lead-modal.open .lead-modal-card {
+    .modal.open .modal-card {
       transform: translateY(0) scale(1);
       opacity: 1;
     }
 
-    .lead-modal-head {
+    .modal-card::before {
+      content: "";
+      position: absolute;
+      inset: -30% -10% auto -10%;
+      height: 52%;
+      background: radial-gradient(circle at center, rgba(255,74,31,.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .modal-head {
+      position: relative;
+      z-index: 2;
       display: flex;
       align-items: start;
       justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 14px;
+      gap: 14px;
+      margin-bottom: 12px;
     }
 
-    .lead-modal-head h3 {
+    .modal-head h3 {
       margin: 0;
-      font-size: 1.36rem;
+      font-size: 1.42rem;
+      line-height: 1.15;
     }
 
-    .lead-modal-head p {
-      margin: 7px 0 0;
+    .modal-head p {
+      margin: 8px 0 0;
       color: var(--muted);
       line-height: 1.6;
       font-size: .95rem;
     }
 
-    .lead-modal-close {
-      width: 36px;
-      height: 36px;
+    .close {
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.1);
-      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
       color: #fff;
       cursor: pointer;
       flex-shrink: 0;
     }
 
-    .lead-modal-note {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: .82rem;
-      line-height: 1.6;
-    }
-
-    .proof-strip {
-      padding: 18px 0 10px;
-    }
-
-    .proof-strip-grid {
+    .form {
+      position: relative;
+      z-index: 2;
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
+      gap: 11px;
     }
 
-    .proof-chip {
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      padding: 14px;
-    }
+    .field { display: grid; gap: 7px; }
 
-    .proof-chip em {
-      display: block;
-      font-style: normal;
-      color: #ffd2c9;
-      font-size: .72rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      font-family: 'IBM Plex Mono', monospace;
-    }
-
-    .proof-chip strong {
-      display: block;
-      font-size: .98rem;
-      margin-bottom: 6px;
-    }
-
-    .proof-chip span {
-      color: var(--muted);
-      font-size: .84rem;
-      line-height: 1.5;
-    }
-
-    .framework-inline { padding-top: 10px; }
-
-    .framework-shell {
-      border-radius: 28px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: linear-gradient(180deg, rgba(14,14,20,.95), rgba(9,9,13,.95));
-      padding: 24px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .framework-shell h2 {
-      margin: 0 0 8px;
-      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-      font-family: 'Cormorant Garamond', serif;
-      line-height: .98;
-    }
-
-    .framework-shell p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      max-width: 64ch;
-      line-height: 1.7;
-    }
-
-    .framework-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .method-pillars {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .pillar-card {
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.02);
-      padding: 14px;
-    }
-
-    .pillar-card strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .pillar-card span {
-      color: var(--muted);
+    .field label {
       font-size: .9rem;
-    }
-
-    .cta-band {
-      margin-top: 14px;
-      padding: 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,77,45,.25);
-      background: rgba(255,77,45,.08);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .cta-band span {
-      font-size: .92rem;
-      color: #ffd9d2;
+      color: #e7e7ee;
       font-weight: 600;
     }
 
-    .faq {
-      padding: 84px 0;
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .faq-item {
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.02);
-      padding: 16px;
-    }
-
-    .faq-item strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 1rem;
-    }
-
-    .faq-item p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: .93rem;
-    }
-
-    .offer-strip {
-      border-top: 1px solid rgba(255,255,255,.06);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      background: linear-gradient(90deg, rgba(255,77,45,.14), rgba(255,77,45,.03), rgba(217,35,35,.14));
-    }
-
-    .offer-strip-inner {
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: .78rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: #ffd5cc;
-    }
-
-    .sticky-cta {
-      display: none;
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 125;
-      border-top: 1px solid rgba(255,255,255,.08);
-      background: rgba(8,8,10,.92);
-      backdrop-filter: blur(10px);
-    }
-
-    .sticky-cta-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .sticky-cta-copy {
-      color: #f3f3f5;
-      font-size: .94rem;
-      font-weight: 600;
-    }
-
-    footer {
-      border-top: 1px solid rgba(255,255,255,.06);
-      padding: 34px 0 48px;
-      background: rgba(0,0,0,.18);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 20px;
-      align-items: end;
-    }
-
-    .footer-copy p {
-      color: var(--muted);
-      max-width: 54ch;
-      line-height: 1.8;
-      margin: 12px 0 0;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px 20px;
-      justify-content: flex-end;
-      color: var(--muted);
-    }
-
-    .footer-news {
-      margin-top: 16px;
-      display: flex;
-      gap: 10px;
-      max-width: 420px;
-    }
-
-    .footer-news input {
-      flex: 1;
-      min-width: 0;
-      padding: 14px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.08);
+    .field input {
+      width: 100%;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.11);
       background: rgba(255,255,255,.03);
-      color: var(--text);
+      color: #fff;
+      outline: none;
+      transition: border-color .2s ease, background .2s ease;
     }
 
-    .parallax { transform: translateY(var(--parallax-offset, 0px)); }
+    .field input:focus {
+      border-color: rgba(255,74,31,.52);
+      background: rgba(255,255,255,.05);
+    }
 
-    @media (max-width: 1100px) {
-      .hero-grid,
-      .narrative-grid,
-      .showcase-grid,
-      .proof-panel,
-      .conversion-grid,
-      .footer-grid,
-      .theater-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .sticky-copy { position: static; }
-      .hero-visual { min-height: auto; }
-      .proof-strip-grid { grid-template-columns: 1fr 1fr; }
-      .framework-grid { grid-template-columns: 1fr; }
-      .faq-grid { grid-template-columns: 1fr; }
+    .modal-note {
+      margin-top: 8px;
+      color: #afb0bc;
+      font-size: .82rem;
+      line-height: 1.55;
     }
 
     @media (max-width: 820px) {
-      .nav-inner { min-height: 72px; }
-      .nav-links { display: none; }
-      .hero { padding-top: 18px; min-height: auto; }
-      .hero-title { max-width: 14ch; font-size: clamp(2rem, 8.4vw, 2.8rem); }
-      .trust-row,
-      .scenario-flow,
-      .mini-cards,
-      .customer-grid { grid-template-columns: 1fr; }
-      .hero-visual { min-height: auto; margin-top: 2px; }
-      .hero .vsl-card { width: 100%; padding: 14px; }
-      .hero-actions, .form-actions, .footer-news { flex-direction: column; }
-      .btn, .footer-news button { width: 100%; }
-      .footer-links { justify-content: flex-start; }
-      .metric-ribbon { flex-direction: column; }
-      .hero-visual::before { font-size: clamp(3.1rem, 18vw, 7rem); right: 10px; bottom: 12px; }
-      .hero-visual::after { opacity: .03; width: 84%; height: 70%; left: 8%; top: 14%; }
-      .proof-strip-grid { grid-template-columns: 1fr; }
-      .vsl-cta-row { flex-direction: column; }
-      .vsl-cta-row .btn { min-width: 0; width: 100%; }
-      .cta-band { flex-direction: column; align-items: stretch; }
-      .sticky-cta { display: block; }
-      .sticky-cta-inner { flex-direction: column; padding: 10px 0; }
-      .sticky-cta-copy { text-align: center; font-size: .9rem; }
-      .sticky-cta .btn-secondary { display: none; }
-    }
-
-    @media (max-width: 560px) {
-      .container { width: min(calc(100% - 20px), var(--max)); }
-      main section { padding: 86px 0; }
-      .hero-title { font-size: clamp(1.9rem, 10vw, 2.4rem); }
-      .section-title, .conversion-grid h2 { max-width: none; }
-      .hero-visual { min-height: auto; margin-top: 0; }
-      .hero .video-shell { border-radius: 18px; }
-      .console-right { display: none; }
-      .trust-row { gap: 10px; }
-      .trust-card { min-height: 84px; }
+      .nav-inner { min-height: 70px; }
+      .brand img { width: clamp(150px, 44vw, 220px); }
+      .hero { padding-top: 22px; }
+      .headline .line.main { font-size: clamp(2rem, 10vw, 2.9rem); }
+      .headline .line.mid { font-size: clamp(1.45rem, 6vw, 1.95rem); }
+      .headline .line.brand { font-size: clamp(2.45rem, 12vw, 3.8rem); }
+      .video-wrap { margin-top: 18px; border-radius: 16px; }
+      .video-label { font-size: .77rem; }
+      .hero::before { left: -34%; width: 90%; opacity: .024; }
     }
   </style>
 </head>
 <body>
-  <div class="ambient" aria-hidden="true">
-    <span class="particle" style="left:6%; bottom:-8%; animation-duration:14s; animation-delay:-2s;"></span>
-    <span class="particle" style="left:14%; bottom:-10%; animation-duration:18s; animation-delay:-8s;"></span>
-    <span class="particle" style="left:23%; bottom:-12%; animation-duration:16s; animation-delay:-5s;"></span>
-    <span class="particle" style="left:39%; bottom:-14%; animation-duration:20s; animation-delay:-4s;"></span>
-    <span class="particle" style="left:51%; bottom:-9%; animation-duration:15s; animation-delay:-11s;"></span>
-    <span class="particle" style="left:67%; bottom:-11%; animation-duration:19s; animation-delay:-6s;"></span>
-    <span class="particle" style="left:79%; bottom:-13%; animation-duration:17s; animation-delay:-9s;"></span>
-    <span class="particle" style="left:92%; bottom:-8%; animation-duration:13s; animation-delay:-1s;"></span>
-  </div>
-  <div class="cursor-glow" aria-hidden="true"></div>
-
   <div class="site">
     <header class="nav">
       <div class="container nav-inner">
-        <a class="brand-lockup" href="#top" aria-label="Brandon Clauser Sales Coaching home">
-          <div class="brand-mark" aria-hidden="true">
-            <img src="assets/alpha-selling-logo.png" alt="Alpha Selling logo">
-          </div>
-          <div class="brand-copy">
-            <strong>Brandon Clauser Sales Coaching</strong>
-            <span>Alpha Selling</span>
-          </div>
+        <a class="brand" href="#top" aria-label="ALPHA SELLING home">
+          <img src="assets/alpha-selling-logo.png" alt="ALPHA SELLING logo" />
         </a>
-
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#method">Method</a>
-          <a href="#proof">Proof</a>
-          <a href="#faq">FAQ</a>
-          <a href="#apply">Apply</a>
-        </nav>
-
-        <!-- Swap this URL with your calendar/apply link -->
-        <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
       </div>
     </header>
 
-    <div class="offer-strip" aria-label="Limited intake">
-      <div class="container offer-strip-inner">Limited March intake for enterprise account executives. Apply now.</div>
-    </div>
-
     <main id="top">
       <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <div class="eyebrow load-in" style="animation-delay:0ms;">Alpha Selling for Enterprise AEs</div>
-            <h1 class="headline hero-title load-in" style="animation-delay:200ms;">
-              Watch the <span class="accent-word">Free Training</span> for Enterprise AEs
-            </h1>
-            <p class="hero-note load-in" style="animation-delay:520ms;">
-              See the framework I use to help AEs close bigger deals, gain more control, and make more money.
-            </p>
-            <div class="hero-meta-rail load-in" style="animation-delay:560ms;">
-              <span>Alpha Selling</span>
-              <span>Brandon Clauser</span>
-              <span>Enterprise AE Training</span>
-              <span>Custom Frameworks</span>
-              <span>Former #1 AE at Salesforce and Workday</span>
-            </div>
-          </div>
+        <div class="container hero-inner">
+          <div class="pill">ALPHA SELLING FREE TRAINING</div>
 
-          <div class="hero-visual load-in parallax" style="animation-delay:300ms;" data-parallax="0.08">
-            <div class="theater">
-              <div class="scan-lines"></div>
-              <div class="theater-top">
-                <div class="console-meta">
-                  <div class="window-dots"><span></span><span></span><span></span></div>
-                  <div class="console-left">
-                    <strong>Brandon Clauser // Alpha Selling</strong>
-                    <span>Custom 1on1 Sales Coaching for Enterprise AEs</span>
-                  </div>
-                </div>
-                <div class="console-right">
-                  Enterprise AE Training<br>
-                  <span>Former #1 AE at Salesforce and Workday</span>
-                </div>
-              </div>
+          <h1 class="headline">
+            <span class="line main">Close Bigger Deals</span>
+            <span class="line mid">With</span>
+            <span class="line brand">ALPHA SELLING</span>
+          </h1>
 
-              <div class="demo-stage" id="vsl">
-                <div class="vsl-edge" aria-hidden="true"></div>
-                <div class="hero-watch-label">Watch This First</div>
-                <div class="vsl-card">
-                  <div class="vsl-top">
-                    <div>
-                      <strong>Front-Page VSL</strong>
-                      <span>Watch this first to understand the framework before you apply.</span>
-                    </div>
-                    <div class="vsl-badge">Enterprise AE training</div>
-                  </div>
-
-                  <div class="video-shell">
-                    <!-- Swap this video URL with your final VSL embed -->
-                    <iframe id="vslFrame" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1" title="Alpha Selling VSL" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <div class="video-overlay" id="videoOverlay" role="button" tabindex="0" aria-label="Play VSL">
-                      <div class="overlay-copy">
-                        <div class="play-core"></div>
-                        <strong>Watch Brandon break down the Alpha Selling method.</strong>
-                        <span>How enterprise reps create urgency, get to power, control bigger deals, and increase income.</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="vsl-learn">
-                    <div>How to create more enterprise pipeline</div>
-                    <div>How to get to power and multi-thread deals</div>
-                    <div>How to close bigger deals with more control</div>
-                    <div>How to increase income as an enterprise AE</div>
-                  </div>
-                  <div class="vsl-cta-row">
-                    <a href="#framework" class="btn btn-primary magnetic js-open-training-modal">Get Free Training</a>
-                    <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
-                  </div>
-                </div>
-
-                <div class="theater-grid">
-                  <div class="command-panel">
-                    <div class="small">Interactive scenario</div>
-                    <div class="scenario-list" role="tablist" aria-label="Sales scenario selector">
-                      <button class="scenario active" data-scenario="cfo" role="tab" aria-selected="true">
-                        <strong>CFO pushback</strong>
-                        <span>Turn skepticism into commercial urgency</span>
-                      </button>
-                      <button class="scenario" data-scenario="stalled" role="tab" aria-selected="false">
-                        <strong>Stalled committee</strong>
-                        <span>Rebuild momentum across the account</span>
-                      </button>
-                      <button class="scenario" data-scenario="renewal" role="tab" aria-selected="false">
-                        <strong>Renewal expansion</strong>
-                        <span>Make renewal a strategic event</span>
-                      </button>
-                    </div>
-                  </div>
-
-                  <div class="story-panel">
-                    <div class="tag-chip" id="scenarioTag">CFO friction</div>
-                    <h3 id="scenarioTitle">Move from defensive seller to commercial operator.</h3>
-                    <p id="weakPattern">Average reps answer the objection too literally, start pitching, and lose executive altitude within 90 seconds.</p>
-                    <div class="quote-box">
-                      <div class="quote-line" id="alphaMove1">Reframe the discussion around financial exposure, timeline compression, and internal political risk.</div>
-                      <div class="quote-line" id="alphaMove2">Use controlled discovery that forces the buyer to evaluate cost of delay before feature fit.</div>
-                      <div class="quote-line" id="alphaMove3">Create a next step with executive intent instead of “circling back.”</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="metric-ribbon">
-                  <div class="metric-card">
-                    <strong id="metric1">Executive urgency</strong>
-                    <span>Not more activity. Better commercial tension.</span>
-                  </div>
-                  <div class="metric-card">
-                    <strong id="metric2">Multi-threading</strong>
-                    <span>Technical buyer + economic buyer alignment.</span>
-                  </div>
-                  <div class="metric-card">
-                    <strong id="metric3">Bigger outcomes</strong>
-                    <span>Deals expand when POV sharpens.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-            <div class="hero-actions load-in" style="animation-delay:640ms;">
-              <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
-              <a href="#framework" class="btn btn-secondary magnetic js-open-training-modal">Get Free Training</a>
-            </div>
-        </div>
-      </section>
-
-      <section class="proof-strip">
-        <div class="container proof-strip-grid reveal">
-          <!-- Swap/expand these proof metrics with verified outcomes -->
-          <div class="proof-chip">
-            <em>Credibility</em>
-            <strong>Top enterprise AE frameworks</strong>
-            <span>Commercial messaging and deal control systems designed for complex accounts.</span>
-          </div>
-          <div class="proof-chip">
-            <em>Experience</em>
-            <strong>$20M+ in SaaS sales experience</strong>
-            <span>Battle-tested frameworks from high-pressure enterprise sales cycles.</span>
-          </div>
-          <div class="proof-chip">
-            <em>Trust</em>
-            <strong>Trusted by enterprise sellers and teams</strong>
-            <span>Used by reps and leaders focused on cleaner execution and bigger outcomes.</span>
-          </div>
-          <div class="proof-chip">
-            <em>Fit</em>
-            <strong>Built for reps who want more</strong>
-            <span>For AEs who want to earn more and sell at a higher level.</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="framework-inline" id="framework">
-        <div class="container framework-shell reveal">
-          <div class="framework-grid">
-            <div>
-              <h2>Get the Alpha Selling Framework</h2>
-              <p>Enter your info below to get the free training + framework built for enterprise account executives.</p>
-              <div class="method-pillars">
-                <div class="pillar-card"><strong>Free training</strong><span>Learn the core plays to increase enterprise pipeline and deal momentum.</span></div>
-                <div class="pillar-card"><strong>Framework PDF</strong><span>Simple structure you can apply to live opportunities immediately.</span></div>
-                <div class="pillar-card"><strong>Next-step path</strong><span>If there is fit, move into a strategy call and deeper implementation.</span></div>
-              </div>
-            </div>
-            <div>
-              <!-- Swap this form action with your lead magnet endpoint -->
-              <form class="form-grid" id="frameworkForm" action="#" method="post" onsubmit="event.preventDefault(); showFrameworkSubmission();">
-                <div class="field">
-                  <label for="frameworkFirstName">First Name</label>
-                  <input id="frameworkFirstName" name="first_name" type="text" placeholder="Your first name" autocomplete="given-name" required>
-                </div>
-                <div class="field">
-                  <label for="frameworkEmail">Email</label>
-                  <input id="frameworkEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required>
-                </div>
-                <div class="form-actions">
-                  <button type="submit" class="btn btn-primary magnetic">Send Me the Framework</button>
-                  <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
-                </div>
-                <div class="form-note">Trusted by enterprise sellers who want to close bigger deals and earn more.</div>
-                <div class="form-note" id="frameworkNote">No spam. This should trigger lead magnet delivery + CRM tagging in production.</div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="pain">
-        <div class="container narrative-grid">
-          <div class="sticky-copy reveal">
-            <div class="eyebrow">Problem / pain</div>
-            <h2 class="section-title">If pipeline is thin and deals keep stalling, this is why.</h2>
-            <p class="lede">
-              Most enterprise AEs are doing the work but still missing outcomes: not enough pipeline, weak executive access, inconsistent multi-threading, stalled deals, and commission checks below potential.
-            </p>
-          </div>
-
-          <div class="story-stack">
-            <article class="story-card reveal">
-              <div class="story-step">Scene 01</div>
-              <h3>You are active, but not in control</h3>
-              <p>
-                Calls are happening, but pipeline quality stays inconsistent. Opportunities move, then stall. The deal lacks executive urgency and your champion cannot force a business decision.
-              </p>
-              <div class="scenario-visual">
-                <div class="scenario-flow">
-                  <div class="flow-node">
-                    <strong>Pipeline gaps</strong>
-                    <span>Top-of-funnel activity without enough high-intent enterprise opportunities.</span>
-                  </div>
-                  <div class="flow-node">
-                    <strong>Exec access issues</strong>
-                    <span>Hard to get to power and create urgency with decision makers.</span>
-                  </div>
-                  <div class="flow-node">
-                    <strong>Deal stall patterns</strong>
-                    <span>Weak multi-threading leaves the deal exposed to silence and delay.</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="story-card reveal">
-              <div class="story-step">Scene 02</div>
-              <h3>Alpha Selling changes the pressure in the room</h3>
-              <p>
-                This system is built to increase pipeline creation, sharpen executive messaging, improve discovery, and create deal control that leads to more predictable quarters.
-              </p>
-            </article>
-
-            <article class="story-card reveal">
-              <div class="story-step">Scene 03</div>
-              <h3>You sell like a top enterprise operator</h3>
-              <p>
-                More strategic outreach. Stronger multi-threading. Better executive traction. Better pipeline quality. Bigger deal outcomes. Higher income.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="method">
-        <div class="container">
-          <div class="eyebrow reveal">Method</div>
-          <h2 class="section-title reveal">The Alpha Selling method</h2>
-          <p class="lede reveal" style="max-width: 70ch; margin-bottom: 28px;">
-            A practical operating system for enterprise AEs who want more pipeline, cleaner executive traction, and stronger deal control.
+          <p class="subheadline">
+            Learn the Alpha Selling method — a modern enterprise sales system built to help you close bigger deals, gain more control, and crush quota.
           </p>
 
-          <div class="showcase-shell reveal">
-            <div class="showcase-grid">
-              <div class="mockup parallax" data-parallax="0.06">
-                <div class="mockup-header">
-                  <div class="theater-label">Alpha Selling operator view</div>
-                  <div class="tag-chip">animated preview</div>
-                </div>
-                <div class="mockup-body">
-                  <div class="mini-chart">
-                    <svg viewBox="0 0 600 240" preserveAspectRatio="none" aria-hidden="true">
-                      <defs>
-                        <linearGradient id="lineGlow" x1="0" x2="1" y1="0" y2="0">
-                          <stop offset="0%" stop-color="rgba(255,77,45,0.08)"/>
-                          <stop offset="42%" stop-color="rgba(255,77,45,1)"/>
-                          <stop offset="100%" stop-color="rgba(217,35,35,0.18)"/>
-                        </linearGradient>
-                      </defs>
-                      <path d="M0,186 C55,179 93,160 131,164 C175,168 204,132 242,119 C286,104 322,114 354,97 C392,77 434,49 479,52 C522,54 552,34 600,16" fill="none" stroke="url(#lineGlow)" stroke-width="4" stroke-linecap="round"/>
-                      <path d="M0,186 C55,179 93,160 131,164 C175,168 204,132 242,119 C286,104 322,114 354,97 C392,77 434,49 479,52 C522,54 552,34 600,16 L600,240 L0,240 Z" fill="rgba(255,77,45,0.08)"/>
-                    </svg>
-                  </div>
-                  <div class="mini-cards">
-                    <div class="mini-card">
-                      <strong>POV sharpness</strong>
-                      <span>Every message ties back to business stakes.</span>
-                    </div>
-                    <div class="mini-card">
-                      <strong>Buyer map</strong>
-                      <span>Economic, technical, and political threads clarified.</span>
-                    </div>
-                    <div class="mini-card">
-                      <strong>Call control</strong>
-                      <span>Next steps move with intent, not hope.</span>
-                    </div>
-                  </div>
-                  <div class="cred-block" style="padding:18px;">
-                    <h3 style="font-family:'Cormorant Garamond',serif; font-size:2rem; margin-bottom:8px;">“He helped me stop sounding like a rep and start sounding like a business operator.”</h3>
-                    <p>From outbound to renewal expansion, the coaching is designed to make your conversations feel more senior, more pointed, and harder to ignore.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="showcase-side">
-                <div class="cred-block">
-                  <h3>Method pillars</h3>
-                  <p>
-                    This is not generic advice. These are the core pillars behind Alpha Selling.
-                  </p>
-                  <div class="cred-list">
-                    <div class="cred-item"><i>01</i><span>Pipeline Creation: messaging that generates better enterprise conversations.</span></div>
-                    <div class="cred-item"><i>02</i><span>Executive Messaging: commercial language that lands with power.</span></div>
-                    <div class="cred-item"><i>03</i><span>Multi-Threading: map and activate technical + economic buyers.</span></div>
-                    <div class="cred-item"><i>04</i><span>Discovery That Creates Urgency: expose cost of delay and business risk.</span></div>
-                    <div class="cred-item"><i>05</i><span>Deal Control: lead the process with intent and stronger next steps.</span></div>
-                  </div>
-                </div>
-
-                <div class="cred-block">
-                  <h3>Built for serious enterprise reps</h3>
-                  <p>
-                    Direct, credible, and operator-level. Built for reps who want to sell at a higher level and earn more because they create real business urgency.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cta-band reveal">
-            <span>Ready to apply the method on your live deals?</span>
-            <div class="vsl-cta-row">
-              <a href="#framework" class="btn btn-primary magnetic js-open-training-modal">Get Free Training</a>
-              <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="proof">
-        <div class="container proof-panel">
-          <div>
-            <div class="eyebrow reveal">Social proof</div>
-            <h2 class="section-title reveal">Results and credibility for enterprise sellers.</h2>
-            <p class="lede reveal">
-              Enterprise reps care about outcomes: stronger pipeline, executive access, deal control, and higher earning potential.
-            </p>
-            <div class="proof-metrics reveal">
-              <!-- Swap these proof metrics with verified stats or case-study numbers -->
-              <div class="proof-metric">
-                <div class="small">Outcome 01</div>
-                <strong>Bigger deals</strong>
-                <span>Sharper POV, stronger urgency, and better access to power creates more commercial leverage.</span>
-              </div>
-              <div class="proof-metric">
-                <div class="small">Outcome 02</div>
-                <strong>Cleaner executive traction</strong>
-                <span>Coaching centered around CFO, CRO, CIO, and executive relevance instead of product dumping.</span>
-              </div>
-              <div class="proof-metric">
-                <div class="small">Outcome 03</div>
-                <strong>Higher income ceiling</strong>
-                <span>When enterprise reps learn how to drive real business urgency, commissions usually follow.</span>
-              </div>
+          <div class="video-wrap" id="vsl">
+            <div class="video-label">WATCH THIS FIRST</div>
+            <div class="video-shell">
+              <!-- Swap this video URL with your final VSL embed -->
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1" title="ALPHA SELLING Free Training" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
           </div>
 
-          <div class="customer-grid reveal">
-            <!-- Swap these with real testimonials, screenshots, or video clips -->
-            <article class="quote-card">
-              <p>
-                “I stopped running soft discovery and started leading strategic conversations. Buyers respected me more almost immediately.”
-              </p>
-              <div class="quote-meta">
-                <strong>Enterprise AE</strong>
-                <span>Mid-market to enterprise transition</span>
-              </div>
-            </article>
-
-            <article class="quote-card">
-              <p>
-                “The biggest shift was learning how to create urgency without sounding needy. It completely changed how I sell to executives.”
-              </p>
-              <div class="quote-meta">
-                <strong>Strategic AE</strong>
-                <span>Complex committee deals</span>
-              </div>
-            </article>
-
-            <article class="quote-card">
-              <p>
-                “My outbound got much stronger because it stopped sounding like a rep asking for time and started sounding like a real commercial point of view.”
-              </p>
-              <div class="quote-meta">
-                <strong>Enterprise Seller</strong>
-                <span>Executive outbound + deal acceleration</span>
-              </div>
-            </article>
-
-            <article class="quote-card">
-              <p>
-                “This felt built for actual enterprise pressure. No fluff. No fake guru energy. Just better selling.”
-              </p>
-              <div class="quote-meta">
-                <strong>Top-performing AE</strong>
-                <span>Renewal expansion + multi-threading</span>
-              </div>
-            </article>
-          </div>
-          <div class="cta-band reveal">
-            <span>Watch the training, grab the framework, then apply it in live opportunities.</span>
-            <div class="vsl-cta-row">
-              <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
-              <a href="#framework" class="btn btn-secondary magnetic js-open-training-modal">Get Free Training</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="faq" id="faq">
-        <div class="container">
-          <div class="eyebrow reveal">FAQ</div>
-          <h2 class="section-title reveal">Questions before you opt in</h2>
-          <div class="faq-grid reveal">
-            <article class="faq-item">
-              <strong>Who is this for?</strong>
-              <p>Enterprise and strategic account executives who want more pipeline, better executive access, and stronger deal control.</p>
-            </article>
-            <article class="faq-item">
-              <strong>Is this for enterprise AEs only?</strong>
-              <p>The core framework is built for enterprise complexity. Mid-market reps moving up can still benefit.</p>
-            </article>
-            <article class="faq-item">
-              <strong>Is this 1:1 coaching or team training?</strong>
-              <p>Both options can exist. The lead magnet and training are the entry point before selecting the best fit.</p>
-            </article>
-            <article class="faq-item">
-              <strong>Do I need to be a top rep already?</strong>
-              <p>No. You need to be coachable, serious, and willing to execute a sharper method.</p>
-            </article>
-            <article class="faq-item">
-              <strong>What happens after I opt in?</strong>
-              <p>You get the framework and training first. If there is alignment, the next step is a strategy call.</p>
-            </article>
-          </div>
-          <div class="cta-band reveal">
-            <span>Still evaluating? Start with the free training and framework.</span>
-            <div class="vsl-cta-row">
-              <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
-              <a href="#framework" class="btn btn-secondary magnetic js-open-training-modal">Get Free Training</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="conversion" id="apply">
-        <div class="container">
-          <div class="conversion-wrap reveal">
-            <div class="conversion-grid">
-              <div>
-                <div class="urgency-bar">Selective intake / premium coaching / limited spots</div>
-                <h2>Watch Free Training. Get the Framework. Then apply.</h2>
-                <p class="lede" style="max-width: 58ch;">
-                  Start with the free training and framework. If there is fit, move to a strategy call and get a direct plan for improving pipeline, executive traction, and deal outcomes.
-                </p>
-                <div class="stack-list">
-                  <div class="stack-item"><i>01</i><span>Free training to upgrade your enterprise selling approach.</span></div>
-                  <div class="stack-item"><i>02</i><span>Framework opt-in to capture high-intent reps quickly.</span></div>
-                  <div class="stack-item"><i>03</i><span>Strategy call path for qualified reps and teams.</span></div>
-                </div>
-              </div>
-
-              <div class="lead-shell">
-                <h3>Get the Alpha Selling Framework</h3>
-                <p>Open the form, enter your details, and get the free training + framework.</p>
-
-                <div class="dropdown-lead" id="dropdownLead">
-                  <button class="dropdown-header" id="dropdownTrigger" type="button" aria-expanded="false" aria-controls="dropdownContent">
-                    <div>
-                      <div class="small">click to open</div>
-                      <strong>Get the Alpha Selling framework + request a strategy call</strong>
-                    </div>
-                    <div class="dropdown-toggle">⌄</div>
-                  </button>
-
-                  <div class="dropdown-content" id="dropdownContent">
-                    <div class="mini-trust">
-                      <div class="mini-pill">Fast form</div>
-                      <div class="mini-pill">High intent</div>
-                      <div class="mini-pill">Enterprise reps only</div>
-                    </div>
-
-                    <!-- Swap this form action with your CRM/ESP endpoint -->
-                    <form class="form-grid" action="#" method="post" onsubmit="event.preventDefault(); showSubmission();">
-                      <div class="field">
-                        <label for="name">First Name</label>
-                        <input id="name" name="first_name" type="text" placeholder="Your first name" autocomplete="given-name" required>
-                      </div>
-                      <div class="field">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required>
-                      </div>
-                      <div class="form-actions">
-                        <button type="submit" class="btn btn-primary magnetic">Get Free Training</button>
-                        <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
-                      </div>
-                      <div class="form-note" id="formNote">No spam. In production, this should connect to your CRM, email automation, and booking flow.</div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="cta-band" style="margin-top:16px;">
-              <span>Primary next step: Watch free training and claim your framework.</span>
-              <div class="vsl-cta-row">
-                <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
-                <a href="#framework" class="btn btn-secondary magnetic js-open-training-modal">Get Free Training</a>
-              </div>
-            </div>
+          <div class="cta">
+            <button class="btn btn-primary" id="openModalBtn" type="button">Learn the Method</button>
+            <div class="scarcity">Limited spots available</div>
           </div>
         </div>
       </section>
     </main>
-
-    <footer>
-      <div class="container footer-grid">
-        <div class="footer-copy">
-          <div class="brand-lockup">
-            <div class="brand-mark" aria-hidden="true">
-              <img src="assets/alpha-selling-logo.png" alt="Alpha Selling logo">
-            </div>
-            <div class="brand-copy">
-              <strong>Brandon Clauser Sales Coaching</strong>
-              <span>Alpha Selling</span>
-            </div>
-          </div>
-          <p>
-            Coaching for enterprise account executives who want to close more, command the room, get to power, and increase their income through sharper commercial thinking.
-          </p>
-          <div class="footer-news">
-            <input type="email" placeholder="Enter email for rare updates" aria-label="Email for newsletter">
-            <button class="btn btn-secondary magnetic" type="button">Join</button>
-          </div>
-        </div>
-
-        <div class="footer-links">
-          <a href="#method">Method</a>
-          <a href="#proof">Results</a>
-          <a href="#faq">FAQ</a>
-          <a href="#apply">Apply</a>
-          <a href="#top">Back to top</a>
-        </div>
-      </div>
-    </footer>
   </div>
 
-  <div class="lead-modal" id="leadModal" aria-hidden="true">
-    <div class="lead-modal-card" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
-      <div class="lead-modal-head">
+  <div class="modal" id="leadModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+      <div class="modal-head">
         <div>
-          <h3 id="leadModalTitle">Get the Alpha Selling Free Training</h3>
-          <p id="leadModalSubhead">Learn how enterprise AEs create more pipeline, get to power, and close bigger deals.</p>
+          <h3 id="leadModalTitle">Get the Alpha Selling Framework</h3>
+          <p>Unlock the free training and framework for enterprise AEs who want bigger deals and more control.</p>
         </div>
-        <button class="lead-modal-close" id="leadModalClose" type="button" aria-label="Close form">✕</button>
+        <button class="close" id="closeModalBtn" type="button" aria-label="Close">✕</button>
       </div>
 
-      <!-- Swap this form action with your popup lead capture endpoint -->
-      <form class="form-grid" id="leadModalForm" action="#" method="post">
+      <!-- Swap this form action with your email capture endpoint -->
+      <form class="form" id="leadForm" action="#" method="post">
         <div class="field">
-          <label for="leadModalName">First Name</label>
-          <input id="leadModalName" name="first_name" type="text" placeholder="Your first name" autocomplete="given-name" required>
+          <label for="firstName">First Name</label>
+          <input id="firstName" name="first_name" type="text" placeholder="Your first name" autocomplete="given-name" required>
         </div>
         <div class="field">
-          <label for="leadModalEmail">Email</label>
-          <input id="leadModalEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required>
         </div>
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary magnetic" id="leadModalSubmit">Send Me the Training</button>
-          <a href="#vsl" class="btn btn-secondary magnetic">Watch Free Training Now</a>
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel" required>
         </div>
-        <div class="lead-modal-note" id="leadModalNote">No spam. Just the training and next steps.</div>
+        <button class="btn btn-primary" type="submit">GET THE FRAMEWORK</button>
+        <div class="modal-note" id="modalNote">No spam. Just the training and next steps.</div>
       </form>
     </div>
   </div>
 
-  <div class="sticky-cta" aria-label="Sticky call to action">
-    <div class="container sticky-cta-inner">
-      <div class="sticky-cta-copy">Get Free Training</div>
-      <div class="vsl-cta-row">
-        <a href="#framework" class="btn btn-primary magnetic js-open-training-modal">Get Free Training</a>
-        <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
-      </div>
-    </div>
-  </div>
-
   <script>
-    const scenarios = {
-      cfo: {
-        tag: 'CFO friction',
-        title: 'Move from defensive seller to commercial operator.',
-        weak: 'Average reps answer the objection too literally, start pitching, and lose executive altitude within 90 seconds.',
-        moves: [
-          'Reframe the discussion around financial exposure, timeline compression, and internal political risk.',
-          'Use controlled discovery that forces the buyer to evaluate cost of delay before feature fit.',
-          'Create a next step with executive intent instead of “circling back.”'
-        ],
-        metrics: ['Executive urgency', 'Multi-threading', 'Bigger outcomes']
-      },
-      stalled: {
-        tag: 'Committee stall',
-        title: 'Recreate movement when interest exists but ownership does not.',
-        weak: 'The rep mistakes positive feedback for progress, keeps following up, and never forces a shared business decision.',
-        moves: [
-          'Map the missing power centers and re-anchor the deal to one financial or operational consequence that cannot stay vague.',
-          'Use persona-specific multi-threading instead of repeating one generic message to everybody.',
-          'Turn the next meeting into a decision workshop, not another status call.'
-        ],
-        metrics: ['Deal momentum', 'Stakeholder control', 'Cleaner next steps']
-      },
-      renewal: {
-        tag: 'Renewal expansion',
-        title: 'Transform a passive renewal into a strategic commercial event.',
-        weak: 'They wait for procurement timing, treat the renewal like admin work, and miss the chance to create new executive relevance.',
-        moves: [
-          'Bring new releases, adoption gaps, and strategic initiatives into one point of view the customer has to react to.',
-          'Use renewal timing to widen the conversation from current usage to future business leverage.',
-          'Frame expansion as the logical cost-saving or growth-driving move, not an upsell ask.'
-        ],
-        metrics: ['Expansion logic', 'Renewal leverage', 'Higher ACV']
-      }
-    };
-
-    const els = {
-      tag: document.getElementById('scenarioTag'),
-      title: document.getElementById('scenarioTitle'),
-      weak: document.getElementById('weakPattern'),
-      move1: document.getElementById('alphaMove1'),
-      move2: document.getElementById('alphaMove2'),
-      move3: document.getElementById('alphaMove3'),
-      metric1: document.getElementById('metric1'),
-      metric2: document.getElementById('metric2'),
-      metric3: document.getElementById('metric3')
-    };
-
-    document.querySelectorAll('.scenario').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const key = btn.dataset.scenario;
-        const data = scenarios[key];
-        document.querySelectorAll('.scenario').forEach(s => {
-          s.classList.remove('active');
-          s.setAttribute('aria-selected', 'false');
-        });
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-
-        animateSwap(els.tag, data.tag);
-        animateSwap(els.title, data.title);
-        animateSwap(els.weak, data.weak);
-        animateSwap(els.move1, data.moves[0]);
-        animateSwap(els.move2, data.moves[1]);
-        animateSwap(els.move3, data.moves[2]);
-        animateSwap(els.metric1, data.metrics[0]);
-        animateSwap(els.metric2, data.metrics[1]);
-        animateSwap(els.metric3, data.metrics[2]);
-      });
-    });
-
-    function animateSwap(el, text) {
-      el.style.transition = 'opacity .18s ease, transform .18s ease';
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(6px)';
-      setTimeout(() => {
-        el.textContent = text;
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      }, 180);
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('in-view');
-      });
-    }, { threshold: 0.14 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    const cursorGlow = document.querySelector('.cursor-glow');
-    window.addEventListener('pointermove', (e) => {
-      cursorGlow.style.left = `${e.clientX}px`;
-      cursorGlow.style.top = `${e.clientY}px`;
-    });
-
-    window.addEventListener('pointerdown', () => cursorGlow.style.opacity = '.9');
-    window.addEventListener('pointerup', () => cursorGlow.style.opacity = '1');
-
-    document.querySelectorAll('.magnetic').forEach(button => {
-      button.addEventListener('mousemove', (e) => {
-        const rect = button.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        button.style.transform = `translate(${x * 0.08}px, ${y * 0.12}px)`;
-      });
-      button.addEventListener('mouseleave', () => {
-        button.style.transform = '';
-      });
-    });
-
-    const parallaxEls = document.querySelectorAll('[data-parallax]');
-    const handleParallax = () => {
-      const viewportH = window.innerHeight;
-      parallaxEls.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        const speed = parseFloat(el.dataset.parallax || '0.06');
-        const offset = (rect.top - viewportH / 2) * speed;
-        el.style.setProperty('--parallax-offset', `${offset * -1}px`);
-      });
-    };
-
-    handleParallax();
-    window.addEventListener('scroll', handleParallax, { passive: true });
-    window.addEventListener('resize', handleParallax);
-
-    const dropdownLead = document.getElementById('dropdownLead');
-    const dropdownTrigger = document.getElementById('dropdownTrigger');
-    dropdownTrigger.addEventListener('click', () => {
-      const open = dropdownLead.classList.toggle('open');
-      dropdownTrigger.setAttribute('aria-expanded', String(open));
-    });
-    if (window.innerWidth <= 820) {
-      dropdownLead.classList.add('open');
-      dropdownTrigger.setAttribute('aria-expanded', 'true');
-    }
-
-    const videoOverlay = document.getElementById('videoOverlay');
-    const vslFrame = document.getElementById('vslFrame');
-
-    function playVideo() {
-      videoOverlay.classList.add('hidden');
-      const currentSrc = vslFrame.getAttribute('src');
-      if (!currentSrc.includes('autoplay=1')) {
-        const joiner = currentSrc.includes('?') ? '&' : '?';
-        vslFrame.setAttribute('src', `${currentSrc}${joiner}autoplay=1`);
-      }
-    }
-
-    videoOverlay.addEventListener('click', playVideo);
-    videoOverlay.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        playVideo();
-      }
-    });
-
-    function showSubmission() {
-      const note = document.getElementById('formNote');
-      note.textContent = 'Framework request captured. In production, connect this form to your CRM, lead magnet delivery, and booking workflow.';
-      note.style.color = 'var(--success)';
-      dropdownLead.classList.add('open');
-      dropdownTrigger.setAttribute('aria-expanded', 'true');
-      setLeadCaptured();
-    }
-
-    function showFrameworkSubmission() {
-      const note = document.getElementById('frameworkNote');
-      note.textContent = 'Framework request captured. Connect this to CRM + autoresponder in production.';
-      note.style.color = 'var(--success)';
-      setLeadCaptured();
-    }
-
     const leadModal = document.getElementById('leadModal');
-    const leadModalClose = document.getElementById('leadModalClose');
-    const leadModalForm = document.getElementById('leadModalForm');
-    const leadModalNote = document.getElementById('leadModalNote');
-    const leadModalTitle = document.getElementById('leadModalTitle');
-    const leadModalSubhead = document.getElementById('leadModalSubhead');
-    const leadModalSubmit = document.getElementById('leadModalSubmit');
-    const isDesktop = window.matchMedia('(min-width: 821px)').matches;
-    const leadModalState = JSON.parse(sessionStorage.getItem('leadModalState') || '{"timedShown":false,"exitShown":false,"submitted":false}');
-    let exitIntentArmed = false;
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const leadForm = document.getElementById('leadForm');
+    const modalNote = document.getElementById('modalNote');
 
-    function saveLeadModalState() {
-      sessionStorage.setItem('leadModalState', JSON.stringify(leadModalState));
+    const modalState = JSON.parse(sessionStorage.getItem('alphaSellingModalState') || '{"shown":false,"submitted":false,"dismissed":false}');
+
+    function saveModalState() {
+      sessionStorage.setItem('alphaSellingModalState', JSON.stringify(modalState));
     }
 
-    function setLeadCaptured() {
-      leadModalState.submitted = true;
-      saveLeadModalState();
-    }
-
-    function setModalVariant(variant) {
-      if (variant === 'exit') {
-        leadModalTitle.textContent = 'Before You Go — Get the Free Training';
-        leadModalSubhead.textContent = 'Grab the Alpha Selling framework for enterprise AEs and learn the system behind more pipeline, stronger deal control, and bigger commission checks.';
-        leadModalSubmit.textContent = 'Get the Free Training';
-        leadModalNote.textContent = 'Built for enterprise reps who want more control, more pipeline, and more income.';
-      } else {
-        leadModalTitle.textContent = 'Get the Alpha Selling Free Training';
-        leadModalSubhead.textContent = 'Learn how enterprise AEs create more pipeline, get to power, and close bigger deals.';
-        leadModalSubmit.textContent = 'Send Me the Training';
-        leadModalNote.textContent = 'No spam. Just the training and next steps.';
-      }
-      leadModalNote.style.color = 'var(--muted)';
-    }
-
-    function openLeadModal(trigger = 'timed') {
-      if (leadModalState.submitted) return;
-      if (trigger === 'timed' && leadModalState.timedShown) return;
-      if (trigger === 'exit' && (!isDesktop || leadModalState.exitShown)) return;
-
-      setModalVariant(trigger === 'exit' ? 'exit' : 'timed');
+    function openModal(trigger = 'cta') {
+      if (trigger === 'timed' && (modalState.shown || modalState.dismissed || modalState.submitted)) return;
       leadModal.classList.add('open');
       leadModal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('modal-open');
-
-      if (trigger === 'timed') leadModalState.timedShown = true;
-      if (trigger === 'exit') leadModalState.exitShown = true;
-      saveLeadModalState();
+      if (trigger === 'timed') {
+        modalState.shown = true;
+        saveModalState();
+      }
     }
 
-    function closeLeadModal() {
+    function closeModal(markDismissed = false) {
       leadModal.classList.remove('open');
       leadModal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
+      if (markDismissed && !modalState.submitted) {
+        modalState.dismissed = true;
+        saveModalState();
+      }
     }
 
-    // Two-step opt-in: high-intent CTA click opens the lead modal first.
-    document.querySelectorAll('.js-open-training-modal').forEach((el) => {
-      el.addEventListener('click', (e) => {
-        e.preventDefault();
-        openLeadModal('cta');
-      });
-    });
+    openModalBtn.addEventListener('click', () => openModal('cta'));
+    closeModalBtn.addEventListener('click', () => closeModal(true));
 
-    // Timed popup trigger: once per session after 15 seconds.
-    setTimeout(() => openLeadModal('timed'), 15000);
-
-    // Exit intent (desktop only): once per session if no lead captured yet.
-    setTimeout(() => { exitIntentArmed = true; }, 4000);
-    if (isDesktop) {
-      document.addEventListener('mouseout', (e) => {
-        if (!exitIntentArmed) return;
-        if (leadModalState.submitted) return;
-        if (e.clientY <= 8) openLeadModal('exit');
-      });
-    }
-
-    leadModalClose.addEventListener('click', closeLeadModal);
     leadModal.addEventListener('click', (e) => {
-      if (e.target === leadModal) closeLeadModal();
+      if (e.target === leadModal) closeModal(true);
     });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && leadModal.classList.contains('open')) {
-        closeLeadModal();
+        closeModal(true);
       }
     });
 
-    leadModalForm.addEventListener('submit', (e) => {
+    leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      setLeadCaptured();
-      leadModalNote.textContent = 'Success. Check your inbox for the training and next steps.';
-      leadModalNote.style.color = 'var(--success)';
-      // Connect this modal form to your ESP/CRM endpoint, then redirect if desired.
-      setTimeout(() => closeLeadModal(), 900);
+      modalState.submitted = true;
+      saveModalState();
+      modalNote.textContent = 'Success. Check your inbox for the training and framework.';
+      modalNote.style.color = '#d8ffd1';
+      // Connect this submit handler to your CRM/ESP endpoint and redirect flow here.
+      setTimeout(() => closeModal(false), 900);
     });
+
+    // Timed popup: once per session after 15 seconds.
+    setTimeout(() => openModal('timed'), 15000);
   </script>
 </body>
 </html>
