@@ -84,11 +84,11 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(139deg, transparent 0 54%, rgba(197,23,34,.11) 54% 55.2%, transparent 55.2% 100%),
-        linear-gradient(129deg, transparent 0 63%, rgba(159,18,27,.09) 63% 64%, transparent 64% 100%),
-        linear-gradient(112deg, transparent 0 80%, rgba(197,23,34,.16) 80% 80.7%, transparent 80.7% 100%),
-        linear-gradient(108deg, transparent 0 85%, rgba(255,255,255,.06) 85% 85.35%, transparent 85.35% 100%),
-        radial-gradient(circle at 23% 74%, rgba(197,23,34,.16) 0%, rgba(197,23,34,0) 46%);
+        linear-gradient(139deg, transparent 0 54%, rgba(197,23,34,.094) 54% 55.2%, transparent 55.2% 100%),
+        linear-gradient(129deg, transparent 0 63%, rgba(159,18,27,.076) 63% 64%, transparent 64% 100%),
+        linear-gradient(112deg, transparent 0 80%, rgba(197,23,34,.136) 80% 80.7%, transparent 80.7% 100%),
+        linear-gradient(108deg, transparent 0 85%, rgba(255,255,255,.051) 85% 85.35%, transparent 85.35% 100%),
+        radial-gradient(circle at 23% 74%, rgba(197,23,34,.136) 0%, rgba(197,23,34,0) 46%);
       pointer-events: none;
       z-index: 0;
     }
@@ -116,14 +116,48 @@
       min-height: 1.24em;
       line-height: 1.1;
       letter-spacing: -.01em;
-      margin-bottom: .12em;
+      margin-bottom: .04em;
     }
     .headline .line.brand {
       font-size: clamp(3.05rem, 10vw, 7.5rem);
-      color: var(--hero-accent);
-      text-shadow: 0 0 26px var(--hero-accent-glow);
+      position: relative;
+      display: inline-block;
+      letter-spacing: -.02em;
+      color: transparent;
+      background:
+        repeating-linear-gradient(
+          102deg,
+          rgba(255,255,255,.12) 0px,
+          rgba(255,255,255,.12) 1px,
+          rgba(255,255,255,0) 1px,
+          rgba(255,255,255,0) 4px
+        ),
+        linear-gradient(180deg, #f05b57 0%, #d3262f 37%, #b91420 63%, #8f0e18 100%);
+      background-blend-mode: soft-light, normal;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow:
+        0 1px 0 rgba(255,255,255,.08),
+        0 0 10px rgba(197,23,34,.2),
+        0 0 24px rgba(197,23,34,.14);
       font-style: normal;
       line-height: .9;
+      isolation: isolate;
+    }
+
+    .headline .line.brand::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 56%;
+      width: 112%;
+      height: 92%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(ellipse at center, rgba(4,4,7,.58) 0%, rgba(4,4,7,.18) 52%, rgba(4,4,7,0) 100%);
+      filter: blur(10px);
+      z-index: -1;
+      pointer-events: none;
     }
     .rotating-phrase {
       display: inline-block;
@@ -190,14 +224,80 @@
       width: 100%;
       background: #09090d;
       border-top: 1px solid rgba(255,255,255,.08);
+      overflow: hidden;
     }
 
-    .video-shell iframe {
+    .video-poster {
       position: absolute;
       inset: 0;
+      border: 0;
+      width: 100%;
+      cursor: pointer;
+      padding: 0;
+      background: #0a0a10;
+      color: #fff;
+    }
+
+    .video-poster img {
       width: 100%;
       height: 100%;
-      border: 0;
+      object-fit: cover;
+      opacity: .92;
+      transition: transform .35s var(--ease), opacity .35s ease;
+    }
+
+    .video-poster::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6,6,10,.14) 0%, rgba(6,6,10,.42) 100%);
+      z-index: 1;
+    }
+
+    .video-poster:hover img {
+      transform: scale(1.015);
+      opacity: .98;
+    }
+
+    .video-play {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(72px, 9vw, 92px);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #d82b33 0%, #c51722 100%);
+      box-shadow: 0 16px 36px rgba(197,23,34,.34), inset 0 1px 0 rgba(255,255,255,.22);
+    }
+
+    .video-play::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 18px solid #fff;
+      margin-left: 4px;
+    }
+
+    .video-poster-label {
+      position: absolute;
+      z-index: 2;
+      left: 18px;
+      bottom: 16px;
+      font-weight: 700;
+      font-size: .86rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: #ececf3;
+      background: rgba(7,7,10,.58);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      padding: 8px 12px;
     }
 
     .cta {
@@ -226,9 +326,10 @@
       background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 45%, #d92222 100%);
       border: 1px solid rgba(255,132,103,.5);
       box-shadow: 0 20px 50px rgba(255,74,31,.34), inset 0 1px 0 rgba(255,255,255,.22);
-      width: min(100%, 420px);
-      padding: 16px 24px;
-      font-size: 1.02rem;
+      width: min(100%, 442px);
+      padding: 18px 26px;
+      font-size: 1.08rem;
+      font-weight: 900;
     }
 
     .scarcity {
@@ -355,6 +456,67 @@
       line-height: 1.55;
     }
 
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 130;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(6,6,10,.84);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+
+    .video-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .video-modal-card {
+      position: relative;
+      width: min(100%, 1080px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: #09090d;
+      box-shadow: 0 28px 70px rgba(0,0,0,.62), 0 0 0 1px rgba(197,23,34,.2);
+      overflow: hidden;
+      transform: translateY(8px) scale(.985);
+      transition: transform .25s var(--ease);
+    }
+
+    .video-modal.open .video-modal-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .video-modal-shell {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #050508;
+    }
+
+    .video-modal-shell iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-close {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      z-index: 2;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(8,8,12,.78);
+      color: #fff;
+      cursor: pointer;
+    }
+
     @media (max-width: 820px) {
       .hero { padding-top: 6px; }
       .headline .line.rotating { font-size: clamp(1.22rem, 5.7vw, 1.7rem); min-height: 1.35em; }
@@ -378,14 +540,18 @@
           </h1>
 
           <p class="subheadline">
-            Learn the Alpha Selling method — a modern enterprise sales system built to help you close bigger deals, gain more control, and crush quota.
+            The modern enterprise sales method for AEs who want bigger deals, more control, and more income.
           </p>
 
           <div class="video-wrap" id="vsl">
             <div class="video-label">WATCH THIS FIRST</div>
             <div class="video-shell">
-              <!-- Swap this video URL with your final VSL embed -->
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1" title="ALPHA SELLING Free Training" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <!-- Swap this thumbnail with your final VSL thumbnail image -->
+              <button class="video-poster" id="openVideoBtn" type="button" aria-label="Play free training video">
+                <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="ALPHA SELLING free training video thumbnail">
+                <span class="video-play" aria-hidden="true"></span>
+                <span class="video-poster-label">Play Free Training</span>
+              </button>
             </div>
           </div>
 
@@ -428,6 +594,16 @@
     </div>
   </div>
 
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <div class="video-modal-card" role="dialog" aria-modal="true" aria-label="Video player">
+      <button class="video-close" id="closeVideoBtn" type="button" aria-label="Close video">✕</button>
+      <div class="video-modal-shell">
+        <!-- Swap this video URL with your final VSL embed URL -->
+        <iframe id="videoPlayer" src="" title="ALPHA SELLING Free Training Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
   <script>
     const rotatingPhrase = document.getElementById('rotatingPhrase');
     const heroPhrases = [
@@ -451,10 +627,15 @@
     }
 
     const leadModal = document.getElementById('leadModal');
+    const videoModal = document.getElementById('videoModal');
+    const openVideoBtn = document.getElementById('openVideoBtn');
+    const closeVideoBtn = document.getElementById('closeVideoBtn');
+    const videoPlayer = document.getElementById('videoPlayer');
     const openModalBtn = document.getElementById('openModalBtn');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const leadForm = document.getElementById('leadForm');
     const modalNote = document.getElementById('modalNote');
+    const vslEmbedUrl = 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1&playsinline=1';
 
     const modalState = JSON.parse(sessionStorage.getItem('alphaSellingModalState') || '{"shown":false,"submitted":false,"dismissed":false}');
 
@@ -466,7 +647,7 @@
       if (trigger === 'timed' && (modalState.shown || modalState.dismissed || modalState.submitted)) return;
       leadModal.classList.add('open');
       leadModal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('modal-open');
+      syncBodyLock();
       if (trigger === 'timed') {
         modalState.shown = true;
         saveModalState();
@@ -476,23 +657,48 @@
     function closeModal(markDismissed = false) {
       leadModal.classList.remove('open');
       leadModal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('modal-open');
+      syncBodyLock();
       if (markDismissed && !modalState.submitted) {
         modalState.dismissed = true;
         saveModalState();
       }
     }
 
+    function syncBodyLock() {
+      const hasOpenModal = leadModal.classList.contains('open') || videoModal.classList.contains('open');
+      document.body.classList.toggle('modal-open', hasOpenModal);
+    }
+
+    function openVideoModal() {
+      if (!videoPlayer.src) videoPlayer.src = vslEmbedUrl;
+      videoModal.classList.add('open');
+      videoModal.setAttribute('aria-hidden', 'false');
+      syncBodyLock();
+    }
+
+    function closeVideoModal() {
+      videoModal.classList.remove('open');
+      videoModal.setAttribute('aria-hidden', 'true');
+      videoPlayer.src = '';
+      syncBodyLock();
+    }
+
     openModalBtn.addEventListener('click', () => openModal('cta'));
     closeModalBtn.addEventListener('click', () => closeModal(true));
+    openVideoBtn.addEventListener('click', openVideoModal);
+    closeVideoBtn.addEventListener('click', closeVideoModal);
 
     leadModal.addEventListener('click', (e) => {
       if (e.target === leadModal) closeModal(true);
     });
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) closeVideoModal();
+    });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && leadModal.classList.contains('open')) {
-        closeModal(true);
+      if (e.key === 'Escape') {
+        if (leadModal.classList.contains('open')) closeModal(true);
+        if (videoModal.classList.contains('open')) closeVideoModal();
       }
     });
 
