@@ -227,9 +227,75 @@
       line-height: 1.5;
       box-shadow: 0 14px 34px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.04);
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
     }
 
-    .proof-strip strong { color: #f5f5fa; font-weight: 800; }
+    .proof-strip::before {
+      content: "";
+      position: absolute;
+      inset: -45% auto -45% -28%;
+      width: 46%;
+      background: linear-gradient(
+        100deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,.09) 45%,
+        rgba(255,255,255,0) 100%
+      );
+      transform: translateX(-122%) skewX(-14deg);
+      animation: authoritySweep 7.5s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .proof-strip::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 112%;
+      height: 175%;
+      transform: translate(-50%, -50%);
+      background:
+        radial-gradient(ellipse at center, rgba(197,23,34,.22) 0%, rgba(197,23,34,.11) 28%, rgba(197,23,34,0) 72%);
+      opacity: .38;
+      filter: blur(20px);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .proof-strip strong {
+      color: #f5f5fa;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+    }
+
+    .proof-strip .proof-anchor {
+      background: linear-gradient(180deg, #ffd0cf 0%, #ffc0be 34%, #f29a98 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(197,23,34,.2);
+    }
+
+    @keyframes authoritySweep {
+      0%, 22% {
+        opacity: 0;
+        transform: translateX(-122%) skewX(-14deg);
+      }
+      34% {
+        opacity: .62;
+      }
+      56% {
+        opacity: .26;
+      }
+      72%, 100% {
+        opacity: 0;
+        transform: translateX(312%) skewX(-14deg);
+      }
+    }
 
     .video-wrap {
       margin: 12px auto 0;
@@ -910,7 +976,7 @@
             <span class="line brand">ALPHA SELLING</span>
           </h1>
           <div class="proof-strip">
-            Built from the <strong>exact method</strong> Brandon Clauser used to become the <strong>#1 AE</strong> in his division at <strong>Salesforce</strong> and <strong>Workday</strong>, win at multiple startups, and help drive a <strong>$13.75M</strong> net new deal in today’s <strong>AI-driven enterprise selling environment</strong>.
+            Built from the <strong>exact method</strong> Brandon Clauser used to become the <strong class="proof-anchor">#1 AE</strong> in his division at <strong class="proof-anchor">Salesforce</strong> and <strong class="proof-anchor">Workday</strong>, win at multiple startups, and help drive a <strong class="proof-anchor">$13.75M</strong> net new deal in today’s <strong>AI-driven enterprise selling environment</strong>.
           </div>
 
           <div class="video-wrap" id="vsl">
