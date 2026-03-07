@@ -181,6 +181,38 @@
       font-size: clamp(1rem, 1.8vw, 1.12rem);
     }
 
+    .proof-strip {
+      margin: 14px auto 0;
+      width: min(100%, 920px);
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.11);
+      background: rgba(10,10,14,.62);
+      color: #e6e6ee;
+      font-size: .92rem;
+      line-height: 1.45;
+    }
+
+    .trust-row {
+      margin: 12px auto 0;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .trust-chip {
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.035);
+      color: #d6d8e2;
+      font-size: .75rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
     .video-wrap {
       margin: 24px auto 0;
       width: min(100%, 980px);
@@ -335,6 +367,57 @@
     .scarcity {
       color: var(--muted);
       font-size: .88rem;
+    }
+
+    .testimonial-row {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .testimonial-chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.03);
+      color: #e0e2ec;
+      font-size: .78rem;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .mini-faq {
+      margin: 18px auto 0;
+      width: min(100%, 860px);
+      display: grid;
+      gap: 8px;
+      text-align: left;
+    }
+
+    .faq-item {
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(10,10,14,.58);
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 700;
+      color: #f0f1f7;
+      font-size: .88rem;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item p {
+      margin: 8px 0 0;
+      color: #cbced9;
+      font-size: .84rem;
+      line-height: 1.45;
     }
 
     .modal {
@@ -517,6 +600,27 @@
       cursor: pointer;
     }
 
+    .mobile-sticky-cta {
+      display: none;
+      position: fixed;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      z-index: 90;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(8,8,12,.86);
+      backdrop-filter: blur(10px);
+      padding: 8px;
+      box-shadow: 0 14px 36px rgba(0,0,0,.48);
+    }
+
+    .mobile-sticky-cta .btn-primary {
+      width: 100%;
+      padding: 14px 18px;
+      font-size: .98rem;
+    }
+
     @media (max-width: 820px) {
       .hero { padding-top: 6px; }
       .headline .line.rotating { font-size: clamp(1.22rem, 5.7vw, 1.7rem); min-height: 1.35em; }
@@ -524,6 +628,10 @@
       .video-wrap { margin-top: 18px; border-radius: 16px; }
       .video-label { font-size: .77rem; }
       .hero::before { left: -44%; bottom: -27%; width: min(114vw, 760px); opacity: .064; }
+      .mini-faq { margin-top: 14px; }
+      .testimonial-chip { white-space: normal; }
+      .mobile-sticky-cta { display: block; }
+      body { padding-bottom: 86px; }
     }
   </style>
 </head>
@@ -542,6 +650,14 @@
           <p class="subheadline">
             The modern enterprise sales method for AEs who want bigger deals, more control, and more income.
           </p>
+          <div class="proof-strip">
+            Built from the method behind top performance at Workday and Salesforce — and a $13.75M net new win.
+          </div>
+          <div class="trust-row" aria-label="Trust indicators">
+            <span class="trust-chip">Built for Enterprise AEs</span>
+            <span class="trust-chip">Private Framework</span>
+            <span class="trust-chip">High-Value Deal Focus</span>
+          </div>
 
           <div class="video-wrap" id="vsl">
             <div class="video-label">WATCH THIS FIRST</div>
@@ -558,6 +674,26 @@
           <div class="cta">
             <button class="btn btn-primary" id="openModalBtn" type="button">Learn the Method</button>
             <div class="scarcity">Limited spots available</div>
+            <div class="testimonial-row" aria-label="Client testimonials">
+              <span class="testimonial-chip">"Finally got control of late-stage deals."</span>
+              <span class="testimonial-chip">"Pipeline quality improved in 30 days."</span>
+              <span class="testimonial-chip">"Best enterprise framework I have used."</span>
+            </div>
+          </div>
+
+          <div class="mini-faq" aria-label="FAQ">
+            <details class="faq-item">
+              <summary>Who is this for?</summary>
+              <p>Enterprise AEs who want bigger deals, cleaner execution, and stronger quarter-to-quarter consistency.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What will I learn?</summary>
+              <p>How to build stronger pipeline, get to power, and run multi-threaded deals with more control.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is this for enterprise AEs only?</summary>
+              <p>It is optimized for enterprise sellers; strategic mid-market reps can still apply the core method.</p>
+            </details>
           </div>
         </div>
       </section>
@@ -584,10 +720,6 @@
           <label for="email">Email</label>
           <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required>
         </div>
-        <div class="field">
-          <label for="phone">Phone Number</label>
-          <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel" required>
-        </div>
         <button class="btn btn-primary" type="submit">GET THE FRAMEWORK</button>
         <div class="modal-note" id="modalNote">No spam. Just the training and next steps.</div>
       </form>
@@ -602,6 +734,10 @@
         <iframe id="videoPlayer" src="" title="ALPHA SELLING Free Training Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
+  </div>
+
+  <div class="mobile-sticky-cta" aria-hidden="false">
+    <button class="btn btn-primary" id="mobileStickyCtaBtn" type="button">Get the Framework</button>
   </div>
 
   <script>
@@ -632,23 +768,24 @@
     const closeVideoBtn = document.getElementById('closeVideoBtn');
     const videoPlayer = document.getElementById('videoPlayer');
     const openModalBtn = document.getElementById('openModalBtn');
+    const mobileStickyCtaBtn = document.getElementById('mobileStickyCtaBtn');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const leadForm = document.getElementById('leadForm');
     const modalNote = document.getElementById('modalNote');
     const vslEmbedUrl = 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1&playsinline=1';
 
-    const modalState = JSON.parse(sessionStorage.getItem('alphaSellingModalState') || '{"shown":false,"submitted":false,"dismissed":false}');
+    const modalState = JSON.parse(sessionStorage.getItem('alphaSellingModalState') || '{"shown":false,"submitted":false,"dismissed":false,"exitShown":false,"scrollShown":false}');
 
     function saveModalState() {
       sessionStorage.setItem('alphaSellingModalState', JSON.stringify(modalState));
     }
 
     function openModal(trigger = 'cta') {
-      if (trigger === 'timed' && (modalState.shown || modalState.dismissed || modalState.submitted)) return;
+      if (trigger !== 'cta' && (modalState.shown || modalState.dismissed || modalState.submitted)) return;
       leadModal.classList.add('open');
       leadModal.setAttribute('aria-hidden', 'false');
       syncBodyLock();
-      if (trigger === 'timed') {
+      if (trigger !== 'cta') {
         modalState.shown = true;
         saveModalState();
       }
@@ -684,6 +821,7 @@
     }
 
     openModalBtn.addEventListener('click', () => openModal('cta'));
+    mobileStickyCtaBtn.addEventListener('click', () => openModal('cta'));
     closeModalBtn.addEventListener('click', () => closeModal(true));
     openVideoBtn.addEventListener('click', openVideoModal);
     closeVideoBtn.addEventListener('click', closeVideoModal);
@@ -714,6 +852,33 @@
 
     // Timed popup: once per session after 15 seconds.
     setTimeout(() => openModal('timed'), 15000);
+
+    // Exit intent: desktop only, once per session unless already submitted.
+    if (window.matchMedia('(min-width: 821px)').matches) {
+      document.addEventListener('mouseout', (e) => {
+        if (modalState.exitShown || modalState.submitted) return;
+        if (e.clientY <= 8) {
+          modalState.exitShown = true;
+          saveModalState();
+          openModal('exit');
+        }
+      });
+    }
+
+    // Scroll trigger: mobile only, once per session unless already submitted.
+    if (window.matchMedia('(max-width: 820px)').matches) {
+      const onMobileScroll = () => {
+        if (modalState.scrollShown || modalState.submitted) return;
+        const scrollDepth = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+        if (scrollDepth >= 0.5) {
+          modalState.scrollShown = true;
+          saveModalState();
+          openModal('scroll');
+          window.removeEventListener('scroll', onMobileScroll);
+        }
+      };
+      window.addEventListener('scroll', onMobileScroll, { passive: true });
+    }
   </script>
 </body>
 </html>
