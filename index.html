@@ -316,9 +316,10 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(28px, 4vw, 52px);
+      grid-template-columns: 1fr;
+      gap: 20px;
       align-items: center;
+      justify-items: center;
     }
 
     .hero-copy {
@@ -328,14 +329,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      max-width: 980px;
     }
 
     .hero-title {
-      font-size: clamp(3.8rem, 10vw, 8.4rem);
-      max-width: 10ch;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      max-width: 16ch;
       text-align: center;
       line-height: .94;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .hero-title .accent-word {
@@ -352,7 +354,7 @@
     }
 
     .hero-vsl-priority {
-      margin-top: 8px;
+      margin-top: 10px;
       color: #ffd2c9;
       font-family: 'IBM Plex Mono', monospace;
       font-size: .78rem;
@@ -361,16 +363,18 @@
       border: 1px solid rgba(255,77,45,.32);
       background: rgba(255,77,45,.12);
       border-radius: 999px;
-      padding: 9px 14px;
+      padding: 9px 16px;
     }
 
-    .hero-kicker {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 12px 0 14px;
-      justify-content: center;
+    .hero-note {
+      margin: 10px 0 0;
+      color: var(--muted);
+      max-width: 62ch;
+      line-height: 1.7;
+      font-size: 1rem;
     }
+
+    .hero-kicker { display: none; }
 
     .hero-chip {
       display: inline-flex;
@@ -398,43 +402,12 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin: 24px 0 16px;
+      margin: 12px 0 6px;
       justify-content: center;
     }
 
-    .hero-promise-list {
-      width: min(100%, 760px);
-      margin: 0 auto 4px;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      text-align: left;
-    }
-
-    .hero-promise {
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      font-size: .88rem;
-      color: #f0f0f4;
-    }
-
-    .hero-promise strong {
-      color: #ffd8d1;
-      font-size: .82rem;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      margin-right: 8px;
-    }
-
-    .trust-row {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      max-width: 740px;
-      margin: 16px auto 0;
-    }
+    .hero-promise-list,
+    .trust-row { display: none; }
 
     .trust-card {
       padding: 14px 14px 12px;
@@ -459,14 +432,15 @@
 
     .hero-visual {
       position: relative;
-      min-height: 760px;
+      min-height: auto;
+      width: min(100%, 980px);
     }
 
     .wolf-orbit {
       position: absolute;
-      right: -18px;
-      top: 8px;
-      width: 192px;
+      right: -10px;
+      top: -12px;
+      width: 130px;
       aspect-ratio: 1;
       border-radius: 30px;
       border: 1px solid rgba(255,255,255,.06);
@@ -507,9 +481,9 @@
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    .theater {
-      position: absolute;
-      inset: 0;
+    .hero .theater {
+      position: relative;
+      inset: auto;
       border-radius: 32px;
       overflow: hidden;
       background:
@@ -520,7 +494,7 @@
       box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,.06);
     }
 
-    .theater::before {
+    .hero .theater::before {
       content: "";
       position: absolute;
       inset: 0;
@@ -570,10 +544,10 @@
       text-transform: uppercase;
     }
 
-    .demo-stage {
+    .hero .demo-stage {
       position: relative;
       padding: 26px;
-      height: calc(100% - 78px);
+      height: auto;
     }
 
     .vsl-card {
@@ -585,6 +559,11 @@
       backdrop-filter: blur(16px);
       box-shadow: 0 24px 60px rgba(0,0,0,.35);
       z-index: 4;
+    }
+
+    .hero .theater-grid,
+    .hero .metric-ribbon {
+      display: none;
     }
 
     .vsl-top {
@@ -1669,8 +1648,8 @@
       }
 
       .sticky-copy { position: static; }
-      .hero-visual { min-height: 900px; }
-      .wolf-orbit { right: 12px; top: -26px; width: 148px; }
+      .hero-visual { min-height: auto; }
+      .wolf-orbit { right: 12px; top: -16px; width: 120px; }
       .proof-strip-grid { grid-template-columns: 1fr 1fr; }
       .framework-grid { grid-template-columns: 1fr; }
       .faq-grid { grid-template-columns: 1fr; }
@@ -1680,19 +1659,17 @@
       .nav-inner { min-height: 72px; }
       .nav-links { display: none; }
       .hero { padding-top: 28px; min-height: auto; }
-      .hero-title { max-width: 10ch; }
-      .hero-promise-list { grid-template-columns: 1fr; }
+      .hero-title { max-width: 14ch; }
       .trust-row,
       .scenario-flow,
       .mini-cards,
       .customer-grid { grid-template-columns: 1fr; }
-      .hero-visual { min-height: 940px; }
+      .hero-visual { min-height: auto; }
       .hero-actions, .form-actions, .footer-news { flex-direction: column; }
       .btn, .footer-news button { width: 100%; }
       .footer-links { justify-content: flex-start; }
       .metric-ribbon { flex-direction: column; }
-      .wolf-orbit { width: 118px; right: 10px; top: -18px; border-radius: 20px; }
-      .wolf-orbit svg { width: 58px; height: 58px; }
+      .wolf-orbit { display: none; }
       .proof-strip-grid { grid-template-columns: 1fr; }
       .vsl-cta-row { flex-direction: column; }
       .vsl-cta-row .btn { min-width: 0; width: 100%; }
@@ -1708,7 +1685,7 @@
       main section { padding: 86px 0; }
       .hero-title { font-size: clamp(3rem, 19vw, 4.8rem); }
       .section-title, .conversion-grid h2 { max-width: none; }
-      .hero-visual { min-height: 900px; }
+      .hero-visual { min-height: auto; }
       .trust-row { gap: 10px; }
       .trust-card { min-height: 84px; }
     }
@@ -1763,48 +1740,16 @@
             <div class="eyebrow load-in" style="animation-delay:0ms;">Alpha Selling for enterprise AEs who want more money, more power, more control</div>
             <h1 class="headline hero-title load-in" style="animation-delay:200ms;">
               Enterprise AEs:<br>
-              Close <span class="accent-word">Bigger Deals</span>, Build More Pipeline, and Increase Your Income with Alpha Selling
+              Close <span class="accent-word">Bigger Deals</span> With More Control
             </h1>
             <div class="hero-vsl-priority load-in" style="animation-delay:280ms;">Start here: watch the VSL before applying</div>
-
-            <div class="hero-kicker load-in" style="animation-delay:400ms;">
-              <div class="hero-chip"><span class="mono">Tagline</span><span>Alpha Selling</span></div>
-              <div class="hero-chip"><span class="mono">Built for</span><span>Enterprise Account Executives</span></div>
-            </div>
-
-            <p class="lede load-in" style="animation-delay:520ms; max-width: 66ch;">
-              A proven sales system for enterprise reps who want more control, more pipeline, stronger deal strategy, and bigger commission checks.
+            <p class="hero-note load-in" style="animation-delay:520ms;">
+              Build more pipeline, get to power faster, and run cleaner multi-threaded deals with the Alpha Selling framework.
             </p>
-
-            <div class="hero-promise-list load-in" style="animation-delay:560ms;">
-              <div class="hero-promise"><strong>Pipeline:</strong> Build higher quality enterprise opportunities.</div>
-              <div class="hero-promise"><strong>Control:</strong> Lead deals instead of reacting to buyer stalls.</div>
-              <div class="hero-promise"><strong>Power:</strong> Reach executive stakeholders earlier and cleaner.</div>
-              <div class="hero-promise"><strong>Income:</strong> Increase ACV and commission upside.</div>
-            </div>
 
             <div class="hero-actions load-in" style="animation-delay:640ms;">
               <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
               <a href="#framework" class="btn btn-secondary magnetic">Get My Framework</a>
-            </div>
-
-            <div class="trust-row load-in" style="animation-delay:760ms;">
-              <div class="trust-card">
-                <strong>Enterprise Focus</strong>
-                <span>Built for complex, multi-stakeholder deals</span>
-              </div>
-              <div class="trust-card">
-                <strong>Exec Messaging</strong>
-                <span>Sell to CFO, CRO, CIO, VP, and power</span>
-              </div>
-              <div class="trust-card">
-                <strong>Alpha Selling</strong>
-                <span>POV, urgency, multi-threading, deal control</span>
-              </div>
-              <div class="trust-card">
-                <strong>Conversion-First</strong>
-                <span>VSL → lead capture → application → booking</span>
-              </div>
             </div>
           </div>
 
