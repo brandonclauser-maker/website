@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brandon Clauser Sales Coaching — Alpha Selling</title>
-  <meta name="description" content="Brandon Clauser Sales Coaching helps Enterprise Account Executives close bigger deals, increase income, and operate at a higher level with the Alpha Selling methodology." />
+  <meta name="description" content="Enterprise AEs: close bigger deals, build more pipeline, and increase income with the Alpha Selling framework. Watch free training and apply for a strategy call." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -294,20 +294,21 @@
 
     .btn-primary {
       color: #fff;
-      background: linear-gradient(135deg, #ff6649 0%, #ff4d2d 42%, #d92323 100%);
-      box-shadow: 0 18px 40px rgba(255, 77, 45, 0.28), inset 0 1px 0 rgba(255,255,255,.18);
+      background: linear-gradient(135deg, #ff7357 0%, #ff4d2d 45%, #c81818 100%);
+      border: 1px solid rgba(255, 124, 101, 0.45);
+      box-shadow: 0 20px 46px rgba(255, 77, 45, 0.34), inset 0 1px 0 rgba(255,255,255,.2);
     }
 
     .btn-secondary {
       color: var(--text);
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
       box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
     }
 
     .hero {
       position: relative;
-      padding: clamp(40px, 6vw, 68px) 0 90px;
+      padding: clamp(34px, 5vw, 58px) 0 74px;
       min-height: calc(100vh - var(--nav-h));
       display: flex;
       align-items: center;
@@ -333,6 +334,8 @@
       font-size: clamp(3.8rem, 10vw, 8.4rem);
       max-width: 10ch;
       text-align: center;
+      line-height: .94;
+      margin-bottom: 10px;
     }
 
     .hero-title .accent-word {
@@ -349,7 +352,7 @@
     }
 
     .hero-vsl-priority {
-      margin-top: 14px;
+      margin-top: 8px;
       color: #ffd2c9;
       font-family: 'IBM Plex Mono', monospace;
       font-size: .78rem;
@@ -365,7 +368,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin: 18px 0 18px;
+      margin: 12px 0 14px;
       justify-content: center;
     }
 
@@ -395,8 +398,34 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin: 34px 0 24px;
+      margin: 24px 0 16px;
       justify-content: center;
+    }
+
+    .hero-promise-list {
+      width: min(100%, 760px);
+      margin: 0 auto 4px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      text-align: left;
+    }
+
+    .hero-promise {
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      font-size: .88rem;
+      color: #f0f0f4;
+    }
+
+    .hero-promise strong {
+      color: #ffd8d1;
+      font-size: .82rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-right: 8px;
     }
 
     .trust-row {
@@ -404,7 +433,7 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
       max-width: 740px;
-      margin: 24px auto 0;
+      margin: 16px auto 0;
     }
 
     .trust-card {
@@ -590,6 +619,31 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
+
+    .vsl-learn {
+      margin: 16px 0 0;
+      display: grid;
+      gap: 8px;
+      color: #e8e8ee;
+      font-size: .92rem;
+      line-height: 1.55;
+    }
+
+    .vsl-learn div::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: 8px;
+      font-weight: 800;
+    }
+
+    .vsl-cta-row {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .vsl-cta-row .btn { min-width: 220px; }
 
     .video-shell {
       position: relative;
@@ -1249,6 +1303,8 @@
       gap: 12px;
     }
 
+    .form-grid .btn-primary { min-width: 260px; }
+
     .field {
       display: grid;
       gap: 8px;
@@ -1365,6 +1421,150 @@
       line-height: 1.6;
     }
 
+    .proof-strip {
+      padding: 18px 0 10px;
+    }
+
+    .proof-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .proof-chip {
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      padding: 14px;
+    }
+
+    .proof-chip em {
+      display: block;
+      font-style: normal;
+      color: #ffd2c9;
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .proof-chip strong {
+      display: block;
+      font-size: .98rem;
+      margin-bottom: 6px;
+    }
+
+    .proof-chip span {
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.5;
+    }
+
+    .framework-inline { padding-top: 10px; }
+
+    .framework-shell {
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(14,14,20,.95), rgba(9,9,13,.95));
+      padding: 24px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .framework-shell h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+      font-family: 'Cormorant Garamond', serif;
+      line-height: .98;
+    }
+
+    .framework-shell p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      max-width: 64ch;
+      line-height: 1.7;
+    }
+
+    .framework-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .method-pillars {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .pillar-card {
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+      padding: 14px;
+    }
+
+    .pillar-card strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .pillar-card span {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .cta-band {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,77,45,.25);
+      background: rgba(255,77,45,.08);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .cta-band span {
+      font-size: .92rem;
+      color: #ffd9d2;
+      font-weight: 600;
+    }
+
+    .faq {
+      padding: 84px 0;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .faq-item {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+      padding: 16px;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: .93rem;
+    }
+
     .offer-strip {
       border-top: 1px solid rgba(255,255,255,.06);
       border-bottom: 1px solid rgba(255,255,255,.06);
@@ -1385,6 +1585,7 @@
     }
 
     .sticky-cta {
+      display: none;
       position: fixed;
       left: 0;
       right: 0;
@@ -1470,6 +1671,9 @@
       .sticky-copy { position: static; }
       .hero-visual { min-height: 900px; }
       .wolf-orbit { right: 12px; top: -26px; width: 148px; }
+      .proof-strip-grid { grid-template-columns: 1fr 1fr; }
+      .framework-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 820px) {
@@ -1477,6 +1681,7 @@
       .nav-links { display: none; }
       .hero { padding-top: 28px; min-height: auto; }
       .hero-title { max-width: 10ch; }
+      .hero-promise-list { grid-template-columns: 1fr; }
       .trust-row,
       .scenario-flow,
       .mini-cards,
@@ -1488,8 +1693,14 @@
       .metric-ribbon { flex-direction: column; }
       .wolf-orbit { width: 118px; right: 10px; top: -18px; border-radius: 20px; }
       .wolf-orbit svg { width: 58px; height: 58px; }
+      .proof-strip-grid { grid-template-columns: 1fr; }
+      .vsl-cta-row { flex-direction: column; }
+      .vsl-cta-row .btn { min-width: 0; width: 100%; }
+      .cta-band { flex-direction: column; align-items: stretch; }
+      .sticky-cta { display: block; }
       .sticky-cta-inner { flex-direction: column; padding: 10px 0; }
       .sticky-cta-copy { text-align: center; font-size: .9rem; }
+      .sticky-cta .btn-secondary { display: none; }
     }
 
     @media (max-width: 560px) {
@@ -1530,12 +1741,13 @@
         </a>
 
         <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#story">Method</a>
-          <a href="#showcase">Proof</a>
-          <a href="#results">Results</a>
+          <a href="#method">Method</a>
+          <a href="#proof">Proof</a>
+          <a href="#faq">FAQ</a>
           <a href="#apply">Apply</a>
         </nav>
 
+        <!-- Swap this URL with your calendar/apply link -->
         <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
       </div>
     </header>
@@ -1550,8 +1762,8 @@
           <div class="hero-copy">
             <div class="eyebrow load-in" style="animation-delay:0ms;">Alpha Selling for enterprise AEs who want more money, more power, more control</div>
             <h1 class="headline hero-title load-in" style="animation-delay:200ms;">
-              Close <span class="accent-word">bigger deals</span><br>
-              with Alpha Selling.
+              Enterprise AEs:<br>
+              Close <span class="accent-word">Bigger Deals</span>, Build More Pipeline, and Increase Your Income with Alpha Selling
             </h1>
             <div class="hero-vsl-priority load-in" style="animation-delay:280ms;">Start here: watch the VSL before applying</div>
 
@@ -1560,13 +1772,20 @@
               <div class="hero-chip"><span class="mono">Built for</span><span>Enterprise Account Executives</span></div>
             </div>
 
-            <p class="lede load-in" style="animation-delay:520ms; max-width: 60ch;">
-              Brandon Clauser teaches enterprise reps how to create executive urgency, run sharper discovery, get to power, multi-thread complex deals, and materially grow income without sounding like every other rep on the internet.
+            <p class="lede load-in" style="animation-delay:520ms; max-width: 66ch;">
+              A proven sales system for enterprise reps who want more control, more pipeline, stronger deal strategy, and bigger commission checks.
             </p>
 
+            <div class="hero-promise-list load-in" style="animation-delay:560ms;">
+              <div class="hero-promise"><strong>Pipeline:</strong> Build higher quality enterprise opportunities.</div>
+              <div class="hero-promise"><strong>Control:</strong> Lead deals instead of reacting to buyer stalls.</div>
+              <div class="hero-promise"><strong>Power:</strong> Reach executive stakeholders earlier and cleaner.</div>
+              <div class="hero-promise"><strong>Income:</strong> Increase ACV and commission upside.</div>
+            </div>
+
             <div class="hero-actions load-in" style="animation-delay:640ms;">
-              <a href="#vsl" class="btn btn-primary magnetic">Watch the VSL (Start Here)</a>
-              <a href="#apply" class="btn btn-secondary magnetic">Get the Lead Magnet + Apply</a>
+              <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
+              <a href="#framework" class="btn btn-secondary magnetic">Get My Framework</a>
             </div>
 
             <div class="trust-row load-in" style="animation-delay:760ms;">
@@ -1610,12 +1829,13 @@
                   <div class="vsl-top">
                     <div>
                       <strong>Front-Page VSL</strong>
-                      <span>Replace the embed URL below with your actual video sales letter.</span>
+                      <span>Watch this first to understand the framework before you apply.</span>
                     </div>
                     <div class="vsl-badge">high-conversion entry</div>
                   </div>
 
                   <div class="video-shell">
+                    <!-- Swap this video URL with your final VSL embed -->
                     <iframe id="vslFrame" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1" title="Alpha Selling VSL" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <div class="video-overlay" id="videoOverlay" role="button" tabindex="0" aria-label="Play VSL">
                       <div class="overlay-copy">
@@ -1624,6 +1844,17 @@
                         <span>How enterprise reps create urgency, get to power, control bigger deals, and increase income.</span>
                       </div>
                     </div>
+                  </div>
+
+                  <div class="vsl-learn">
+                    <div>How to create more enterprise pipeline</div>
+                    <div>How to get to power and multi-thread deals</div>
+                    <div>How to close bigger deals with more control</div>
+                    <div>How to increase income as an enterprise AE</div>
+                  </div>
+                  <div class="vsl-cta-row">
+                    <a href="#framework" class="btn btn-primary magnetic">Get My Framework</a>
+                    <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
                   </div>
                 </div>
 
@@ -1678,36 +1909,100 @@
         </div>
       </section>
 
-      <section id="story">
+      <section class="proof-strip">
+        <div class="container proof-strip-grid reveal">
+          <!-- Swap/expand these proof metrics with verified outcomes -->
+          <div class="proof-chip">
+            <em>Credibility</em>
+            <strong>Top enterprise AE frameworks</strong>
+            <span>Commercial messaging and deal control systems designed for complex accounts.</span>
+          </div>
+          <div class="proof-chip">
+            <em>Experience</em>
+            <strong>$20M+ in SaaS sales experience</strong>
+            <span>Battle-tested frameworks from high-pressure enterprise sales cycles.</span>
+          </div>
+          <div class="proof-chip">
+            <em>Trust</em>
+            <strong>Trusted by enterprise sellers and teams</strong>
+            <span>Used by reps and leaders focused on cleaner execution and bigger outcomes.</span>
+          </div>
+          <div class="proof-chip">
+            <em>Fit</em>
+            <strong>Built for reps who want more</strong>
+            <span>For AEs who want to earn more and sell at a higher level.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="framework-inline" id="framework">
+        <div class="container framework-shell reveal">
+          <div class="framework-grid">
+            <div>
+              <h2>Get the Alpha Selling Framework</h2>
+              <p>Enter your info below to get the free training + framework built for enterprise account executives.</p>
+              <div class="method-pillars">
+                <div class="pillar-card"><strong>Free training</strong><span>Learn the core plays to increase enterprise pipeline and deal momentum.</span></div>
+                <div class="pillar-card"><strong>Framework PDF</strong><span>Simple structure you can apply to live opportunities immediately.</span></div>
+                <div class="pillar-card"><strong>Next-step path</strong><span>If there is fit, move into a strategy call and deeper implementation.</span></div>
+              </div>
+            </div>
+            <div>
+              <!-- Swap this form action with your lead magnet endpoint -->
+              <form class="form-grid" id="frameworkForm" action="#" method="post" onsubmit="event.preventDefault(); showFrameworkSubmission();">
+                <div class="field">
+                  <label for="frameworkFirstName">First Name</label>
+                  <input id="frameworkFirstName" name="first_name" type="text" placeholder="Your first name" autocomplete="given-name" required>
+                </div>
+                <div class="field">
+                  <label for="frameworkEmail">Email</label>
+                  <input id="frameworkEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required>
+                </div>
+                <div class="field">
+                  <label for="frameworkPhone">Phone (optional)</label>
+                  <input id="frameworkPhone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel">
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary magnetic">Send My Free Framework</button>
+                  <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
+                </div>
+                <div class="form-note" id="frameworkNote">No spam. This should trigger lead magnet delivery + CRM tagging in production.</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pain">
         <div class="container narrative-grid">
           <div class="sticky-copy reveal">
-            <div class="eyebrow">Problem / Solution narrative</div>
-            <h2 class="section-title">Most reps are active. Very few are dangerous.</h2>
+            <div class="eyebrow">Problem / pain</div>
+            <h2 class="section-title">If pipeline is thin and deals keep stalling, this is why.</h2>
             <p class="lede">
-              Brandon’s content has always centered around the same truth: most reps are too soft in discovery, too generic in messaging, too feature-heavy with executives, and too passive when deals stall. Alpha Selling is about changing that.
+              Most enterprise AEs are doing the work but still missing outcomes: not enough pipeline, weak executive access, inconsistent multi-threading, stalled deals, and commission checks below potential.
             </p>
           </div>
 
           <div class="story-stack">
             <article class="story-card reveal">
               <div class="story-step">Scene 01</div>
-              <h3>You have activity, but not real control</h3>
+              <h3>You are active, but not in control</h3>
               <p>
-                You are sending emails, running demos, following up, and maybe even building pipeline. But the biggest deals still slip because the account never feels a compelling business reason to move now.
+                Calls are happening, but pipeline quality stays inconsistent. Opportunities move, then stall. The deal lacks executive urgency and your champion cannot force a business decision.
               </p>
               <div class="scenario-visual">
                 <div class="scenario-flow">
                   <div class="flow-node">
-                    <strong>Discovery</strong>
-                    <span>Questions asked. No real cost of delay established.</span>
+                    <strong>Pipeline gaps</strong>
+                    <span>Top-of-funnel activity without enough high-intent enterprise opportunities.</span>
                   </div>
                   <div class="flow-node">
-                    <strong>Demo</strong>
-                    <span>Strong product. Weak executive relevance.</span>
+                    <strong>Exec access issues</strong>
+                    <span>Hard to get to power and create urgency with decision makers.</span>
                   </div>
                   <div class="flow-node">
-                    <strong>Committee stall</strong>
-                    <span>Interest exists. Ownership does not.</span>
+                    <strong>Deal stall patterns</strong>
+                    <span>Weak multi-threading leaves the deal exposed to silence and delay.</span>
                   </div>
                 </div>
               </div>
@@ -1717,27 +2012,27 @@
               <div class="story-step">Scene 02</div>
               <h3>Alpha Selling changes the pressure in the room</h3>
               <p>
-                The goal is not to sound smoother. The goal is to create a commercial point of view, force real thinking, get to power, and make staying the same feel expensive.
+                This system is built to increase pipeline creation, sharpen executive messaging, improve discovery, and create deal control that leads to more predictable quarters.
               </p>
             </article>
 
             <article class="story-card reveal">
               <div class="story-step">Scene 03</div>
-              <h3>You start selling like a top enterprise operator</h3>
+              <h3>You sell like a top enterprise operator</h3>
               <p>
-                Better outreach. Better discovery. Better multi-threading. Better executive conversations. Better pricing posture. Better income. That is the whole point.
+                More strategic outreach. Stronger multi-threading. Better executive traction. Better pipeline quality. Bigger deal outcomes. Higher income.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="showcase">
+      <section id="method">
         <div class="container">
-          <div class="eyebrow reveal">Proof / methodology in action</div>
-          <h2 class="section-title reveal">What the shift feels like when your messaging gets sharp.</h2>
+          <div class="eyebrow reveal">Method</div>
+          <h2 class="section-title reveal">The Alpha Selling method</h2>
           <p class="lede reveal" style="max-width: 70ch; margin-bottom: 28px;">
-            This funnel is built around the exact promise your audience wants: stronger deal control, higher-level executive conversations, and a clearer path to closing bigger enterprise business.
+            A practical operating system for enterprise AEs who want more pipeline, cleaner executive traction, and stronger deal control.
           </p>
 
           <div class="showcase-shell reveal">
@@ -1784,47 +2079,60 @@
 
               <div class="showcase-side">
                 <div class="cred-block">
-                  <h3>Built to convert the right reps</h3>
+                  <h3>Method pillars</h3>
                   <p>
-                    This is not broad-market motivational fluff. It is a premium front-end experience for ambitious enterprise AEs who want better messaging, better outcomes, and a bigger income ceiling.
+                    This is not generic advice. These are the core pillars behind Alpha Selling.
                   </p>
                   <div class="cred-list">
-                    <div class="cred-item"><i>01</i><span>Front-page VSL to create belief before the form ever opens.</span></div>
-                    <div class="cred-item"><i>02</i><span>Dropdown lead capture modeled after high-conversion funnel behavior.</span></div>
-                    <div class="cred-item"><i>03</i><span>Brand cues aligned to Alpha Selling: wolf energy, control, precision, power.</span></div>
+                    <div class="cred-item"><i>01</i><span>Pipeline Creation: messaging that generates better enterprise conversations.</span></div>
+                    <div class="cred-item"><i>02</i><span>Executive Messaging: commercial language that lands with power.</span></div>
+                    <div class="cred-item"><i>03</i><span>Multi-Threading: map and activate technical + economic buyers.</span></div>
+                    <div class="cred-item"><i>04</i><span>Discovery That Creates Urgency: expose cost of delay and business risk.</span></div>
+                    <div class="cred-item"><i>05</i><span>Deal Control: lead the process with intent and stronger next steps.</span></div>
                   </div>
                 </div>
 
                 <div class="cred-block">
-                  <h3>Messaging aligned to your content style</h3>
+                  <h3>Built for serious enterprise reps</h3>
                   <p>
-                    Direct. Experienced. Polarizing in the right way. Built around power, urgency, commercial thinking, and helping reps stop playing small inside enterprise deals.
+                    Direct, credible, and operator-level. Built for reps who want to sell at a higher level and earn more because they create real business urgency.
                   </p>
                 </div>
               </div>
             </div>
           </div>
+          <div class="cta-band reveal">
+            <span>Ready to apply the method on your live deals?</span>
+            <div class="vsl-cta-row">
+              <a href="#framework" class="btn btn-primary magnetic">Get My Framework</a>
+              <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="results">
+      <section id="proof">
         <div class="container proof-panel">
           <div>
             <div class="eyebrow reveal">Social proof</div>
-            <h2 class="section-title reveal">Proof that matters to enterprise account executives.</h2>
+            <h2 class="section-title reveal">Results and credibility for enterprise sellers.</h2>
             <p class="lede reveal">
-              The outcomes your audience cares about are simple: better pipeline quality, more executive access, better deal control, stronger pricing posture, and more money because they are selling at a higher level.
+              Enterprise reps care about outcomes: stronger pipeline, executive access, deal control, and higher earning potential.
             </p>
             <div class="proof-metrics reveal">
+              <!-- Swap these proof metrics with verified stats or case-study numbers -->
               <div class="proof-metric">
+                <div class="small">Outcome 01</div>
                 <strong>Bigger deals</strong>
                 <span>Sharper POV, stronger urgency, and better access to power creates more commercial leverage.</span>
               </div>
               <div class="proof-metric">
+                <div class="small">Outcome 02</div>
                 <strong>Cleaner executive traction</strong>
                 <span>Coaching centered around CFO, CRO, CIO, and executive relevance instead of product dumping.</span>
               </div>
               <div class="proof-metric">
+                <div class="small">Outcome 03</div>
                 <strong>Higher income ceiling</strong>
                 <span>When enterprise reps learn how to drive real business urgency, commissions usually follow.</span>
               </div>
@@ -1832,6 +2140,7 @@
           </div>
 
           <div class="customer-grid reveal">
+            <!-- Swap these with real testimonials, screenshots, or video clips -->
             <article class="quote-card">
               <p>
                 “I stopped running soft discovery and started leading strategic conversations. Buyers respected me more almost immediately.”
@@ -1872,6 +2181,49 @@
               </div>
             </article>
           </div>
+          <div class="cta-band reveal">
+            <span>Watch the training, grab the framework, then apply it in live opportunities.</span>
+            <div class="vsl-cta-row">
+              <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
+              <a href="#framework" class="btn btn-secondary magnetic">Get My Framework</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" id="faq">
+        <div class="container">
+          <div class="eyebrow reveal">FAQ</div>
+          <h2 class="section-title reveal">Questions before you opt in</h2>
+          <div class="faq-grid reveal">
+            <article class="faq-item">
+              <strong>Who is this for?</strong>
+              <p>Enterprise and strategic account executives who want more pipeline, better executive access, and stronger deal control.</p>
+            </article>
+            <article class="faq-item">
+              <strong>Is this for enterprise AEs only?</strong>
+              <p>The core framework is built for enterprise complexity. Mid-market reps moving up can still benefit.</p>
+            </article>
+            <article class="faq-item">
+              <strong>Is this 1:1 coaching or team training?</strong>
+              <p>Both options can exist. The lead magnet and training are the entry point before selecting the best fit.</p>
+            </article>
+            <article class="faq-item">
+              <strong>Do I need to be a top rep already?</strong>
+              <p>No. You need to be coachable, serious, and willing to execute a sharper method.</p>
+            </article>
+            <article class="faq-item">
+              <strong>What happens after I opt in?</strong>
+              <p>You get the framework and training first. If there is alignment, the next step is a strategy call.</p>
+            </article>
+          </div>
+          <div class="cta-band reveal">
+            <span>Still evaluating? Start with the free training and framework.</span>
+            <div class="vsl-cta-row">
+              <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
+              <a href="#framework" class="btn btn-secondary magnetic">Get My Framework</a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1881,26 +2233,26 @@
             <div class="conversion-grid">
               <div>
                 <div class="urgency-bar">Selective intake / premium coaching / limited spots</div>
-                <h2>Get the lead magnet. Watch the VSL. Then book the call.</h2>
+                <h2>Watch Free Training. Get the Framework. Then apply.</h2>
                 <p class="lede" style="max-width: 58ch;">
-                  This page is optimized to capture high-intent enterprise reps. First create belief with the VSL. Then open the dropdown form, grab contact info, and move qualified prospects toward a strategy conversation.
+                  Start with the free training and framework. If there is fit, move to a strategy call and get a direct plan for improving pipeline, executive traction, and deal outcomes.
                 </p>
                 <div class="stack-list">
-                  <div class="stack-item"><i>01</i><span>Lead magnet capture to build list and follow-up sequence.</span></div>
-                  <div class="stack-item"><i>02</i><span>Short form fields to reduce friction and increase conversion rate.</span></div>
-                  <div class="stack-item"><i>03</i><span>Strong CTA language aimed at call bookings, not passive subscribers.</span></div>
+                  <div class="stack-item"><i>01</i><span>Free training to upgrade your enterprise selling approach.</span></div>
+                  <div class="stack-item"><i>02</i><span>Framework opt-in to capture high-intent reps quickly.</span></div>
+                  <div class="stack-item"><i>03</i><span>Strategy call path for qualified reps and teams.</span></div>
                 </div>
               </div>
 
               <div class="lead-shell">
-                <h3>Book a strategy call</h3>
-                <p>Open the dropdown, enter your details, and move into the next step of the funnel.</p>
+                <h3>Get the Alpha Selling Framework</h3>
+                <p>Open the form, enter your details, and get the free training + framework.</p>
 
                 <div class="dropdown-lead" id="dropdownLead">
                   <button class="dropdown-header" id="dropdownTrigger" type="button" aria-expanded="false" aria-controls="dropdownContent">
                     <div>
                       <div class="small">click to open</div>
-                      <strong>Get the Alpha Selling lead magnet + request a call</strong>
+                      <strong>Get the Alpha Selling framework + request a strategy call</strong>
                     </div>
                     <div class="dropdown-toggle">⌄</div>
                   </button>
@@ -1912,27 +2264,35 @@
                       <div class="mini-pill">Enterprise reps only</div>
                     </div>
 
-                    <form class="form-grid" onsubmit="event.preventDefault(); showSubmission();">
+                    <!-- Swap this form action with your CRM/ESP endpoint -->
+                    <form class="form-grid" action="#" method="post" onsubmit="event.preventDefault(); showSubmission();">
                       <div class="field">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text" placeholder="Your full name" required>
+                        <label for="name">First Name</label>
+                        <input id="name" name="first_name" type="text" placeholder="Your first name" autocomplete="given-name" required>
                       </div>
                       <div class="field">
                         <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="you@company.com" required>
+                        <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required>
                       </div>
                       <div class="field">
-                        <label for="phone">Phone Number</label>
-                        <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" required>
+                        <label for="phone">Phone (optional)</label>
+                        <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel">
                       </div>
                       <div class="form-actions">
-                        <button type="submit" class="btn btn-primary magnetic">Get the Lead Magnet + Book My Call</button>
-                        <a href="#vsl" class="btn btn-secondary magnetic">Watch VSL Again</a>
+                        <button type="submit" class="btn btn-primary magnetic">Send My Free Framework</button>
+                        <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
                       </div>
                       <div class="form-note" id="formNote">No spam. In production, this should connect to your CRM, email automation, and booking flow.</div>
                     </form>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="cta-band" style="margin-top:16px;">
+              <span>Primary next step: Watch free training and claim your framework.</span>
+              <div class="vsl-cta-row">
+                <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
+                <a href="#framework" class="btn btn-secondary magnetic">Get My Framework</a>
               </div>
             </div>
           </div>
@@ -1962,8 +2322,9 @@
         </div>
 
         <div class="footer-links">
-          <a href="#story">Method</a>
-          <a href="#results">Results</a>
+          <a href="#method">Method</a>
+          <a href="#proof">Results</a>
+          <a href="#faq">FAQ</a>
           <a href="#apply">Apply</a>
           <a href="#top">Back to top</a>
         </div>
@@ -1975,27 +2336,29 @@
     <div class="lead-modal-card" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
       <div class="lead-modal-head">
         <div>
-          <h3 id="leadModalTitle">Get the Alpha Selling lead magnet</h3>
-          <p>Drop your info and I will send details for the next step.</p>
+          <h3 id="leadModalTitle">Get the Alpha Selling Framework</h3>
+          <p>Free training + enterprise AE playbook. Drop your info and get the framework.</p>
         </div>
         <button class="lead-modal-close" id="leadModalClose" type="button" aria-label="Close form">✕</button>
       </div>
 
-      <form class="form-grid" id="leadModalForm">
+      <!-- Swap this form action with your popup lead capture endpoint -->
+      <form class="form-grid" id="leadModalForm" action="#" method="post">
         <div class="field">
           <label for="leadModalName">Name</label>
-          <input id="leadModalName" name="name" type="text" placeholder="Your full name" required>
+          <input id="leadModalName" name="name" type="text" placeholder="Your name" autocomplete="name" required>
         </div>
         <div class="field">
           <label for="leadModalEmail">Email</label>
-          <input id="leadModalEmail" name="email" type="email" placeholder="you@company.com" required>
+          <input id="leadModalEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required>
         </div>
         <div class="field">
-          <label for="leadModalPhone">Phone Number</label>
-          <input id="leadModalPhone" name="phone" type="tel" placeholder="(555) 555-5555" required>
+          <label for="leadModalPhone">Phone (optional)</label>
+          <input id="leadModalPhone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel">
         </div>
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary magnetic">Send My Info</button>
+          <button type="submit" class="btn btn-primary magnetic">Send My Free Framework</button>
+          <a href="#vsl" class="btn btn-secondary magnetic">Watch Free Training Now</a>
         </div>
         <div class="lead-modal-note" id="leadModalNote">No spam. This should connect to CRM + email automation in production.</div>
       </form>
@@ -2004,8 +2367,11 @@
 
   <div class="sticky-cta" aria-label="Sticky call to action">
     <div class="container sticky-cta-inner">
-      <div class="sticky-cta-copy">Ready to close bigger deals with Alpha Selling?</div>
-      <a href="#apply" class="btn btn-primary magnetic">Apply for a strategy call</a>
+      <div class="sticky-cta-copy">Get the Alpha Selling Framework</div>
+      <div class="vsl-cta-row">
+        <a href="#framework" class="btn btn-primary magnetic">Get My Framework</a>
+        <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
+      </div>
     </div>
   </div>
 
@@ -2142,6 +2508,10 @@
       const open = dropdownLead.classList.toggle('open');
       dropdownTrigger.setAttribute('aria-expanded', String(open));
     });
+    if (window.innerWidth <= 820) {
+      dropdownLead.classList.add('open');
+      dropdownTrigger.setAttribute('aria-expanded', 'true');
+    }
 
     const videoOverlay = document.getElementById('videoOverlay');
     const vslFrame = document.getElementById('vslFrame');
@@ -2165,10 +2535,16 @@
 
     function showSubmission() {
       const note = document.getElementById('formNote');
-      note.textContent = 'Lead captured. In production, connect this form to your CRM, nurture sequence, lead magnet delivery, and booking calendar.';
+      note.textContent = 'Framework request captured. In production, connect this form to your CRM, lead magnet delivery, and booking workflow.';
       note.style.color = 'var(--success)';
       dropdownLead.classList.add('open');
       dropdownTrigger.setAttribute('aria-expanded', 'true');
+    }
+
+    function showFrameworkSubmission() {
+      const note = document.getElementById('frameworkNote');
+      note.textContent = 'Framework request captured. Connect this to CRM + autoresponder in production.';
+      note.style.color = 'var(--success)';
     }
 
     const leadModal = document.getElementById('leadModal');
@@ -2176,36 +2552,64 @@
     const leadModalForm = document.getElementById('leadModalForm');
     const leadModalNote = document.getElementById('leadModalNote');
     let leadModalClosed = false;
-    let leadModalShown = sessionStorage.getItem('leadModalShown') === '1';
+    let exitIntentArmed = false;
+    const popupTriggerState = JSON.parse(sessionStorage.getItem('popupTriggerState') || '{"timed":false,"exit":false,"scroll":false}');
+    const popupDismissedUntil = Number(localStorage.getItem('popupDismissedUntil') || '0');
 
-    function openLeadModal() {
-      if (leadModalClosed || leadModalShown) return;
-      leadModal.classList.add('open');
-      leadModal.setAttribute('aria-hidden', 'false');
-      leadModalShown = true;
-      sessionStorage.setItem('leadModalShown', '1');
+    function isUserActivelyEngaged() {
+      const activeTag = document.activeElement?.tagName;
+      const activeFormField = activeTag === 'INPUT' || activeTag === 'TEXTAREA' || activeTag === 'SELECT';
+      const videoPlaying = videoOverlay.classList.contains('hidden');
+      return activeFormField || videoPlaying;
     }
 
-    function closeLeadModal() {
+    function openLeadModal(source) {
+      if (leadModalClosed) return;
+      if (Date.now() < popupDismissedUntil) return;
+      if (popupTriggerState[source]) return;
+      if (isUserActivelyEngaged()) return;
+      leadModal.classList.add('open');
+      leadModal.setAttribute('aria-hidden', 'false');
+      popupTriggerState[source] = true;
+      popupTriggerState.timed = true;
+      popupTriggerState.exit = true;
+      popupTriggerState.scroll = true;
+      sessionStorage.setItem('popupTriggerState', JSON.stringify(popupTriggerState));
+    }
+
+    function closeLeadModal(setCooldown = true) {
       leadModalClosed = true;
       leadModal.classList.remove('open');
       leadModal.setAttribute('aria-hidden', 'true');
+      if (setCooldown) {
+        const nextShow = Date.now() + 1000 * 60 * 60 * 24 * 3;
+        localStorage.setItem('popupDismissedUntil', String(nextShow));
+      }
     }
 
-    setTimeout(openLeadModal, 3000);
+    setTimeout(() => { exitIntentArmed = true; }, 12000);
+    setTimeout(() => openLeadModal('timed'), 28000);
 
     document.addEventListener('mouseout', (e) => {
-      if (e.clientY <= 0) openLeadModal();
+      if (!exitIntentArmed) return;
+      if (e.clientY <= 0) openLeadModal('exit');
     });
 
-    leadModalClose.addEventListener('click', closeLeadModal);
+    window.addEventListener('scroll', () => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (maxScroll <= 0) return;
+      const depth = window.scrollY / maxScroll;
+      if (depth >= 0.45) openLeadModal('scroll');
+    });
+
+    leadModalClose.addEventListener('click', () => closeLeadModal(true));
     leadModal.addEventListener('click', (e) => {
-      if (e.target === leadModal) closeLeadModal();
+      if (e.target === leadModal) closeLeadModal(true);
     });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && leadModal.classList.contains('open')) {
-        closeLeadModal();
+        closeLeadModal(true);
       }
     });
 
@@ -2213,7 +2617,7 @@
       e.preventDefault();
       leadModalNote.textContent = 'Lead captured. Connect this to your CRM and autoresponder sequence in production.';
       leadModalNote.style.color = 'var(--success)';
-      setTimeout(closeLeadModal, 900);
+      setTimeout(() => closeLeadModal(true), 900);
     });
   </script>
 </body>
