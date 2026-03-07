@@ -284,16 +284,6 @@
       text-shadow: 0 0 10px rgba(182,22,34,.2);
     }
 
-    .clarity-line {
-      margin: 8px auto 0;
-      width: min(100%, 900px);
-      color: #d9dbe5;
-      font-size: .95rem;
-      line-height: 1.4;
-      letter-spacing: .01em;
-      text-align: center;
-    }
-
     @keyframes authoritySweep {
       0%, 22% {
         opacity: 0;
@@ -474,7 +464,7 @@
     }
 
     .trust-compact {
-      margin: 10px auto 0;
+      margin: 8px auto 0;
       width: min(100%, 900px);
       text-align: center;
     }
@@ -482,48 +472,50 @@
     .trust-title {
       margin: 0;
       color: #bfc2cf;
-      font-size: .8rem;
-      letter-spacing: .07em;
+      font-size: .74rem;
+      letter-spacing: .08em;
       text-transform: uppercase;
       font-weight: 700;
     }
 
     .trust-logos {
-      margin-top: 8px;
+      margin-top: 6px;
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 7px;
       flex-wrap: wrap;
     }
 
     .trust-logo {
-      padding: 7px 11px;
+      padding: 5px 9px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.11);
-      background: rgba(255,255,255,.03);
-      color: #e0e2ec;
-      font-size: .78rem;
-      letter-spacing: .03em;
+      background: rgba(255,255,255,.02);
+      color: #d7d9e4;
+      font-size: .72rem;
+      letter-spacing: .04em;
       font-weight: 700;
+      line-height: 1;
     }
 
     .learning-strip {
-      margin: 10px auto 0;
+      margin: 7px auto 0;
       width: min(100%, 900px);
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
+      gap: 6px;
     }
 
     .learning-chip {
-      padding: 9px 10px;
-      border-radius: 11px;
+      padding: 5px 8px;
+      border-radius: 999px;
       border: 1px solid rgba(255,255,255,.1);
-      background: rgba(13,13,18,.56);
-      color: #eceef5;
-      font-size: .82rem;
-      font-weight: 700;
-      letter-spacing: .02em;
+      background: rgba(12,12,17,.4);
+      color: #cfd2de;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
       text-align: center;
     }
 
@@ -1026,11 +1018,11 @@
       .hero::before { top: 2%; width: min(96vw, 820px); opacity: .10; }
       .hero-cursor-glow { width: 420px; height: 420px; filter: blur(34px); }
       .proof-strip { font-size: 1rem; padding: 14px 14px; line-height: 1.46; }
-      .clarity-line { font-size: .9rem; margin-top: 7px; }
       .mini-faq { margin-top: 14px; }
       .stack-divider { margin-top: 14px; }
-      .trust-title { font-size: .73rem; letter-spacing: .06em; }
-      .learning-strip { grid-template-columns: 1fr; gap: 6px; }
+      .trust-title { font-size: .69rem; letter-spacing: .06em; }
+      .learning-strip { grid-template-columns: 1fr; gap: 5px; margin-top: 6px; }
+      .learning-chip { font-size: .68rem; }
       .proof-section { padding: 12px; border-radius: 16px; }
       .proof-head { flex-direction: column; align-items: flex-start; gap: 6px; }
       .proof-lockup img { width: 32px; }
@@ -1056,7 +1048,6 @@
           <div class="proof-strip">
             Built from the <strong>exact method</strong> Brandon Clauser used to become the <strong class="proof-anchor">#1 AE</strong> in his division at <strong class="proof-anchor">Salesforce</strong> and <strong class="proof-anchor">Workday</strong>, win at multiple startups, and help drive a <strong class="proof-anchor">$13.75M</strong> net new deal in today’s <strong>AI-driven enterprise selling environment</strong>.
           </div>
-          <p class="clarity-line">Close bigger deals, control the cycle, and increase your income as an enterprise AE.</p>
 
           <div class="video-wrap" id="vsl">
             <div class="video-label">WATCH THIS FIRST</div>
@@ -1081,7 +1072,7 @@
               <span class="trust-logo">Salesforce</span>
               <span class="trust-logo">Workday</span>
               <span class="trust-logo">HubSpot</span>
-              <span class="trust-logo">SalesDraft</span>
+              <span class="trust-logo">Microsoft</span>
             </div>
           </div>
 
