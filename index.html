@@ -488,24 +488,47 @@
     }
 
     .trust-logo-item {
-      width: clamp(100px, 11vw, 128px);
-      height: 30px;
+      width: clamp(120px, 13vw, 154px);
+      height: 38px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 8px;
+      border-radius: 10px;
       border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.015);
-      padding: 4px 8px;
+      background: rgba(255,255,255,.02);
+      padding: 6px 10px;
     }
 
     .trust-logo-item img {
       max-width: 100%;
-      max-height: 18px;
+      max-height: 24px;
       width: auto;
       height: auto;
-      opacity: .72;
-      filter: grayscale(1) saturate(0) brightness(1.1) contrast(1.06);
+      opacity: .9;
+      filter: saturate(.86) brightness(1.04) contrast(1.03);
+    }
+
+    .powered-by {
+      margin-top: 10px;
+      display: grid;
+      justify-items: center;
+      gap: 6px;
+    }
+
+    .powered-by-label {
+      margin: 0;
+      color: #bcc0cd;
+      font-size: .68rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .powered-by-logo {
+      width: clamp(120px, 14vw, 178px);
+      height: auto;
+      opacity: .84;
+      filter: grayscale(.06) saturate(.92) brightness(.98);
     }
 
     .proof-section {
@@ -962,6 +985,19 @@
       border: 0;
     }
 
+    .video-modal-fallback {
+      margin: 10px 0 0;
+      text-align: center;
+      font-size: .84rem;
+    }
+
+    .video-modal-fallback a {
+      color: #d7dae5;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(215,218,229,.45);
+      padding-bottom: 1px;
+    }
+
     .video-close {
       position: absolute;
       right: 12px;
@@ -1011,8 +1047,9 @@
       .stack-divider { margin-top: 14px; }
       .trust-title { font-size: .69rem; letter-spacing: .06em; }
       .trust-logos { gap: 6px; }
-      .trust-logo-item { width: 94px; height: 28px; padding: 3px 6px; }
-      .trust-logo-item img { max-height: 15px; }
+      .trust-logo-item { width: 112px; height: 34px; padding: 4px 8px; }
+      .trust-logo-item img { max-height: 20px; }
+      .powered-by-logo { width: 130px; }
       .proof-section { padding: 12px; border-radius: 16px; }
       .proof-head { flex-direction: column; align-items: flex-start; gap: 6px; }
       .proof-lockup img { width: 32px; }
@@ -1063,7 +1100,10 @@
               <span class="trust-logo-item"><img src="assets/salesforce-logo.png" alt="Salesforce logo"></span>
               <span class="trust-logo-item"><img src="assets/workday-logo.png" alt="Workday logo"></span>
               <span class="trust-logo-item"><img src="assets/hubpsot-logo.jpg" alt="HubSpot logo"></span>
-              <span class="trust-logo-item"><img src="assets/logo-salesdraft-placeholder.svg" alt="SalesDraft logo"></span>
+            </div>
+            <div class="powered-by">
+              <p class="powered-by-label">Powered by:</p>
+              <img class="powered-by-logo" src="assets/alpha-selling-logo.png" alt="Alpha Selling logo">
             </div>
           </div>
 
@@ -1185,6 +1225,9 @@
         <!-- Swap this video URL with your final VSL embed URL -->
         <iframe id="videoPlayer" src="" title="ALPHA SELLING Free Training Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
+      <div class="video-modal-fallback">
+        <a id="videoDirectLink" href="#" target="_blank" rel="noopener noreferrer">Open video directly</a>
+      </div>
     </div>
   </div>
 
@@ -1267,7 +1310,8 @@
     const closeModalBtn = document.getElementById('closeModalBtn');
     const leadForm = document.getElementById('leadForm');
     const modalNote = document.getElementById('modalNote');
-    const vslEmbedUrl = 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&playsinline=1';
+    const videoDirectLink = document.getElementById('videoDirectLink');
+    const vslEmbedUrl = 'https://next.frame.io/share/fb6dcbb8-ae85-41b8-8b08-14f92a73fb42/view/487faa37-c66e-418a-9953-cc5886e9f146';
 
     const modalState = JSON.parse(sessionStorage.getItem('alphaSellingModalState') || '{"shown":false,"submitted":false,"dismissed":false,"exitShown":false,"scrollShown":false}');
 
@@ -1304,6 +1348,7 @@
     function openVideoModal(videoUrl = vslEmbedUrl, videoTitle = 'ALPHA SELLING Free Training Video') {
       videoPlayer.title = videoTitle;
       videoPlayer.src = videoUrl;
+      videoDirectLink.href = videoUrl;
       videoModal.classList.add('open');
       videoModal.setAttribute('aria-hidden', 'false');
       syncBodyLock();
