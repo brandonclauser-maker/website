@@ -30,8 +30,8 @@
       font-family: 'Manrope', sans-serif;
       color: var(--text);
       background:
-        linear-gradient(137deg, transparent 0 56%, rgba(182,22,34,.08) 56% 57.2%, transparent 57.2% 100%),
-        linear-gradient(126deg, transparent 0 64%, rgba(182,22,34,.07) 64% 65.1%, transparent 65.1% 100%),
+        linear-gradient(137deg, transparent 0 56%, rgba(182,22,34,.045) 56% 57.2%, transparent 57.2% 100%),
+        linear-gradient(126deg, transparent 0 64%, rgba(182,22,34,.04) 64% 65.1%, transparent 65.1% 100%),
         radial-gradient(circle at 58% 43%, rgba(182,22,34,.13), transparent 42%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 55%, var(--bg) 100%);
       min-height: 100vh;
@@ -57,7 +57,7 @@
     }
 
     .hero::before {
-      content: "";
+      content: none;
       position: absolute;
       left: 50%;
       top: -2%;
@@ -77,11 +77,11 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(139deg, transparent 0 54%, rgba(197,23,34,.094) 54% 55.2%, transparent 55.2% 100%),
-        linear-gradient(129deg, transparent 0 63%, rgba(159,18,27,.076) 63% 64%, transparent 64% 100%),
-        linear-gradient(112deg, transparent 0 80%, rgba(197,23,34,.136) 80% 80.7%, transparent 80.7% 100%),
-        linear-gradient(108deg, transparent 0 85%, rgba(255,255,255,.051) 85% 85.35%, transparent 85.35% 100%),
-        radial-gradient(circle at 23% 74%, rgba(197,23,34,.136) 0%, rgba(197,23,34,0) 46%);
+        linear-gradient(139deg, transparent 0 54%, rgba(197,23,34,.058) 54% 55.2%, transparent 55.2% 100%),
+        linear-gradient(129deg, transparent 0 63%, rgba(159,18,27,.045) 63% 64%, transparent 64% 100%),
+        linear-gradient(112deg, transparent 0 80%, rgba(197,23,34,.08) 80% 80.7%, transparent 80.7% 100%),
+        linear-gradient(108deg, transparent 0 85%, rgba(255,255,255,.03) 85% 85.35%, transparent 85.35% 100%),
+        radial-gradient(circle at 23% 74%, rgba(197,23,34,.09) 0%, rgba(197,23,34,0) 46%);
       pointer-events: none;
       z-index: 0;
     }
@@ -526,7 +526,7 @@
     }
 
     .powered-by-logo {
-      width: clamp(230px, 26vw, 320px);
+      width: clamp(290px, 33vw, 400px);
       height: auto;
       opacity: .94;
       filter: grayscale(0) saturate(1) brightness(1);
@@ -1041,7 +1041,7 @@
       .headline .line.brand { font-size: clamp(2.45rem, 12vw, 3.8rem); }
       .video-wrap { margin-top: 14px; border-radius: 16px; }
       .video-label { font-size: .77rem; }
-      .hero::before { top: 2%; width: min(96vw, 820px); opacity: .10; }
+      .hero::before { content: none; }
       .hero-cursor-glow { width: 420px; height: 420px; filter: blur(34px); }
       .proof-strip { font-size: 1.03rem; padding: 16px 15px; line-height: 1.5; }
       .mini-faq { margin-top: 14px; }
@@ -1050,7 +1050,7 @@
       .trust-logos { gap: 10px; flex-wrap: wrap; }
       .trust-logo-item { width: 146px; height: 46px; padding: 7px 10px; }
       .trust-logo-item img { max-height: 28px; }
-      .powered-by-logo { width: 210px; }
+      .powered-by-logo { width: 265px; }
       .proof-section { padding: 12px; border-radius: 16px; }
       .proof-head { flex-direction: column; align-items: flex-start; gap: 6px; }
       .proof-lockup img { width: 32px; }
@@ -1357,6 +1357,11 @@
       syncBodyLock();
     }
 
+    function openMainVslDirect() {
+      const w = window.open(vslEmbedUrl, '_blank', 'noopener,noreferrer');
+      if (!w) window.location.href = vslEmbedUrl;
+    }
+
     function closeVideoModal() {
       videoModal.classList.remove('open');
       videoModal.setAttribute('aria-hidden', 'true');
@@ -1367,7 +1372,7 @@
     openModalBtn.addEventListener('click', () => openModal('cta'));
     mobileStickyCtaBtn.addEventListener('click', () => openModal('cta'));
     closeModalBtn.addEventListener('click', () => closeModal(true));
-    openVideoBtn.addEventListener('click', () => openVideoModal(vslEmbedUrl, 'ALPHA SELLING Free Training Video'));
+    openVideoBtn.addEventListener('click', openMainVslDirect);
     closeVideoBtn.addEventListener('click', closeVideoModal);
     proofVideoBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
