@@ -71,6 +71,9 @@
       position: relative;
       padding: clamp(28px, 4.2vw, 52px) 0 64px;
       isolation: isolate;
+      --hero-accent: #c51722;
+      --hero-accent-soft: #9f121b;
+      --hero-accent-glow: rgba(197,23,34,.38);
     }
 
     .hero::before {
@@ -93,8 +96,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(139deg, transparent 0 54%, rgba(255,74,31,.08) 54% 55.2%, transparent 55.2% 100%),
-        linear-gradient(129deg, transparent 0 63%, rgba(255,74,31,.07) 63% 64%, transparent 64% 100%);
+        linear-gradient(139deg, transparent 0 54%, rgba(197,23,34,.11) 54% 55.2%, transparent 55.2% 100%),
+        linear-gradient(129deg, transparent 0 63%, rgba(159,18,27,.09) 63% 64%, transparent 64% 100%);
       pointer-events: none;
       z-index: 0;
     }
@@ -124,19 +127,39 @@
     .headline {
       margin: 18px 0 10px;
       font-family: 'Cormorant Garamond', serif;
-      line-height: .94;
+      line-height: .96;
       letter-spacing: -.03em;
       font-weight: 700;
     }
 
     .headline .line { display: block; }
-    .headline .line.main { font-size: clamp(2.7rem, 8vw, 6.2rem); }
-    .headline .line.mid { font-size: clamp(1.9rem, 4.8vw, 3.2rem); }
+    .headline .line.rotating {
+      font-size: clamp(1.55rem, 4.1vw, 3.05rem);
+      color: #f1f1f5;
+      min-height: 1.2em;
+      line-height: 1.1;
+      letter-spacing: -.01em;
+      margin-bottom: .12em;
+    }
     .headline .line.brand {
-      font-size: clamp(3.1rem, 10vw, 7.6rem);
-      color: var(--accent);
-      text-shadow: 0 0 26px rgba(255,74,31,.34);
-      font-style: italic;
+      font-size: clamp(3.05rem, 10vw, 7.5rem);
+      color: var(--hero-accent);
+      text-shadow: 0 0 26px var(--hero-accent-glow);
+      font-style: normal;
+      line-height: .9;
+    }
+    .rotating-phrase {
+      display: inline-block;
+      will-change: transform, opacity, filter;
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+      transition: opacity .42s ease, transform .42s var(--ease), filter .42s ease;
+    }
+    .rotating-phrase.is-changing {
+      opacity: 0;
+      transform: translateY(-8px);
+      filter: blur(2px);
     }
 
     .subheadline {
@@ -359,8 +382,7 @@
       .nav-inner { min-height: 70px; }
       .brand img { width: clamp(150px, 44vw, 220px); }
       .hero { padding-top: 22px; }
-      .headline .line.main { font-size: clamp(2rem, 10vw, 2.9rem); }
-      .headline .line.mid { font-size: clamp(1.45rem, 6vw, 1.95rem); }
+      .headline .line.rotating { font-size: clamp(1.22rem, 5.7vw, 1.7rem); min-height: 1.35em; }
       .headline .line.brand { font-size: clamp(2.45rem, 12vw, 3.8rem); }
       .video-wrap { margin-top: 18px; border-radius: 16px; }
       .video-label { font-size: .77rem; }
@@ -384,8 +406,7 @@
           <div class="pill">ALPHA SELLING FREE TRAINING</div>
 
           <h1 class="headline">
-            <span class="line main">Close Bigger Deals</span>
-            <span class="line mid">With</span>
+            <span class="line rotating"><span class="rotating-phrase" id="rotatingPhrase">Control Your Deals</span></span>
             <span class="line brand">ALPHA SELLING</span>
           </h1>
 
@@ -441,6 +462,25 @@
   </div>
 
   <script>
+    const rotatingPhrase = document.getElementById('rotatingPhrase');
+    const heroPhrases = [
+      'Control Your Deals',
+      'Dominate Your Peers',
+      'Crush Your Number',
+      'Lead Your Customers',
+      'Dictate the Tone'
+    ];
+    let phraseIndex = 0;
+
+    setInterval(() => {
+      phraseIndex = (phraseIndex + 1) % heroPhrases.length;
+      rotatingPhrase.classList.add('is-changing');
+      setTimeout(() => {
+        rotatingPhrase.textContent = heroPhrases[phraseIndex];
+        rotatingPhrase.classList.remove('is-changing');
+      }, 220);
+    }, 2000);
+
     const leadModal = document.getElementById('leadModal');
     const openModalBtn = document.getElementById('openModalBtn');
     const closeModalBtn = document.getElementById('closeModalBtn');
