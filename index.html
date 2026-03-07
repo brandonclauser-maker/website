@@ -48,6 +48,8 @@
       padding-bottom: 84px;
     }
 
+    body.modal-open { overflow: hidden; }
+
     body::before {
       content: "";
       position: fixed;
@@ -1307,7 +1309,7 @@
 
     .field input {
       width: 100%;
-      padding: 15px 16px;
+      padding: 16px 16px;
       border-radius: 16px;
       border: 1px solid rgba(255,255,255,.08);
       background: rgba(255,255,255,.03);
@@ -1358,13 +1360,24 @@
     .lead-modal-card {
       width: min(100%, 520px);
       border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.14);
       background: linear-gradient(180deg, rgba(20,20,27,.97), rgba(12,12,17,.97));
-      box-shadow: 0 30px 80px rgba(0,0,0,.55);
+      box-shadow: 0 30px 90px rgba(0,0,0,.6), 0 0 0 1px rgba(255,77,45,.12);
       padding: 22px;
       transform: translateY(-24px) scale(.98);
       opacity: 0;
       transition: transform .35s var(--ease), opacity .35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lead-modal-card::before {
+      content: "";
+      position: absolute;
+      inset: -30% -10% auto -10%;
+      height: 55%;
+      background: radial-gradient(circle at center, rgba(255,77,45,.18), transparent 70%);
+      pointer-events: none;
     }
 
     .lead-modal.open .lead-modal-card {
@@ -1804,7 +1817,7 @@
                     <div>How to increase income as an enterprise AE</div>
                   </div>
                   <div class="vsl-cta-row">
-                    <a href="#framework" class="btn btn-primary magnetic">Get My Framework</a>
+                    <a href="#framework" class="btn btn-primary magnetic js-open-training-modal">Get Free Training</a>
                     <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
                   </div>
                 </div>
@@ -1858,10 +1871,10 @@
             </div>
           </div>
 
-          <div class="hero-actions load-in" style="animation-delay:640ms;">
-            <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
-            <a href="#framework" class="btn btn-secondary magnetic">Get My Framework</a>
-          </div>
+            <div class="hero-actions load-in" style="animation-delay:640ms;">
+              <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
+              <a href="#framework" class="btn btn-secondary magnetic js-open-training-modal">Get Free Training</a>
+            </div>
         </div>
       </section>
 
@@ -1914,14 +1927,11 @@
                   <label for="frameworkEmail">Email</label>
                   <input id="frameworkEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required>
                 </div>
-                <div class="field">
-                  <label for="frameworkPhone">Phone (optional)</label>
-                  <input id="frameworkPhone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel">
-                </div>
                 <div class="form-actions">
-                  <button type="submit" class="btn btn-primary magnetic">Send My Free Framework</button>
+                  <button type="submit" class="btn btn-primary magnetic">Send Me the Framework</button>
                   <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
                 </div>
+                <div class="form-note">Trusted by enterprise sellers who want to close bigger deals and earn more.</div>
                 <div class="form-note" id="frameworkNote">No spam. This should trigger lead magnet delivery + CRM tagging in production.</div>
               </form>
             </div>
@@ -2060,7 +2070,7 @@
           <div class="cta-band reveal">
             <span>Ready to apply the method on your live deals?</span>
             <div class="vsl-cta-row">
-              <a href="#framework" class="btn btn-primary magnetic">Get My Framework</a>
+              <a href="#framework" class="btn btn-primary magnetic js-open-training-modal">Get Free Training</a>
               <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
             </div>
           </div>
@@ -2141,7 +2151,7 @@
             <span>Watch the training, grab the framework, then apply it in live opportunities.</span>
             <div class="vsl-cta-row">
               <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
-              <a href="#framework" class="btn btn-secondary magnetic">Get My Framework</a>
+              <a href="#framework" class="btn btn-secondary magnetic js-open-training-modal">Get Free Training</a>
             </div>
           </div>
         </div>
@@ -2177,7 +2187,7 @@
             <span>Still evaluating? Start with the free training and framework.</span>
             <div class="vsl-cta-row">
               <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
-              <a href="#framework" class="btn btn-secondary magnetic">Get My Framework</a>
+              <a href="#framework" class="btn btn-secondary magnetic js-open-training-modal">Get Free Training</a>
             </div>
           </div>
         </div>
@@ -2230,12 +2240,8 @@
                         <label for="email">Email</label>
                         <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required>
                       </div>
-                      <div class="field">
-                        <label for="phone">Phone (optional)</label>
-                        <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel">
-                      </div>
                       <div class="form-actions">
-                        <button type="submit" class="btn btn-primary magnetic">Send My Free Framework</button>
+                        <button type="submit" class="btn btn-primary magnetic">Get Free Training</button>
                         <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
                       </div>
                       <div class="form-note" id="formNote">No spam. In production, this should connect to your CRM, email automation, and booking flow.</div>
@@ -2248,7 +2254,7 @@
               <span>Primary next step: Watch free training and claim your framework.</span>
               <div class="vsl-cta-row">
                 <a href="#vsl" class="btn btn-primary magnetic">Watch Free Training Now</a>
-                <a href="#framework" class="btn btn-secondary magnetic">Get My Framework</a>
+                <a href="#framework" class="btn btn-secondary magnetic js-open-training-modal">Get Free Training</a>
               </div>
             </div>
           </div>
@@ -2292,8 +2298,8 @@
     <div class="lead-modal-card" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
       <div class="lead-modal-head">
         <div>
-          <h3 id="leadModalTitle">Get the Alpha Selling Framework</h3>
-          <p>Free training + enterprise AE playbook. Drop your info and get the framework.</p>
+          <h3 id="leadModalTitle">Get the Alpha Selling Free Training</h3>
+          <p id="leadModalSubhead">Learn how enterprise AEs create more pipeline, get to power, and close bigger deals.</p>
         </div>
         <button class="lead-modal-close" id="leadModalClose" type="button" aria-label="Close form">✕</button>
       </div>
@@ -2301,31 +2307,27 @@
       <!-- Swap this form action with your popup lead capture endpoint -->
       <form class="form-grid" id="leadModalForm" action="#" method="post">
         <div class="field">
-          <label for="leadModalName">Name</label>
-          <input id="leadModalName" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+          <label for="leadModalName">First Name</label>
+          <input id="leadModalName" name="first_name" type="text" placeholder="Your first name" autocomplete="given-name" required>
         </div>
         <div class="field">
           <label for="leadModalEmail">Email</label>
           <input id="leadModalEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" inputmode="email" required>
         </div>
-        <div class="field">
-          <label for="leadModalPhone">Phone (optional)</label>
-          <input id="leadModalPhone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel">
-        </div>
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary magnetic">Send My Free Framework</button>
+          <button type="submit" class="btn btn-primary magnetic" id="leadModalSubmit">Send Me the Training</button>
           <a href="#vsl" class="btn btn-secondary magnetic">Watch Free Training Now</a>
         </div>
-        <div class="lead-modal-note" id="leadModalNote">No spam. This should connect to CRM + email automation in production.</div>
+        <div class="lead-modal-note" id="leadModalNote">No spam. Just the training and next steps.</div>
       </form>
     </div>
   </div>
 
   <div class="sticky-cta" aria-label="Sticky call to action">
     <div class="container sticky-cta-inner">
-      <div class="sticky-cta-copy">Get the Alpha Selling Framework</div>
+      <div class="sticky-cta-copy">Get Free Training</div>
       <div class="vsl-cta-row">
-        <a href="#framework" class="btn btn-primary magnetic">Get My Framework</a>
+        <a href="#framework" class="btn btn-primary magnetic js-open-training-modal">Get Free Training</a>
         <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
       </div>
     </div>
@@ -2495,85 +2497,111 @@
       note.style.color = 'var(--success)';
       dropdownLead.classList.add('open');
       dropdownTrigger.setAttribute('aria-expanded', 'true');
+      setLeadCaptured();
     }
 
     function showFrameworkSubmission() {
       const note = document.getElementById('frameworkNote');
       note.textContent = 'Framework request captured. Connect this to CRM + autoresponder in production.';
       note.style.color = 'var(--success)';
+      setLeadCaptured();
     }
 
     const leadModal = document.getElementById('leadModal');
     const leadModalClose = document.getElementById('leadModalClose');
     const leadModalForm = document.getElementById('leadModalForm');
     const leadModalNote = document.getElementById('leadModalNote');
-    let leadModalClosed = false;
+    const leadModalTitle = document.getElementById('leadModalTitle');
+    const leadModalSubhead = document.getElementById('leadModalSubhead');
+    const leadModalSubmit = document.getElementById('leadModalSubmit');
+    const isDesktop = window.matchMedia('(min-width: 821px)').matches;
+    const leadModalState = JSON.parse(sessionStorage.getItem('leadModalState') || '{"timedShown":false,"exitShown":false,"submitted":false}');
     let exitIntentArmed = false;
-    const popupTriggerState = JSON.parse(sessionStorage.getItem('popupTriggerState') || '{"timed":false,"exit":false,"scroll":false}');
-    const popupDismissedUntil = Number(localStorage.getItem('popupDismissedUntil') || '0');
 
-    function isUserActivelyEngaged() {
-      const activeTag = document.activeElement?.tagName;
-      const activeFormField = activeTag === 'INPUT' || activeTag === 'TEXTAREA' || activeTag === 'SELECT';
-      const videoPlaying = videoOverlay.classList.contains('hidden');
-      return activeFormField || videoPlaying;
+    function saveLeadModalState() {
+      sessionStorage.setItem('leadModalState', JSON.stringify(leadModalState));
     }
 
-    function openLeadModal(source) {
-      if (leadModalClosed) return;
-      if (Date.now() < popupDismissedUntil) return;
-      if (popupTriggerState[source]) return;
-      if (isUserActivelyEngaged()) return;
+    function setLeadCaptured() {
+      leadModalState.submitted = true;
+      saveLeadModalState();
+    }
+
+    function setModalVariant(variant) {
+      if (variant === 'exit') {
+        leadModalTitle.textContent = 'Before You Go — Get the Free Training';
+        leadModalSubhead.textContent = 'Grab the Alpha Selling framework for enterprise AEs and learn the system behind more pipeline, stronger deal control, and bigger commission checks.';
+        leadModalSubmit.textContent = 'Get the Free Training';
+        leadModalNote.textContent = 'Built for enterprise reps who want more control, more pipeline, and more income.';
+      } else {
+        leadModalTitle.textContent = 'Get the Alpha Selling Free Training';
+        leadModalSubhead.textContent = 'Learn how enterprise AEs create more pipeline, get to power, and close bigger deals.';
+        leadModalSubmit.textContent = 'Send Me the Training';
+        leadModalNote.textContent = 'No spam. Just the training and next steps.';
+      }
+      leadModalNote.style.color = 'var(--muted)';
+    }
+
+    function openLeadModal(trigger = 'timed') {
+      if (leadModalState.submitted) return;
+      if (trigger === 'timed' && leadModalState.timedShown) return;
+      if (trigger === 'exit' && (!isDesktop || leadModalState.exitShown)) return;
+
+      setModalVariant(trigger === 'exit' ? 'exit' : 'timed');
       leadModal.classList.add('open');
       leadModal.setAttribute('aria-hidden', 'false');
-      popupTriggerState[source] = true;
-      popupTriggerState.timed = true;
-      popupTriggerState.exit = true;
-      popupTriggerState.scroll = true;
-      sessionStorage.setItem('popupTriggerState', JSON.stringify(popupTriggerState));
+      document.body.classList.add('modal-open');
+
+      if (trigger === 'timed') leadModalState.timedShown = true;
+      if (trigger === 'exit') leadModalState.exitShown = true;
+      saveLeadModalState();
     }
 
-    function closeLeadModal(setCooldown = true) {
-      leadModalClosed = true;
+    function closeLeadModal() {
       leadModal.classList.remove('open');
       leadModal.setAttribute('aria-hidden', 'true');
-      if (setCooldown) {
-        const nextShow = Date.now() + 1000 * 60 * 60 * 24 * 3;
-        localStorage.setItem('popupDismissedUntil', String(nextShow));
-      }
+      document.body.classList.remove('modal-open');
     }
 
-    setTimeout(() => { exitIntentArmed = true; }, 12000);
-    setTimeout(() => openLeadModal('timed'), 28000);
-
-    document.addEventListener('mouseout', (e) => {
-      if (!exitIntentArmed) return;
-      if (e.clientY <= 0) openLeadModal('exit');
+    // Two-step opt-in: high-intent CTA click opens the lead modal first.
+    document.querySelectorAll('.js-open-training-modal').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openLeadModal('cta');
+      });
     });
 
-    window.addEventListener('scroll', () => {
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      if (maxScroll <= 0) return;
-      const depth = window.scrollY / maxScroll;
-      if (depth >= 0.45) openLeadModal('scroll');
-    });
+    // Timed popup trigger: once per session after 15 seconds.
+    setTimeout(() => openLeadModal('timed'), 15000);
 
-    leadModalClose.addEventListener('click', () => closeLeadModal(true));
+    // Exit intent (desktop only): once per session if no lead captured yet.
+    setTimeout(() => { exitIntentArmed = true; }, 4000);
+    if (isDesktop) {
+      document.addEventListener('mouseout', (e) => {
+        if (!exitIntentArmed) return;
+        if (leadModalState.submitted) return;
+        if (e.clientY <= 8) openLeadModal('exit');
+      });
+    }
+
+    leadModalClose.addEventListener('click', closeLeadModal);
     leadModal.addEventListener('click', (e) => {
-      if (e.target === leadModal) closeLeadModal(true);
+      if (e.target === leadModal) closeLeadModal();
     });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && leadModal.classList.contains('open')) {
-        closeLeadModal(true);
+        closeLeadModal();
       }
     });
 
     leadModalForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      leadModalNote.textContent = 'Lead captured. Connect this to your CRM and autoresponder sequence in production.';
+      setLeadCaptured();
+      leadModalNote.textContent = 'Success. Check your inbox for the training and next steps.';
       leadModalNote.style.color = 'var(--success)';
-      setTimeout(() => closeLeadModal(true), 900);
+      // Connect this modal form to your ESP/CRM endpoint, then redirect if desired.
+      setTimeout(() => closeLeadModal(), 900);
     });
   </script>
 </body>
