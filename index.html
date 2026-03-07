@@ -99,6 +99,50 @@
       max-width: 960px;
       margin: 0 auto;
       text-align: center;
+      padding: clamp(18px, 2.8vw, 28px);
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(14,14,20,.48) 0%, rgba(10,10,14,.32) 100%);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow:
+        0 26px 70px rgba(0,0,0,.42),
+        0 0 0 1px rgba(197,23,34,.12),
+        inset 0 1px 0 rgba(255,255,255,.05);
+      overflow: hidden;
+    }
+
+    .hero-inner::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background:
+        linear-gradient(128deg, rgba(197,23,34,.16), rgba(197,23,34,0) 28% 72%, rgba(255,255,255,.05));
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: xor;
+      padding: 1px;
+      pointer-events: none;
+    }
+
+    .hero-inner::after {
+      content: "";
+      position: absolute;
+      right: -12%;
+      top: 42%;
+      width: min(30vw, 300px);
+      height: min(30vw, 300px);
+      background: radial-gradient(circle at center, rgba(197,23,34,.14), rgba(197,23,34,0) 70%);
+      pointer-events: none;
+    }
+
+    .stack-divider {
+      width: min(100%, 900px);
+      height: 1px;
+      margin: 18px auto 0;
+      background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.16) 20%, rgba(197,23,34,.22) 50%, rgba(255,255,255,.16) 80%, rgba(255,255,255,0));
+      opacity: .75;
     }
 
     .headline {
@@ -193,6 +237,8 @@
       line-height: 1.45;
     }
 
+    .proof-strip strong { color: #f3f3f8; font-weight: 800; }
+
     .trust-row {
       margin: 12px auto 0;
       display: flex;
@@ -214,13 +260,13 @@
     }
 
     .video-wrap {
-      margin: 24px auto 0;
+      margin: 22px auto 0;
       width: min(100%, 980px);
       border-radius: var(--radius);
       overflow: hidden;
       background: linear-gradient(180deg, rgba(16,16,22,.96), rgba(10,10,14,.96));
       border: 1px solid var(--line);
-      box-shadow: 0 34px 95px rgba(0,0,0,.56), 0 0 0 1px rgba(255,74,31,.14);
+      box-shadow: 0 32px 85px rgba(0,0,0,.56), 0 0 0 1px rgba(255,74,31,.14);
       position: relative;
     }
 
@@ -337,6 +383,8 @@
       display: grid;
       gap: 10px;
       place-items: center;
+      position: relative;
+      z-index: 2;
     }
 
     .btn {
@@ -369,31 +417,268 @@
       font-size: .88rem;
     }
 
-    .testimonial-row {
-      margin-top: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
+    .proof-section {
+      margin: 18px auto 0;
+      width: min(100%, 930px);
+      position: relative;
+      z-index: 2;
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.11);
+      background:
+        linear-gradient(180deg, rgba(16,16,22,.86), rgba(10,10,14,.82));
+      box-shadow:
+        0 22px 58px rgba(0,0,0,.45),
+        0 0 0 1px rgba(197,23,34,.1),
+        inset 0 1px 0 rgba(255,255,255,.05);
+      overflow: hidden;
     }
 
-    .testimonial-chip {
-      padding: 8px 12px;
+    .proof-section::before {
+      content: "";
+      position: absolute;
+      right: -4%;
+      top: -12%;
+      width: min(360px, 36vw);
+      aspect-ratio: 1 / 1;
+      background: url("assets/alpha-selling-logo.png") center / contain no-repeat;
+      opacity: .07;
+      filter: grayscale(1) contrast(1.12) brightness(.9);
+      pointer-events: none;
+    }
+
+    .proof-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background:
+        linear-gradient(120deg, rgba(197,23,34,.12), rgba(197,23,34,0) 22% 78%, rgba(255,255,255,.05));
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: xor;
+      padding: 1px;
+    }
+
+    .proof-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .proof-kicker {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #d2d4df;
+      font-weight: 700;
+    }
+
+    .proof-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .66rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: #b9bcc8;
+      font-weight: 700;
+      padding: 6px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.03);
-      color: #e0e2ec;
-      font-size: .78rem;
-      line-height: 1.2;
-      white-space: nowrap;
+    }
+
+    .proof-lockup img {
+      width: 34px;
+      height: auto;
+      opacity: .82;
+      filter: grayscale(1) contrast(1.3) brightness(1.12);
+    }
+
+    .quote-card {
+      text-align: left;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      padding: 15px 15px 13px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 10px 24px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.05);
+    }
+
+    .quote-card blockquote {
+      margin: 0;
+      color: #f3f4f8;
+      line-height: 1.52;
+    }
+
+    .quote-card blockquote::before {
+      content: "“";
+      font-family: 'Cormorant Garamond', serif;
+      color: rgba(240,75,74,.5);
+      font-size: 2rem;
+      line-height: 0;
+      vertical-align: -.45rem;
+      margin-right: 6px;
+    }
+
+    .quote-card footer {
+      margin-top: 10px;
+      color: #b9bdcb;
+      font-size: .81rem;
+      line-height: 1.4;
+      font-style: normal;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 9px;
+    }
+
+    .quote-featured {
+      border-color: rgba(240,75,74,.28);
+      background:
+        linear-gradient(180deg, rgba(240,75,74,.085), rgba(255,255,255,.02));
+      box-shadow:
+        0 16px 34px rgba(0,0,0,.38),
+        0 0 0 1px rgba(240,75,74,.1),
+        inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .quote-featured blockquote {
+      font-size: clamp(.98rem, 1.35vw, 1.1rem);
+      font-weight: 600;
+    }
+
+    .quote-grid {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
     }
 
     .mini-faq {
-      margin: 18px auto 0;
+      margin: 16px auto 0;
       width: min(100%, 860px);
       display: grid;
       gap: 8px;
       text-align: left;
+    }
+
+    .video-proof {
+      margin: 16px auto 0;
+      width: min(100%, 930px);
+      text-align: left;
+      position: relative;
+      z-index: 2;
+    }
+
+    .video-proof h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.05rem, 2vw, 1.26rem);
+      letter-spacing: -.01em;
+      color: #f1f2f8;
+    }
+
+    .video-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .proof-video-card {
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 14px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(16,16,22,.78), rgba(11,11,16,.88));
+      box-shadow: 0 12px 28px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.04);
+      cursor: pointer;
+      color: inherit;
+      text-align: left;
+      padding: 0;
+      transition: transform .22s var(--ease), border-color .22s ease, box-shadow .22s ease;
+    }
+
+    .proof-video-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(240,75,74,.3);
+      box-shadow: 0 16px 34px rgba(0,0,0,.4), 0 0 0 1px rgba(240,75,74,.1);
+    }
+
+    .proof-video-thumb {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #09090d;
+    }
+
+    .proof-video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .9;
+    }
+
+    .proof-video-thumb::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6,6,10,.12), rgba(6,6,10,.5));
+      pointer-events: none;
+    }
+
+    .proof-video-play {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d82b33 0%, #c51722 100%);
+      box-shadow: 0 12px 24px rgba(197,23,34,.34), inset 0 1px 0 rgba(255,255,255,.22);
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+    }
+
+    .proof-video-play::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 12px solid #fff;
+      margin-left: 3px;
+    }
+
+    .proof-video-meta {
+      padding: 10px 11px 12px;
+      display: grid;
+      gap: 3px;
+    }
+
+    .proof-video-name {
+      font-size: .93rem;
+      font-weight: 800;
+      color: #f2f3f8;
+      line-height: 1.25;
+    }
+
+    .proof-video-role {
+      font-size: .78rem;
+      color: #b8bbca;
+      line-height: 1.35;
+    }
+
+    .proof-video-result {
+      margin-top: 3px;
+      font-size: .79rem;
+      color: #e2e4ed;
+      line-height: 1.35;
     }
 
     .faq-item {
@@ -623,13 +908,19 @@
 
     @media (max-width: 820px) {
       .hero { padding-top: 6px; }
+      .hero-inner { padding: 14px; border-radius: 18px; }
       .headline .line.rotating { font-size: clamp(1.22rem, 5.7vw, 1.7rem); min-height: 1.35em; }
       .headline .line.brand { font-size: clamp(2.45rem, 12vw, 3.8rem); }
       .video-wrap { margin-top: 18px; border-radius: 16px; }
       .video-label { font-size: .77rem; }
       .hero::before { left: -44%; bottom: -27%; width: min(114vw, 760px); opacity: .064; }
       .mini-faq { margin-top: 14px; }
-      .testimonial-chip { white-space: normal; }
+      .stack-divider { margin-top: 14px; }
+      .proof-section { padding: 12px; border-radius: 16px; }
+      .proof-head { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .proof-lockup img { width: 32px; }
+      .quote-grid { grid-template-columns: 1fr; }
+      .video-proof-grid { grid-template-columns: 1fr; }
       .mobile-sticky-cta { display: block; }
       body { padding-bottom: 86px; }
     }
@@ -651,7 +942,7 @@
             The modern enterprise sales method for AEs who want bigger deals, more control, and more income.
           </p>
           <div class="proof-strip">
-            Built from the method behind top performance at Workday and Salesforce — and a $13.75M net new win.
+            <strong>Built from the method behind top performance at Workday and Salesforce</strong> — and a $13.75M net new win.
           </div>
           <div class="trust-row" aria-label="Trust indicators">
             <span class="trust-chip">Built for Enterprise AEs</span>
@@ -674,12 +965,73 @@
           <div class="cta">
             <button class="btn btn-primary" id="openModalBtn" type="button">Learn the Method</button>
             <div class="scarcity">Limited spots available</div>
-            <div class="testimonial-row" aria-label="Client testimonials">
-              <span class="testimonial-chip">"Finally got control of late-stage deals."</span>
-              <span class="testimonial-chip">"Pipeline quality improved in 30 days."</span>
-              <span class="testimonial-chip">"Best enterprise framework I have used."</span>
-            </div>
           </div>
+
+          <div class="stack-divider" aria-hidden="true"></div>
+
+          <section class="proof-section" aria-label="Client proof">
+            <div class="proof-head">
+              <div class="proof-kicker">Alpha Selling Results</div>
+              <div class="proof-lockup">
+                <img src="assets/alpha-selling-logo.png" alt="Alpha Selling brand mark">
+                <span>Proprietary Enterprise Method</span>
+              </div>
+            </div>
+            <article class="quote-card quote-featured">
+              <blockquote>I closed a $2.6M TCV deal I never would have uncovered without this method — and we found another $500K in opportunity in the same motion.</blockquote>
+              <footer>Mike DeMaio, Enterprise Account Executive at Salesforce</footer>
+            </article>
+            <div class="quote-grid">
+              <article class="quote-card">
+                <blockquote>I’m at 125% overall, and hit 180% in April and 162% in May. A lot of that came from Alpha Selling ideas and strategies I brought directly to customers.</blockquote>
+                <footer>James Strickland, Enterprise AE at HubSpot</footer>
+              </article>
+              <article class="quote-card">
+                <blockquote>Our sales team is already telling me they’re closing deals using the methods and strategies from Alpha Selling.</blockquote>
+                <footer>Ethan Whitehead, CEO, SalesDraft</footer>
+              </article>
+            </div>
+          </section>
+
+          <section class="video-proof" aria-label="Video testimonials">
+            <h2>Hear It From Enterprise AEs</h2>
+            <div class="video-proof-grid">
+              <!-- Swap data-video-url and thumbnail image for each real testimonial video -->
+              <button class="proof-video-card js-proof-video" type="button" data-video-url="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&playsinline=1" data-video-title="Mike DeMaio Testimonial">
+                <div class="proof-video-thumb">
+                  <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Mike DeMaio testimonial thumbnail">
+                  <span class="proof-video-play" aria-hidden="true"></span>
+                </div>
+                <div class="proof-video-meta">
+                  <div class="proof-video-name">Mike DeMaio</div>
+                  <div class="proof-video-role">Enterprise Account Executive at Salesforce</div>
+                  <div class="proof-video-result">$2.6M TCV deal uncovered + another $500K found in the same motion.</div>
+                </div>
+              </button>
+              <button class="proof-video-card js-proof-video" type="button" data-video-url="https://www.youtube-nocookie.com/embed/oHg5SJYRHA0?rel=0&modestbranding=1&playsinline=1" data-video-title="James Strickland Testimonial">
+                <div class="proof-video-thumb">
+                  <img src="https://img.youtube.com/vi/oHg5SJYRHA0/hqdefault.jpg" alt="James Strickland testimonial thumbnail">
+                  <span class="proof-video-play" aria-hidden="true"></span>
+                </div>
+                <div class="proof-video-meta">
+                  <div class="proof-video-name">James Strickland</div>
+                  <div class="proof-video-role">Enterprise AE at HubSpot</div>
+                  <div class="proof-video-result">125% overall, including 180% in April and 162% in May.</div>
+                </div>
+              </button>
+              <button class="proof-video-card js-proof-video" type="button" data-video-url="https://www.youtube-nocookie.com/embed/ub82Xb1C8os?rel=0&modestbranding=1&playsinline=1" data-video-title="Ethan Whitehead Testimonial">
+                <div class="proof-video-thumb">
+                  <img src="https://img.youtube.com/vi/ub82Xb1C8os/hqdefault.jpg" alt="Ethan Whitehead testimonial thumbnail">
+                  <span class="proof-video-play" aria-hidden="true"></span>
+                </div>
+                <div class="proof-video-meta">
+                  <div class="proof-video-name">Ethan Whitehead</div>
+                  <div class="proof-video-role">CEO, SalesDraft</div>
+                  <div class="proof-video-result">Team is already closing deals using Alpha Selling methods.</div>
+                </div>
+              </button>
+            </div>
+          </section>
 
           <div class="mini-faq" aria-label="FAQ">
             <details class="faq-item">
@@ -767,12 +1119,13 @@
     const openVideoBtn = document.getElementById('openVideoBtn');
     const closeVideoBtn = document.getElementById('closeVideoBtn');
     const videoPlayer = document.getElementById('videoPlayer');
+    const proofVideoBtns = document.querySelectorAll('.js-proof-video');
     const openModalBtn = document.getElementById('openModalBtn');
     const mobileStickyCtaBtn = document.getElementById('mobileStickyCtaBtn');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const leadForm = document.getElementById('leadForm');
     const modalNote = document.getElementById('modalNote');
-    const vslEmbedUrl = 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    const vslEmbedUrl = 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&playsinline=1';
 
     const modalState = JSON.parse(sessionStorage.getItem('alphaSellingModalState') || '{"shown":false,"submitted":false,"dismissed":false,"exitShown":false,"scrollShown":false}');
 
@@ -806,8 +1159,9 @@
       document.body.classList.toggle('modal-open', hasOpenModal);
     }
 
-    function openVideoModal() {
-      if (!videoPlayer.src) videoPlayer.src = vslEmbedUrl;
+    function openVideoModal(videoUrl = vslEmbedUrl, videoTitle = 'ALPHA SELLING Free Training Video') {
+      videoPlayer.title = videoTitle;
+      videoPlayer.src = videoUrl;
       videoModal.classList.add('open');
       videoModal.setAttribute('aria-hidden', 'false');
       syncBodyLock();
@@ -823,8 +1177,15 @@
     openModalBtn.addEventListener('click', () => openModal('cta'));
     mobileStickyCtaBtn.addEventListener('click', () => openModal('cta'));
     closeModalBtn.addEventListener('click', () => closeModal(true));
-    openVideoBtn.addEventListener('click', openVideoModal);
+    openVideoBtn.addEventListener('click', () => openVideoModal(vslEmbedUrl, 'ALPHA SELLING Free Training Video'));
     closeVideoBtn.addEventListener('click', closeVideoModal);
+    proofVideoBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const videoUrl = btn.getAttribute('data-video-url');
+        const videoTitle = btn.getAttribute('data-video-title') || 'Client Video Testimonial';
+        openVideoModal(videoUrl, videoTitle);
+      });
+    });
 
     leadModal.addEventListener('click', (e) => {
       if (e.target === leadModal) closeModal(true);
