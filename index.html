@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brandon Clauser Sales Coaching — Alpha Selling</title>
+  <meta name="description" content="Brandon Clauser Sales Coaching helps Enterprise Account Executives close bigger deals, increase income, and operate at a higher level with the Alpha Selling methodology." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09090b;
+      --bg-soft: #111116;
+      --panel: rgba(17, 17, 22, 0.82);
+      --panel-strong: rgba(20, 20, 27, 0.96);
+      --text: #ffffff;
+      --muted: #a2a2ad;
+      --line: rgba(255,255,255,0.08);
+      --accent: #ff4d2d;
+      --accent-2: #d92323;
+      --accent-soft: rgba(255, 77, 45, 0.14);
+      --accent-glow: rgba(255, 77, 45, 0.28);
+      --success: #d8ffd1;
+      --max: 1280px;
+      --radius: 28px;
+      --radius-sm: 18px;
+      --shadow-lg: 0 30px 80px rgba(0,0,0,0.45);
+      --shadow-md: 0 18px 50px rgba(0,0,0,0.28);
+      --nav-h: 82px;
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Manrope', sans-serif;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(255,77,45,0.15), transparent 26%),
+        radial-gradient(circle at 85% 8%, rgba(217,35,35,0.13), transparent 18%),
+        radial-gradient(circle at 50% 100%, rgba(255,255,255,0.025), transparent 30%),
+        linear-gradient(180deg, #060608 0%, #0d0d11 50%, #08080a 100%);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at center, black 25%, transparent 82%);
+      opacity: 0.22;
+      z-index: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, input, iframe { font: inherit; }
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(255,77,45,0.72) 0%, rgba(255,77,45,0.12) 45%, transparent 72%);
+      animation: floatParticle linear infinite;
+      opacity: .55;
+      filter: blur(.2px);
+    }
+
+    @keyframes floatParticle {
+      from { transform: translate3d(0, 12vh, 0) scale(.7); opacity: 0; }
+      10% { opacity: .5; }
+      80% { opacity: .3; }
+      to { transform: translate3d(0, -110vh, 0) scale(1.5); opacity: 0; }
+    }
+
+    .cursor-glow {
+      position: fixed;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(255,77,45,0.14) 0%, rgba(255,77,45,0.06) 26%, transparent 68%);
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      mix-blend-mode: screen;
+      transition: opacity .3s ease;
+    }
+
+    .site { position: relative; z-index: 2; }
+    .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent));
+    }
+
+    .headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: -.04em;
+      line-height: .92;
+      margin: 0;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.3rem, 5vw, 4.8rem);
+      line-height: .95;
+      margin: 18px 0 16px;
+      max-width: 10ch;
+    }
+
+    .lede {
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.16rem);
+      line-height: 1.78;
+      max-width: 62ch;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: transform .9s var(--ease), opacity .9s var(--ease);
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .load-in {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: pageReveal .9s var(--ease) forwards;
+    }
+
+    @keyframes pageReveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header.nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(16px);
+      background: rgba(8,8,10,.56);
+      border-bottom: 1px solid rgba(255,255,255,.04);
+    }
+
+    .nav-inner {
+      min-height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.015)),
+        radial-gradient(circle at 30% 30%, rgba(255,77,45,.24), transparent 52%),
+        #101015;
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 12px 34px rgba(0,0,0,.34);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .brand-mark svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+      opacity: .94;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: .98rem;
+      font-weight: 700;
+      letter-spacing: .01em;
+    }
+
+    .brand-copy span {
+      display: block;
+      color: var(--muted);
+      font-size: .76rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: color .25s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .35s var(--ease);
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s ease, color .3s ease;
+      overflow: hidden;
+      isolation: isolate;
+      will-change: transform;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.12) 30%, transparent 62%);
+      transform: translateX(-120%);
+      transition: transform .7s var(--ease);
+      z-index: -1;
+    }
+
+    .btn:hover::before { transform: translateX(130%); }
+    .btn:hover { transform: translateY(-2px) scale(1.02); }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, #ff6649 0%, #ff4d2d 42%, #d92323 100%);
+      box-shadow: 0 18px 40px rgba(255, 77, 45, 0.28), inset 0 1px 0 rgba(255,255,255,.18);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .hero {
+      position: relative;
+      padding: clamp(40px, 6vw, 68px) 0 90px;
+      min-height: calc(100vh - var(--nav-h));
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(28px, 4vw, 52px);
+      align-items: center;
+    }
+
+    .hero-copy { position: relative; z-index: 2; }
+
+    .hero-title {
+      font-size: clamp(3.8rem, 10vw, 8.4rem);
+      max-width: 8ch;
+    }
+
+    .hero-title .accent-word {
+      color: var(--accent);
+      font-style: italic;
+      text-shadow: 0 0 18px rgba(255,77,45,.18);
+    }
+
+    .hero-kicker {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 18px;
+    }
+
+    .hero-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+      color: #f2f2f4;
+      font-weight: 600;
+      font-size: .92rem;
+    }
+
+    .hero-chip .mono {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .76rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 34px 0 24px;
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 740px;
+      margin-top: 24px;
+    }
+
+    .trust-card {
+      padding: 14px 14px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.025);
+      min-height: 96px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .3s var(--ease), border-color .3s ease, background .3s ease;
+    }
+
+    .trust-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,77,45,.28);
+      background: rgba(255,255,255,.035);
+    }
+
+    .trust-card strong { font-size: 1rem; line-height: 1.1; }
+    .trust-card span { color: var(--muted); font-size: .8rem; }
+
+    .hero-visual {
+      position: relative;
+      min-height: 760px;
+    }
+
+    .wolf-orbit {
+      position: absolute;
+      right: -40px;
+      top: 18px;
+      width: 180px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.06);
+      background: radial-gradient(circle at center, rgba(255,77,45,.12), rgba(255,255,255,.01));
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 20px 60px rgba(0,0,0,.25);
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    .wolf-orbit::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255,77,45,.24);
+      animation: spin 18s linear infinite;
+    }
+
+    .wolf-orbit svg {
+      width: 90px;
+      height: 90px;
+      fill: #fff;
+      opacity: .92;
+      filter: drop-shadow(0 0 18px rgba(255,77,45,.24));
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .theater {
+      position: absolute;
+      inset: 0;
+      border-radius: 32px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.02), transparent),
+        linear-gradient(145deg, rgba(255, 77, 45, 0.08), rgba(255,255,255,.02) 35%, rgba(217, 35, 35, 0.05) 100%),
+        #101015;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .theater::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.24) 100%);
+      pointer-events: none;
+    }
+
+    .scan-lines {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        180deg,
+        rgba(255,255,255,.03) 0,
+        rgba(255,255,255,.03) 1px,
+        transparent 1px,
+        transparent 18px
+      );
+      opacity: .1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .theater-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 24px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      position: relative;
+      z-index: 2;
+    }
+
+    .window-dots { display: flex; gap: 8px; }
+    .window-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.14);
+    }
+    .window-dots span:nth-child(1) { background: rgba(255,77,45,.84); }
+
+    .theater-label {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--muted);
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .demo-stage {
+      position: relative;
+      padding: 26px;
+      height: calc(100% - 78px);
+    }
+
+    .vsl-card {
+      position: relative;
+      padding: 18px;
+      border-radius: 28px;
+      background: rgba(7,7,10,.62);
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 24px 60px rgba(0,0,0,.35);
+      z-index: 4;
+    }
+
+    .vsl-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .vsl-top strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .vsl-top span {
+      display: block;
+      color: var(--muted);
+      font-size: .84rem;
+      margin-top: 3px;
+    }
+
+    .vsl-badge {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .08em;
+      color: var(--muted);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .video-shell {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.08);
+      background:
+        radial-gradient(circle at center, rgba(255,77,45,.12), rgba(0,0,0,.36)),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+    }
+
+    .video-shell iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(8,8,10,.14), rgba(8,8,10,.52));
+      transition: opacity .35s ease, visibility .35s ease;
+      cursor: pointer;
+    }
+
+    .video-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .play-core {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #ff6649 0%, #ff4d2d 45%, #d92323 100%);
+      box-shadow: 0 20px 46px rgba(255,77,45,.28), inset 0 1px 0 rgba(255,255,255,.18);
+      margin-bottom: 18px;
+      animation: pulsePlay 2.4s ease-in-out infinite;
+    }
+
+    .play-core::before {
+      content: "";
+      border-style: solid;
+      border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 4px;
+    }
+
+    @keyframes pulsePlay {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .overlay-copy {
+      text-align: center;
+      max-width: 38ch;
+    }
+
+    .overlay-copy strong {
+      display: block;
+      font-size: 1.18rem;
+      margin-bottom: 8px;
+    }
+
+    .overlay-copy span {
+      display: block;
+      color: #dddde4;
+      line-height: 1.65;
+      font-size: .94rem;
+    }
+
+    .theater-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .command-panel,
+    .story-panel {
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+
+    .command-panel .small,
+    .story-panel .small,
+    .dropdown-header .small {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      font-size: .72rem;
+      margin-bottom: 10px;
+    }
+
+    .scenario-list { display: grid; gap: 10px; }
+
+    .scenario {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.06);
+      cursor: pointer;
+      transition: transform .3s var(--ease), border-color .3s ease, background .3s ease;
+      text-align: left;
+      color: inherit;
+    }
+
+    .scenario:hover,
+    .scenario.active {
+      transform: translateX(-3px);
+      border-color: rgba(255,77,45,.34);
+      background: rgba(255,77,45,.08);
+    }
+
+    .scenario strong { display: block; font-size: .96rem; }
+    .scenario span { color: var(--muted); font-size: .84rem; }
+
+    .tag-chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .08em;
+      color: var(--muted);
+      text-transform: uppercase;
+      display: inline-flex;
+      width: fit-content;
+    }
+
+    .story-panel h3 {
+      margin: 12px 0 10px;
+      font-size: clamp(1.55rem, 2.3vw, 2.2rem);
+      line-height: 1.04;
+      max-width: 13ch;
+    }
+
+    .story-panel p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: .95rem;
+    }
+
+    .quote-box {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .quote-line {
+      position: relative;
+      padding-left: 18px;
+      color: #f1f1f4;
+      line-height: 1.65;
+      font-size: .95rem;
+    }
+
+    .quote-line::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .6em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(255,77,45,.12);
+    }
+
+    .metric-ribbon {
+      display: flex;
+      gap: 12px;
+      z-index: 5;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .metric-card {
+      min-width: 140px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(6,6,9,.62);
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 48px rgba(0,0,0,.3);
+      flex: 1;
+    }
+
+    .metric-card strong {
+      display: block;
+      font-size: 1.02rem;
+      margin-bottom: 4px;
+    }
+
+    .metric-card span {
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    main section { padding: 110px 0; position: relative; }
+
+    .narrative-grid {
+      display: grid;
+      grid-template-columns: .84fr 1.16fr;
+      gap: clamp(26px, 4vw, 60px);
+      align-items: start;
+    }
+
+    .sticky-copy {
+      position: sticky;
+      top: calc(var(--nav-h) + 28px);
+    }
+
+    .story-stack { display: grid; gap: 18px; }
+
+    .story-card {
+      padding: 22px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.025));
+      border: 1px solid rgba(255,255,255,.07);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+      transition: transform .3s var(--ease), border-color .3s ease, background .3s ease;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,77,45,.24);
+      background: linear-gradient(180deg, rgba(255,77,45,.06), rgba(255,255,255,.03));
+    }
+
+    .story-step {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--accent);
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .story-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.85rem, 2.4vw, 2.65rem);
+      margin: 0 0 10px;
+      line-height: 1;
+    }
+
+    .story-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .scenario-visual {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.06);
+      overflow: hidden;
+    }
+
+    .scenario-flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+    }
+
+    .flow-node {
+      padding: 16px;
+      border-radius: 18px;
+      min-height: 140px;
+      background: rgba(255,255,255,.026);
+      border: 1px solid rgba(255,255,255,.06);
+      position: relative;
+    }
+
+    .flow-node::after {
+      content: "→";
+      position: absolute;
+      top: 18px;
+      right: -12px;
+      color: rgba(255,255,255,.18);
+      font-size: 1.2rem;
+    }
+
+    .flow-node:last-child::after { display: none; }
+    .flow-node strong { display: block; margin-bottom: 10px; }
+    .flow-node span { color: var(--muted); line-height: 1.65; font-size: .92rem; }
+
+    .showcase-shell {
+      padding: 28px;
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mockup {
+      min-height: 540px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(9,9,12,.78), rgba(18,18,24,.96));
+      border: 1px solid rgba(255,255,255,.08);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .mockup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .mockup-body {
+      padding: 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .mini-chart {
+      height: 180px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mini-chart svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .mini-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+    }
+
+    .mini-card {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .mini-card span {
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.5;
+    }
+
+    .showcase-side { display: grid; gap: 16px; }
+
+    .cred-block {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.07);
+    }
+
+    .cred-block h3 { margin: 0 0 10px; font-size: 1.35rem; }
+    .cred-block p { margin: 0; color: var(--muted); line-height: 1.8; }
+
+    .cred-list {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .cred-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #ececf0;
+      line-height: 1.6;
+    }
+
+    .cred-item i {
+      font-style: normal;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .proof-panel {
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .proof-metrics { display: grid; gap: 14px; }
+
+    .proof-metric {
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+
+    .proof-metric strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: .95;
+      margin-bottom: 8px;
+    }
+
+    .proof-metric span {
+      color: var(--muted);
+      line-height: 1.7;
+      display: block;
+    }
+
+    .customer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .quote-card {
+      position: relative;
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.028);
+      transition: transform .35s var(--ease), border-color .3s ease, background .3s ease;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quote-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,77,45,.28);
+      background: rgba(255,77,45,.06);
+    }
+
+    .quote-card::before {
+      content: "“";
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      color: rgba(255,255,255,.09);
+      line-height: 1;
+    }
+
+    .quote-card p {
+      margin: 0 0 16px;
+      color: #f1f1f4;
+      line-height: 1.8;
+      padding-right: 26px;
+    }
+
+    .quote-meta strong { display: block; font-size: 1rem; margin-bottom: 4px; }
+    .quote-meta span { color: var(--muted); font-size: .84rem; }
+
+    .conversion { padding-bottom: 130px; }
+
+    .conversion-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      padding: clamp(24px, 4vw, 42px);
+      background:
+        radial-gradient(circle at 85% 18%, rgba(255,77,45,.18), transparent 22%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
+        #101015;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .conversion-grid {
+      display: grid;
+      grid-template-columns: 1fr .98fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .conversion-grid h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 5.6rem);
+      line-height: .95;
+      margin: 16px 0;
+      max-width: 9ch;
+    }
+
+    .urgency-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,77,45,.1);
+      border: 1px solid rgba(255,77,45,.2);
+      color: #ffd2c9;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .76rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .stack-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+      max-width: 46ch;
+    }
+
+    .stack-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #ececf0;
+      line-height: 1.6;
+    }
+
+    .stack-item i {
+      font-style: normal;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .lead-shell {
+      padding: 22px;
+      border-radius: 28px;
+      background: rgba(7,7,10,.66);
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(14px);
+    }
+
+    .lead-shell h3 {
+      margin: 0 0 10px;
+      font-size: 1.45rem;
+    }
+
+    .lead-shell p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .dropdown-lead {
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      overflow: hidden;
+    }
+
+    .dropdown-header {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      color: var(--text);
+      border: 0;
+      padding: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .dropdown-header strong {
+      display: block;
+      font-size: 1rem;
+      margin-top: 3px;
+    }
+
+    .dropdown-toggle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.08);
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.04);
+      flex-shrink: 0;
+      transition: transform .3s var(--ease), background .3s ease;
+    }
+
+    .dropdown-lead.open .dropdown-toggle {
+      transform: rotate(180deg);
+      background: rgba(255,77,45,.1);
+    }
+
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .45s var(--ease), opacity .35s ease, padding .35s ease;
+      opacity: 0;
+      padding: 0 18px;
+    }
+
+    .dropdown-lead.open .dropdown-content {
+      max-height: 520px;
+      opacity: 1;
+      padding: 0 18px 18px;
+    }
+
+    .mini-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .mini-pill {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      color: #e5e5ea;
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      outline: none;
+      transition: border-color .25s ease, background .25s ease, transform .25s ease;
+    }
+
+    .field input:focus {
+      border-color: rgba(255,77,45,.45);
+      background: rgba(255,255,255,.04);
+      transform: translateY(-1px);
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .form-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 34px 0 48px;
+      background: rgba(0,0,0,.18);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+      align-items: end;
+    }
+
+    .footer-copy p {
+      color: var(--muted);
+      max-width: 54ch;
+      line-height: 1.8;
+      margin: 12px 0 0;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 20px;
+      justify-content: flex-end;
+      color: var(--muted);
+    }
+
+    .footer-news {
+      margin-top: 16px;
+      display: flex;
+      gap: 10px;
+      max-width: 420px;
+    }
+
+    .footer-news input {
+      flex: 1;
+      min-width: 0;
+      padding: 14px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+    }
+
+    .parallax { transform: translateY(var(--parallax-offset, 0px)); }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .narrative-grid,
+      .showcase-grid,
+      .proof-panel,
+      .conversion-grid,
+      .footer-grid,
+      .theater-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sticky-copy { position: static; }
+      .hero-visual { min-height: 900px; }
+      .wolf-orbit { right: 12px; top: -26px; width: 140px; }
+    }
+
+    @media (max-width: 820px) {
+      .nav-inner { min-height: 72px; }
+      .nav-links { display: none; }
+      .hero { padding-top: 28px; min-height: auto; }
+      .hero-title { max-width: 10ch; }
+      .trust-row,
+      .scenario-flow,
+      .mini-cards,
+      .customer-grid { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 940px; }
+      .hero-actions, .form-actions, .footer-news { flex-direction: column; }
+      .btn, .footer-news button { width: 100%; }
+      .footer-links { justify-content: flex-start; }
+      .metric-ribbon { flex-direction: column; }
+      .wolf-orbit { width: 110px; right: 10px; top: -18px; }
+      .wolf-orbit svg { width: 58px; height: 58px; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(calc(100% - 20px), var(--max)); }
+      main section { padding: 86px 0; }
+      .hero-title { font-size: clamp(3rem, 19vw, 4.8rem); }
+      .section-title, .conversion-grid h2 { max-width: none; }
+      .hero-visual { min-height: 900px; }
+      .trust-row { gap: 10px; }
+      .trust-card { min-height: 84px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="particle" style="left:6%; bottom:-8%; animation-duration:14s; animation-delay:-2s;"></span>
+    <span class="particle" style="left:14%; bottom:-10%; animation-duration:18s; animation-delay:-8s;"></span>
+    <span class="particle" style="left:23%; bottom:-12%; animation-duration:16s; animation-delay:-5s;"></span>
+    <span class="particle" style="left:39%; bottom:-14%; animation-duration:20s; animation-delay:-4s;"></span>
+    <span class="particle" style="left:51%; bottom:-9%; animation-duration:15s; animation-delay:-11s;"></span>
+    <span class="particle" style="left:67%; bottom:-11%; animation-duration:19s; animation-delay:-6s;"></span>
+    <span class="particle" style="left:79%; bottom:-13%; animation-duration:17s; animation-delay:-9s;"></span>
+    <span class="particle" style="left:92%; bottom:-8%; animation-duration:13s; animation-delay:-1s;"></span>
+  </div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <div class="site">
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand-lockup" href="#top" aria-label="Brandon Clauser Sales Coaching home">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" role="presentation">
+              <path d="M31.8 6 18 13.2l-4.8 12.4L16 42.7 31.9 58 48 42.8l2.7-17.1L46 13.3 31.8 6Zm-7.3 15.6 7.4-4.7 7.6 4.6-2.2 7.7-5.4-3.2-5.2 3.2-2.2-7.6Zm-1.7 12.6 8.9-5.2 9.4 5.2-1.4 7.6-8 7.5-8-7.7-1-7.4Z"/>
+            </svg>
+          </div>
+          <div class="brand-copy">
+            <strong>Brandon Clauser Sales Coaching</strong>
+            <span>Alpha Selling</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#story">Method</a>
+          <a href="#showcase">Proof</a>
+          <a href="#results">Results</a>
+          <a href="#apply">Apply</a>
+        </nav>
+
+        <a href="#apply" class="btn btn-secondary magnetic">Book Strategy Call</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow load-in" style="animation-delay:0ms;">Alpha Selling for enterprise AEs who want more money, more power, more control</div>
+            <h1 class="headline hero-title load-in" style="animation-delay:200ms;">
+              Close <span class="accent-word">bigger</span><br>
+              deals. Increase<br>
+              your income.
+            </h1>
+
+            <div class="hero-kicker load-in" style="animation-delay:400ms;">
+              <div class="hero-chip"><span class="mono">Tagline</span><span>Alpha Selling</span></div>
+              <div class="hero-chip"><span class="mono">Built for</span><span>Enterprise Account Executives</span></div>
+            </div>
+
+            <p class="lede load-in" style="animation-delay:520ms; max-width: 60ch;">
+              Brandon Clauser teaches enterprise reps how to create executive urgency, run sharper discovery, get to power, multi-thread complex deals, and materially grow income without sounding like every other rep on the internet.
+            </p>
+
+            <div class="hero-actions load-in" style="animation-delay:640ms;">
+              <a href="#vsl" class="btn btn-primary magnetic">Watch the VSL</a>
+              <a href="#apply" class="btn btn-secondary magnetic">Get the Lead Magnet + Apply</a>
+            </div>
+
+            <div class="trust-row load-in" style="animation-delay:760ms;">
+              <div class="trust-card">
+                <strong>Enterprise Focus</strong>
+                <span>Built for complex, multi-stakeholder deals</span>
+              </div>
+              <div class="trust-card">
+                <strong>Exec Messaging</strong>
+                <span>Sell to CFO, CRO, CIO, VP, and power</span>
+              </div>
+              <div class="trust-card">
+                <strong>Alpha Selling</strong>
+                <span>POV, urgency, multi-threading, deal control</span>
+              </div>
+              <div class="trust-card">
+                <strong>Conversion-First</strong>
+                <span>VSL → lead capture → application → booking</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual load-in parallax" style="animation-delay:300ms;" data-parallax="0.08">
+            <div class="wolf-orbit" aria-hidden="true">
+              <svg viewBox="0 0 64 64" role="presentation">
+                <path d="M10 42.7 17.9 16l12.7 7.6L39.4 13 54 18.7l-6.4 13.7 2.1 14.1-10.7 5.2-7-4.5-7.6 5.1L10 42.7Zm12.8-2.5 8.9-3.5 8.9 3.7-1.7-7.2-7.1-5.5-7.4 5.5-1.6 7Zm6.1-14 2.8-7.3 3.2 7.3-3.1 1.8-2.9-1.8Z"/>
+              </svg>
+            </div>
+
+            <div class="theater">
+              <div class="scan-lines"></div>
+              <div class="theater-top">
+                <div class="window-dots"><span></span><span></span><span></span></div>
+                <div class="theater-label">Alpha Selling / Wolf Room</div>
+              </div>
+
+              <div class="demo-stage" id="vsl">
+                <div class="vsl-card">
+                  <div class="vsl-top">
+                    <div>
+                      <strong>Front-Page VSL</strong>
+                      <span>Replace the embed URL below with your actual video sales letter.</span>
+                    </div>
+                    <div class="vsl-badge">high-conversion entry</div>
+                  </div>
+
+                  <div class="video-shell">
+                    <iframe id="vslFrame" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1" title="Alpha Selling VSL" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <div class="video-overlay" id="videoOverlay" role="button" tabindex="0" aria-label="Play VSL">
+                      <div class="overlay-copy">
+                        <div class="play-core"></div>
+                        <strong>Watch Brandon break down the Alpha Selling method.</strong>
+                        <span>How enterprise reps create urgency, get to power, control bigger deals, and increase income.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="theater-grid">
+                  <div class="command-panel">
+                    <div class="small">Interactive scenario</div>
+                    <div class="scenario-list" role="tablist" aria-label="Sales scenario selector">
+                      <button class="scenario active" data-scenario="cfo" role="tab" aria-selected="true">
+                        <strong>CFO pushback</strong>
+                        <span>Turn skepticism into commercial urgency</span>
+                      </button>
+                      <button class="scenario" data-scenario="stalled" role="tab" aria-selected="false">
+                        <strong>Stalled committee</strong>
+                        <span>Rebuild momentum across the account</span>
+                      </button>
+                      <button class="scenario" data-scenario="renewal" role="tab" aria-selected="false">
+                        <strong>Renewal expansion</strong>
+                        <span>Make renewal a strategic event</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="story-panel">
+                    <div class="tag-chip" id="scenarioTag">CFO friction</div>
+                    <h3 id="scenarioTitle">Move from defensive seller to commercial operator.</h3>
+                    <p id="weakPattern">Average reps answer the objection too literally, start pitching, and lose executive altitude within 90 seconds.</p>
+                    <div class="quote-box">
+                      <div class="quote-line" id="alphaMove1">Reframe the discussion around financial exposure, timeline compression, and internal political risk.</div>
+                      <div class="quote-line" id="alphaMove2">Use controlled discovery that forces the buyer to evaluate cost of delay before feature fit.</div>
+                      <div class="quote-line" id="alphaMove3">Create a next step with executive intent instead of “circling back.”</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="metric-ribbon">
+                  <div class="metric-card">
+                    <strong id="metric1">Executive urgency</strong>
+                    <span>Not more activity. Better commercial tension.</span>
+                  </div>
+                  <div class="metric-card">
+                    <strong id="metric2">Multi-threading</strong>
+                    <span>Technical buyer + economic buyer alignment.</span>
+                  </div>
+                  <div class="metric-card">
+                    <strong id="metric3">Bigger outcomes</strong>
+                    <span>Deals expand when POV sharpens.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="story">
+        <div class="container narrative-grid">
+          <div class="sticky-copy reveal">
+            <div class="eyebrow">Problem / Solution narrative</div>
+            <h2 class="section-title">Most reps are active. Very few are dangerous.</h2>
+            <p class="lede">
+              Brandon’s content has always centered around the same truth: most reps are too soft in discovery, too generic in messaging, too feature-heavy with executives, and too passive when deals stall. Alpha Selling is about changing that.
+            </p>
+          </div>
+
+          <div class="story-stack">
+            <article class="story-card reveal">
+              <div class="story-step">Scene 01</div>
+              <h3>You have activity, but not real control</h3>
+              <p>
+                You are sending emails, running demos, following up, and maybe even building pipeline. But the biggest deals still slip because the account never feels a compelling business reason to move now.
+              </p>
+              <div class="scenario-visual">
+                <div class="scenario-flow">
+                  <div class="flow-node">
+                    <strong>Discovery</strong>
+                    <span>Questions asked. No real cost of delay established.</span>
+                  </div>
+                  <div class="flow-node">
+                    <strong>Demo</strong>
+                    <span>Strong product. Weak executive relevance.</span>
+                  </div>
+                  <div class="flow-node">
+                    <strong>Committee stall</strong>
+                    <span>Interest exists. Ownership does not.</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="story-card reveal">
+              <div class="story-step">Scene 02</div>
+              <h3>Alpha Selling changes the pressure in the room</h3>
+              <p>
+                The goal is not to sound smoother. The goal is to create a commercial point of view, force real thinking, get to power, and make staying the same feel expensive.
+              </p>
+            </article>
+
+            <article class="story-card reveal">
+              <div class="story-step">Scene 03</div>
+              <h3>You start selling like a top enterprise operator</h3>
+              <p>
+                Better outreach. Better discovery. Better multi-threading. Better executive conversations. Better pricing posture. Better income. That is the whole point.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="showcase">
+        <div class="container">
+          <div class="eyebrow reveal">Proof / methodology in action</div>
+          <h2 class="section-title reveal">What the shift feels like when your messaging gets sharp.</h2>
+          <p class="lede reveal" style="max-width: 70ch; margin-bottom: 28px;">
+            This funnel is built around the exact promise your audience wants: stronger deal control, higher-level executive conversations, and a clearer path to closing bigger enterprise business.
+          </p>
+
+          <div class="showcase-shell reveal">
+            <div class="showcase-grid">
+              <div class="mockup parallax" data-parallax="0.06">
+                <div class="mockup-header">
+                  <div class="theater-label">Alpha Selling operator view</div>
+                  <div class="tag-chip">animated preview</div>
+                </div>
+                <div class="mockup-body">
+                  <div class="mini-chart">
+                    <svg viewBox="0 0 600 240" preserveAspectRatio="none" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="lineGlow" x1="0" x2="1" y1="0" y2="0">
+                          <stop offset="0%" stop-color="rgba(255,77,45,0.08)"/>
+                          <stop offset="42%" stop-color="rgba(255,77,45,1)"/>
+                          <stop offset="100%" stop-color="rgba(217,35,35,0.18)"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M0,186 C55,179 93,160 131,164 C175,168 204,132 242,119 C286,104 322,114 354,97 C392,77 434,49 479,52 C522,54 552,34 600,16" fill="none" stroke="url(#lineGlow)" stroke-width="4" stroke-linecap="round"/>
+                      <path d="M0,186 C55,179 93,160 131,164 C175,168 204,132 242,119 C286,104 322,114 354,97 C392,77 434,49 479,52 C522,54 552,34 600,16 L600,240 L0,240 Z" fill="rgba(255,77,45,0.08)"/>
+                    </svg>
+                  </div>
+                  <div class="mini-cards">
+                    <div class="mini-card">
+                      <strong>POV sharpness</strong>
+                      <span>Every message ties back to business stakes.</span>
+                    </div>
+                    <div class="mini-card">
+                      <strong>Buyer map</strong>
+                      <span>Economic, technical, and political threads clarified.</span>
+                    </div>
+                    <div class="mini-card">
+                      <strong>Call control</strong>
+                      <span>Next steps move with intent, not hope.</span>
+                    </div>
+                  </div>
+                  <div class="cred-block" style="padding:18px;">
+                    <h3 style="font-family:'Cormorant Garamond',serif; font-size:2rem; margin-bottom:8px;">“He helped me stop sounding like a rep and start sounding like a business operator.”</h3>
+                    <p>From outbound to renewal expansion, the coaching is designed to make your conversations feel more senior, more pointed, and harder to ignore.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="showcase-side">
+                <div class="cred-block">
+                  <h3>Built to convert the right reps</h3>
+                  <p>
+                    This is not broad-market motivational fluff. It is a premium front-end experience for ambitious enterprise AEs who want better messaging, better outcomes, and a bigger income ceiling.
+                  </p>
+                  <div class="cred-list">
+                    <div class="cred-item"><i>01</i><span>Front-page VSL to create belief before the form ever opens.</span></div>
+                    <div class="cred-item"><i>02</i><span>Dropdown lead capture modeled after high-conversion funnel behavior.</span></div>
+                    <div class="cred-item"><i>03</i><span>Brand cues aligned to Alpha Selling: wolf energy, control, precision, power.</span></div>
+                  </div>
+                </div>
+
+                <div class="cred-block">
+                  <h3>Messaging aligned to your content style</h3>
+                  <p>
+                    Direct. Experienced. Polarizing in the right way. Built around power, urgency, commercial thinking, and helping reps stop playing small inside enterprise deals.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="results">
+        <div class="container proof-panel">
+          <div>
+            <div class="eyebrow reveal">Social proof</div>
+            <h2 class="section-title reveal">Proof that matters to enterprise account executives.</h2>
+            <p class="lede reveal">
+              The outcomes your audience cares about are simple: better pipeline quality, more executive access, better deal control, stronger pricing posture, and more money because they are selling at a higher level.
+            </p>
+            <div class="proof-metrics reveal">
+              <div class="proof-metric">
+                <strong>Bigger deals</strong>
+                <span>Sharper POV, stronger urgency, and better access to power creates more commercial leverage.</span>
+              </div>
+              <div class="proof-metric">
+                <strong>Cleaner executive traction</strong>
+                <span>Coaching centered around CFO, CRO, CIO, and executive relevance instead of product dumping.</span>
+              </div>
+              <div class="proof-metric">
+                <strong>Higher income ceiling</strong>
+                <span>When enterprise reps learn how to drive real business urgency, commissions usually follow.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="customer-grid reveal">
+            <article class="quote-card">
+              <p>
+                “I stopped running soft discovery and started leading strategic conversations. Buyers respected me more almost immediately.”
+              </p>
+              <div class="quote-meta">
+                <strong>Enterprise AE</strong>
+                <span>Mid-market to enterprise transition</span>
+              </div>
+            </article>
+
+            <article class="quote-card">
+              <p>
+                “The biggest shift was learning how to create urgency without sounding needy. It completely changed how I sell to executives.”
+              </p>
+              <div class="quote-meta">
+                <strong>Strategic AE</strong>
+                <span>Complex committee deals</span>
+              </div>
+            </article>
+
+            <article class="quote-card">
+              <p>
+                “My outbound got much stronger because it stopped sounding like a rep asking for time and started sounding like a real commercial point of view.”
+              </p>
+              <div class="quote-meta">
+                <strong>Enterprise Seller</strong>
+                <span>Executive outbound + deal acceleration</span>
+              </div>
+            </article>
+
+            <article class="quote-card">
+              <p>
+                “This felt built for actual enterprise pressure. No fluff. No fake guru energy. Just better selling.”
+              </p>
+              <div class="quote-meta">
+                <strong>Top-performing AE</strong>
+                <span>Renewal expansion + multi-threading</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="conversion" id="apply">
+        <div class="container">
+          <div class="conversion-wrap reveal">
+            <div class="conversion-grid">
+              <div>
+                <div class="urgency-bar">Selective intake / premium coaching / limited spots</div>
+                <h2>Get the lead magnet. Watch the VSL. Then book the call.</h2>
+                <p class="lede" style="max-width: 58ch;">
+                  This page is optimized to capture high-intent enterprise reps. First create belief with the VSL. Then open the dropdown form, grab contact info, and move qualified prospects toward a strategy conversation.
+                </p>
+                <div class="stack-list">
+                  <div class="stack-item"><i>01</i><span>Lead magnet capture to build list and follow-up sequence.</span></div>
+                  <div class="stack-item"><i>02</i><span>Short form fields to reduce friction and increase conversion rate.</span></div>
+                  <div class="stack-item"><i>03</i><span>Strong CTA language aimed at call bookings, not passive subscribers.</span></div>
+                </div>
+              </div>
+
+              <div class="lead-shell">
+                <h3>Book a strategy call</h3>
+                <p>Open the dropdown, enter your details, and move into the next step of the funnel.</p>
+
+                <div class="dropdown-lead" id="dropdownLead">
+                  <button class="dropdown-header" id="dropdownTrigger" type="button" aria-expanded="false" aria-controls="dropdownContent">
+                    <div>
+                      <div class="small">click to open</div>
+                      <strong>Get the Alpha Selling lead magnet + request a call</strong>
+                    </div>
+                    <div class="dropdown-toggle">⌄</div>
+                  </button>
+
+                  <div class="dropdown-content" id="dropdownContent">
+                    <div class="mini-trust">
+                      <div class="mini-pill">Fast form</div>
+                      <div class="mini-pill">High intent</div>
+                      <div class="mini-pill">Enterprise reps only</div>
+                    </div>
+
+                    <form class="form-grid" onsubmit="event.preventDefault(); showSubmission();">
+                      <div class="field">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Your full name" required>
+                      </div>
+                      <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="you@company.com" required>
+                      </div>
+                      <div class="field">
+                        <label for="phone">Phone Number</label>
+                        <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" required>
+                      </div>
+                      <div class="form-actions">
+                        <button type="submit" class="btn btn-primary magnetic">Get the Lead Magnet + Book My Call</button>
+                        <a href="#vsl" class="btn btn-secondary magnetic">Watch VSL Again</a>
+                      </div>
+                      <div class="form-note" id="formNote">No spam. In production, this should connect to your CRM, email automation, and booking flow.</div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div class="footer-copy">
+          <div class="brand-lockup">
+            <div class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" role="presentation">
+                <path d="M31.8 6 18 13.2l-4.8 12.4L16 42.7 31.9 58 48 42.8l2.7-17.1L46 13.3 31.8 6Zm-7.3 15.6 7.4-4.7 7.6 4.6-2.2 7.7-5.4-3.2-5.2 3.2-2.2-7.6Zm-1.7 12.6 8.9-5.2 9.4 5.2-1.4 7.6-8 7.5-8-7.7-1-7.4Z"/>
+              </svg>
+            </div>
+            <div class="brand-copy">
+              <strong>Brandon Clauser Sales Coaching</strong>
+              <span>Alpha Selling</span>
+            </div>
+          </div>
+          <p>
+            Coaching for enterprise account executives who want to close more, command the room, get to power, and increase their income through sharper commercial thinking.
+          </p>
+          <div class="footer-news">
+            <input type="email" placeholder="Enter email for rare updates" aria-label="Email for newsletter">
+            <button class="btn btn-secondary magnetic" type="button">Join</button>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="#story">Method</a>
+          <a href="#results">Results</a>
+          <a href="#apply">Apply</a>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const scenarios = {
+      cfo: {
+        tag: 'CFO friction',
+        title: 'Move from defensive seller to commercial operator.',
+        weak: 'Average reps answer the objection too literally, start pitching, and lose executive altitude within 90 seconds.',
+        moves: [
+          'Reframe the discussion around financial exposure, timeline compression, and internal political risk.',
+          'Use controlled discovery that forces the buyer to evaluate cost of delay before feature fit.',
+          'Create a next step with executive intent instead of “circling back.”'
+        ],
+        metrics: ['Executive urgency', 'Multi-threading', 'Bigger outcomes']
+      },
+      stalled: {
+        tag: 'Committee stall',
+        title: 'Recreate movement when interest exists but ownership does not.',
+        weak: 'The rep mistakes positive feedback for progress, keeps following up, and never forces a shared business decision.',
+        moves: [
+          'Map the missing power centers and re-anchor the deal to one financial or operational consequence that cannot stay vague.',
+          'Use persona-specific multi-threading instead of repeating one generic message to everybody.',
+          'Turn the next meeting into a decision workshop, not another status call.'
+        ],
+        metrics: ['Deal momentum', 'Stakeholder control', 'Cleaner next steps']
+      },
+      renewal: {
+        tag: 'Renewal expansion',
+        title: 'Transform a passive renewal into a strategic commercial event.',
+        weak: 'They wait for procurement timing, treat the renewal like admin work, and miss the chance to create new executive relevance.',
+        moves: [
+          'Bring new releases, adoption gaps, and strategic initiatives into one point of view the customer has to react to.',
+          'Use renewal timing to widen the conversation from current usage to future business leverage.',
+          'Frame expansion as the logical cost-saving or growth-driving move, not an upsell ask.'
+        ],
+        metrics: ['Expansion logic', 'Renewal leverage', 'Higher ACV']
+      }
+    };
+
+    const els = {
+      tag: document.getElementById('scenarioTag'),
+      title: document.getElementById('scenarioTitle'),
+      weak: document.getElementById('weakPattern'),
+      move1: document.getElementById('alphaMove1'),
+      move2: document.getElementById('alphaMove2'),
+      move3: document.getElementById('alphaMove3'),
+      metric1: document.getElementById('metric1'),
+      metric2: document.getElementById('metric2'),
+      metric3: document.getElementById('metric3')
+    };
+
+    document.querySelectorAll('.scenario').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.scenario;
+        const data = scenarios[key];
+        document.querySelectorAll('.scenario').forEach(s => {
+          s.classList.remove('active');
+          s.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        animateSwap(els.tag, data.tag);
+        animateSwap(els.title, data.title);
+        animateSwap(els.weak, data.weak);
+        animateSwap(els.move1, data.moves[0]);
+        animateSwap(els.move2, data.moves[1]);
+        animateSwap(els.move3, data.moves[2]);
+        animateSwap(els.metric1, data.metrics[0]);
+        animateSwap(els.metric2, data.metrics[1]);
+        animateSwap(els.metric3, data.metrics[2]);
+      });
+    });
+
+    function animateSwap(el, text) {
+      el.style.transition = 'opacity .18s ease, transform .18s ease';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(6px)';
+      setTimeout(() => {
+        el.textContent = text;
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, 180);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const cursorGlow = document.querySelector('.cursor-glow');
+    window.addEventListener('pointermove', (e) => {
+      cursorGlow.style.left = `${e.clientX}px`;
+      cursorGlow.style.top = `${e.clientY}px`;
+    });
+
+    window.addEventListener('pointerdown', () => cursorGlow.style.opacity = '.9');
+    window.addEventListener('pointerup', () => cursorGlow.style.opacity = '1');
+
+    document.querySelectorAll('.magnetic').forEach(button => {
+      button.addEventListener('mousemove', (e) => {
+        const rect = button.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        button.style.transform = `translate(${x * 0.08}px, ${y * 0.12}px)`;
+      });
+      button.addEventListener('mouseleave', () => {
+        button.style.transform = '';
+      });
+    });
+
+    const parallaxEls = document.querySelectorAll('[data-parallax]');
+    const handleParallax = () => {
+      const viewportH = window.innerHeight;
+      parallaxEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const speed = parseFloat(el.dataset.parallax || '0.06');
+        const offset = (rect.top - viewportH / 2) * speed;
+        el.style.setProperty('--parallax-offset', `${offset * -1}px`);
+      });
+    };
+
+    handleParallax();
+    window.addEventListener('scroll', handleParallax, { passive: true });
+    window.addEventListener('resize', handleParallax);
+
+    const dropdownLead = document.getElementById('dropdownLead');
+    const dropdownTrigger = document.getElementById('dropdownTrigger');
+    dropdownTrigger.addEventListener('click', () => {
+      const open = dropdownLead.classList.toggle('open');
+      dropdownTrigger.setAttribute('aria-expanded', String(open));
+    });
+
+    const videoOverlay = document.getElementById('videoOverlay');
+    const vslFrame = document.getElementById('vslFrame');
+
+    function playVideo() {
+      videoOverlay.classList.add('hidden');
+      const currentSrc = vslFrame.getAttribute('src');
+      if (!currentSrc.includes('autoplay=1')) {
+        const joiner = currentSrc.includes('?') ? '&' : '?';
+        vslFrame.setAttribute('src', `${currentSrc}${joiner}autoplay=1`);
+      }
+    }
+
+    videoOverlay.addEventListener('click', playVideo);
+    videoOverlay.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        playVideo();
+      }
+    });
+
+    function showSubmission() {
+      const note = document.getElementById('formNote');
+      note.textContent = 'Lead captured. In production, connect this form to your CRM, nurture sequence, lead magnet delivery, and booking calendar.';
+      note.style.color = 'var(--success)';
+      dropdownLead.classList.add('open');
+      dropdownTrigger.setAttribute('aria-expanded', 'true');
+    }
+  </script>
+</body>
+</html>
