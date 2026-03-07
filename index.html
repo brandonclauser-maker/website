@@ -16,8 +16,8 @@
       --text: #f5f5f8;
       --muted: #a7a9b5;
       --line: rgba(255,255,255,.12);
-      --accent: #ff4a1f;
-      --accent-2: #ff6b46;
+      --accent: #b61622;
+      --accent-2: #d2383f;
       --radius: 20px;
       --max: 1120px;
       --ease: cubic-bezier(.22,.61,.36,1);
@@ -30,9 +30,9 @@
       font-family: 'Manrope', sans-serif;
       color: var(--text);
       background:
-        linear-gradient(137deg, transparent 0 56%, rgba(255,74,31,.08) 56% 57.2%, transparent 57.2% 100%),
-        linear-gradient(126deg, transparent 0 64%, rgba(255,74,31,.07) 64% 65.1%, transparent 65.1% 100%),
-        radial-gradient(circle at 58% 43%, rgba(255,74,31,.14), transparent 42%),
+        linear-gradient(137deg, transparent 0 56%, rgba(182,22,34,.08) 56% 57.2%, transparent 57.2% 100%),
+        linear-gradient(126deg, transparent 0 64%, rgba(182,22,34,.07) 64% 65.1%, transparent 65.1% 100%),
+        radial-gradient(circle at 58% 43%, rgba(182,22,34,.13), transparent 42%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 55%, var(--bg) 100%);
       min-height: 100vh;
       overflow-x: hidden;
@@ -58,22 +58,18 @@
     .hero::before {
       content: "";
       position: absolute;
-      left: -24%;
-      bottom: -22%;
-      width: min(72vw, 860px);
+      left: -34%;
+      bottom: -32%;
+      width: min(88vw, 980px);
       aspect-ratio: 1 / 1;
       background:
-        linear-gradient(155deg, rgba(255,255,255,.32) 0%, rgba(255,255,255,.04) 38%, rgba(0,0,0,0) 68%),
-        linear-gradient(128deg, rgba(197,23,34,.52) 0%, rgba(197,23,34,.18) 34%, rgba(0,0,0,0) 72%),
-        linear-gradient(214deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 48%),
-        linear-gradient(38deg, rgba(0,0,0,.9) 12%, rgba(0,0,0,.2) 70%, rgba(0,0,0,0) 100%);
-      clip-path: polygon(
-        8% 70%, 20% 56%, 26% 34%, 38% 20%, 49% 9%, 56% 5%, 58% 22%, 66% 10%,
-        82% 24%, 73% 35%, 90% 44%, 77% 59%, 64% 60%, 53% 74%, 45% 90%, 38% 68%,
-        28% 64%, 20% 72%
-      );
-      opacity: .08;
-      filter: blur(.2px) drop-shadow(0 0 34px rgba(197,23,34,.14)) drop-shadow(-24px 30px 64px rgba(0,0,0,.48));
+        radial-gradient(circle at 56% 48%, rgba(182,22,34,.2) 0%, rgba(182,22,34,0) 58%),
+        url("assets/alpha-selling-logo.png");
+      background-size: 130% 130%, 248% auto;
+      background-position: 56% 48%, 48% 42%;
+      background-repeat: no-repeat;
+      opacity: .072;
+      filter: grayscale(1) contrast(1.2) brightness(.88) drop-shadow(0 0 28px rgba(182,22,34,.16));
       mix-blend-mode: screen;
       pointer-events: none;
       z-index: 0;
@@ -166,25 +162,20 @@
       font-size: clamp(3.05rem, 10vw, 7.5rem);
       position: relative;
       display: inline-block;
-      letter-spacing: -.02em;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      letter-spacing: .09em;
       color: transparent;
       background:
-        repeating-linear-gradient(
-          102deg,
-          rgba(255,255,255,.12) 0px,
-          rgba(255,255,255,.12) 1px,
-          rgba(255,255,255,0) 1px,
-          rgba(255,255,255,0) 4px
-        ),
-        linear-gradient(180deg, #f05b57 0%, #d3262f 37%, #b91420 63%, #8f0e18 100%);
+        linear-gradient(180deg, #eb6467 0%, #cf202c 34%, #b61622 62%, #8d1019 100%);
       background-blend-mode: soft-light, normal;
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow:
         0 1px 0 rgba(255,255,255,.08),
-        0 0 10px rgba(197,23,34,.2),
-        0 0 24px rgba(197,23,34,.14);
+        0 0 10px rgba(182,22,34,.24),
+        0 0 22px rgba(182,22,34,.16);
       font-style: normal;
       line-height: .9;
       isolation: isolate;
@@ -273,11 +264,11 @@
     }
 
     .proof-strip .proof-anchor {
-      background: linear-gradient(180deg, #ffd0cf 0%, #ffc0be 34%, #f29a98 100%);
+      background: linear-gradient(180deg, #ffe3e2 0%, #f9c5c3 45%, #e58f8b 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 10px rgba(197,23,34,.2);
+      text-shadow: 0 0 10px rgba(182,22,34,.2);
     }
 
     @keyframes authoritySweep {
@@ -304,18 +295,22 @@
       overflow: hidden;
       background: linear-gradient(180deg, rgba(16,16,22,.96), rgba(10,10,14,.96));
       border: 1px solid var(--line);
-      box-shadow: 0 32px 85px rgba(0,0,0,.56), 0 0 0 1px rgba(255,74,31,.14);
+      box-shadow: 0 32px 85px rgba(0,0,0,.56), 0 0 0 1px rgba(182,22,34,.16);
       position: relative;
     }
 
     .video-wrap::before {
-      content: "BC";
+      content: "";
       position: absolute;
       right: 12px;
-      top: 4px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 7vw, 4.6rem);
-      color: rgba(255,255,255,.035);
+      top: 10px;
+      width: 40px;
+      aspect-ratio: 1 / 1;
+      background: url("assets/alpha-selling-logo.png") no-repeat;
+      background-size: 250% auto;
+      background-position: 50% 40%;
+      opacity: .13;
+      filter: grayscale(1) contrast(1.2) brightness(1.05);
       pointer-events: none;
       z-index: 0;
     }
@@ -324,8 +319,8 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      background: linear-gradient(90deg, var(--accent) 0%, #ff3f11 100%);
-      color: #170b09;
+      background: linear-gradient(90deg, #c52832 0%, var(--accent) 62%, #8f1019 100%);
+      color: #f7efef;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: .06em;
@@ -441,9 +436,9 @@
 
     .btn-primary {
       color: #fff;
-      background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 45%, #d92222 100%);
-      border: 1px solid rgba(255,132,103,.5);
-      box-shadow: 0 20px 50px rgba(255,74,31,.34), inset 0 1px 0 rgba(255,255,255,.22);
+      background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 45%, #8f1019 100%);
+      border: 1px solid rgba(210,82,91,.5);
+      box-shadow: 0 20px 50px rgba(182,22,34,.34), inset 0 1px 0 rgba(255,255,255,.22);
       width: min(100%, 442px);
       padding: 18px 26px;
       font-size: 1.08rem;
@@ -767,7 +762,7 @@
       border-radius: 20px;
       border: 1px solid rgba(255,255,255,.14);
       background: linear-gradient(180deg, rgba(18,18,24,.97), rgba(10,10,14,.97));
-      box-shadow: 0 34px 90px rgba(0,0,0,.62), 0 0 0 1px rgba(255,74,31,.14);
+      box-shadow: 0 34px 90px rgba(0,0,0,.62), 0 0 0 1px rgba(182,22,34,.16);
       padding: 22px;
       transform: translateY(10px) scale(.98);
       opacity: 0;
@@ -786,7 +781,7 @@
       position: absolute;
       inset: -30% -10% auto -10%;
       height: 52%;
-      background: radial-gradient(circle at center, rgba(255,74,31,.18), transparent 70%);
+      background: radial-gradient(circle at center, rgba(182,22,34,.18), transparent 70%);
       pointer-events: none;
     }
 
@@ -851,7 +846,7 @@
     }
 
     .field input:focus {
-      border-color: rgba(255,74,31,.52);
+      border-color: rgba(182,22,34,.52);
       background: rgba(255,255,255,.05);
     }
 
